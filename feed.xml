@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-03-28T00:00:00Z</updated>
+  <updated>2026-04-11T00:00:00Z</updated>
+  <entry>
+    <title>BTC Weekly: Week 15 (2026)</title>
+    <link href="https://btcweekly.org/2026/week-15/"/>
+    <id>https://btcweekly.org/2026/week-15/</id>
+    <updated>2026-04-11T00:00:00Z</updated>
+    <summary>Morgan Stanley became the first major U.S. bank to issue its own spot Bitcoin ETF, launching MSBT on April 8 at a 0.14% sponsor fee — the lowest of any Bitcoin ETP currently trading.</summary>
+    <content type="html">The Morgan Stanley Bitcoin Trust debuted on NYSE Arca under the ticker MSBT with Coinbase and BNY providing custody, BNY also serving as administrator and transfer agent, and the fund benchmarked to the CoinDesk Bitcoin Benchmark Rate Index. At 0.14%, MSBT undercuts BlackRock&#39;s iShares Bitcoin Trust (IBIT) — the market&#39;s dominant product at 0.25% — creating the first direct fee-based competition from a bank-issued instrument since spot Bitcoin ETFs launched in January 2024. First-day trading cleared $34 million in volume, which Bloomberg Senior ETF Analyst Eric Balchunas placed in the top 1% of all ETF launches on record. The fund&#39;s distribution advantage is structural: Morgan Stanley&#39;s wealth management network spans 16,000 financial advisors overseeing $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle and required clients to access competing products through outside platforms.</content>
+  </entry>
   <entry>
     <title>BTC Weekly: Week 13 (2026)</title>
     <link href="https://btcweekly.org/2026/week-13/"/>
