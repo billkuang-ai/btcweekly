@@ -96,10 +96,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 /* ── TOP BAR ── */
 .top-bar {
   background:var(--orange); padding:10px 20px; margin:0 -20px;
-  display:flex; align-items:center; justify-content:space-between;
+  display:flex; align-items:center; justify-content:center;
   box-shadow:0 3px 0 var(--orange-bright);
 }
-.top-bar-site { font-size:var(--text-label); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#fff; }
 .top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; white-space:nowrap; }
 .top-bar-tagline .hi { color:#fff; font-weight:700; }
 
@@ -224,7 +223,6 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
 @media(max-width:480px){
   .meta-row { flex-direction:column; align-items:flex-start; gap:8px; }
-  .top-bar  { flex-direction:column; align-items:flex-start; gap:5px; }
   .rss { flex-direction:column; align-items:flex-start; }
 }
 </style>
@@ -234,7 +232,6 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <header>
     <div class="top-bar">
-      <div class="top-bar-site"><a href="/" style="color:#fff;text-decoration:none">btcweekly.org</a></div>
       <div class="top-bar-tagline"><span class="hi">B</span>alanced · <span class="hi">T</span>rusted · <span class="hi">C</span>oncise</div>
     </div>
     <div class="masthead-hero">
