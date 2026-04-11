@@ -78,7 +78,7 @@
   --text-title: clamp(17px, 2.6vw, 18px);
   --text-lead:  clamp(20px, 3.2vw, 22px);
   --text-num:   clamp(24px, 3.8vw, 28px);
-  --text-mark:  clamp(58px, 13vw,  96px);
+  --text-mark:  clamp(32px, 12vw,  96px);
 }
 
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
@@ -100,7 +100,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   box-shadow:0 3px 0 var(--orange-bright);
 }
 .top-bar-site { font-size:var(--text-label); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#fff; }
-.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; }
+.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; white-space:nowrap; }
 .top-bar-tagline .hi { color:#fff; font-weight:700; }
 
 /* ── WORDMARK ── */
@@ -108,6 +108,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 .wordmark {
   font-family:'Black Han Sans',sans-serif;
   font-size:var(--text-mark); line-height:0.88; letter-spacing:0.02em; display:block;
+  white-space:nowrap;
 }
 .w1 {
   color:var(--orange);
@@ -136,7 +137,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
 /* ── STORY CARD ── */
 .story {
-  display:flex; align-items:stretch;
+  display:flex; flex-direction:column;
   background:var(--white); border:1px solid var(--border);
   border-radius:10px; margin-top:10px;
   box-shadow:var(--shadow-sm);
@@ -145,44 +146,46 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
 /* Story #1 elevated */
 .story.s1 {
-  border-left:4px solid var(--orange);
+  border-top:4px solid var(--orange);
   box-shadow:var(--shadow-lead);
 }
 
 @media (hover: hover) and (pointer: fine) {
   .story:hover    { border-color:var(--orange-soft); }
-  .story.s1:hover { border-color:var(--orange-soft); border-left-color:var(--orange); }
+  .story.s1:hover { border-color:var(--orange-soft); border-top-color:var(--orange); }
 }
 
-/* ── NUMBER COLUMN ── */
-.story-num {
-  width:52px; flex-shrink:0;
-  display:flex; align-items:flex-start; justify-content:center;
-  padding-top:18px;
-  border-right:1px solid var(--border-soft);
+/* ── STORY META BAR ── */
+.story-meta {
+  display:flex; align-items:center; gap:7px;
+  padding:7px 16px;
   background:var(--surface-soft);
+  border-bottom:1px solid var(--border-soft);
 }
-.story.s1 .story-num {
+.story.s1 .story-meta {
   background:var(--orange-faint);
-  border-right:none;
+  border-bottom-color:var(--orange-pale);
 }
 
 .s-n {
   font-family:'Black Han Sans',sans-serif;
-  font-size:var(--text-num); line-height:1;
+  font-size:var(--text-meta); line-height:1;
   color:var(--orange);
-  text-shadow:1px 1px 0 var(--orange-bright), 2px 2px 0 var(--orange-soft);
+}
+
+.s-meta-sep {
+  color:var(--orange-soft);
+  font-size:var(--text-label);
+  line-height:1;
+}
+
+.s-cat {
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  color:var(--orange);
 }
 
 /* ── STORY BODY ── */
-.story-body { flex:1; padding:18px 18px 18px 16px; }
-
-.s-cat {
-  display:inline-flex; background:var(--bg); color:var(--orange);
-  font-size:var(--text-label); font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
-  padding:3px 8px; border-radius:3px; border:1px solid var(--border-soft); margin-bottom:7px;
-}
-.story.s1 .s-cat { background:var(--orange-faint); border-color:var(--orange-pale); }
+.story-body { padding:16px 18px; }
 
 .s-title { font-size:var(--text-title); font-weight:700; color:var(--text); line-height:1.32; }
 .story.s1 .s-title { font-size:var(--text-lead); }
@@ -222,7 +225,6 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 @media(max-width:480px){
   .meta-row { flex-direction:column; align-items:flex-start; gap:8px; }
   .top-bar  { flex-direction:column; align-items:flex-start; gap:5px; }
-  .story-num { width:44px; }
   .rss { flex-direction:column; align-items:flex-start; }
 }
 </style>
@@ -247,9 +249,12 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   
   <div class="story s1">
-    <div class="story-num"><div class="s-n">1</div></div>
+    <div class="story-meta">
+      <span class="s-n">1</span>
+      <span class="s-meta-sep">·</span>
+      <span class="s-cat">Banking</span>
+    </div>
     <div class="story-body">
-      <div class="s-cat">Banking</div>
       <div class="s-title">Morgan Stanley became the first major U.S. bank to issue its own spot Bitcoin ETF, launching MSBT on April 8 at a 0.14% sponsor fee — the lowest of any Bitcoin ETP currently trading.</div>
       <div class="s-summary">The Morgan Stanley Bitcoin Trust debuted on NYSE Arca under the ticker MSBT with Coinbase and BNY providing custody, BNY also serving as administrator and transfer agent, and the fund benchmarked to the CoinDesk Bitcoin Benchmark Rate Index. At 0.14%, MSBT undercuts BlackRock&#39;s iShares Bitcoin Trust (IBIT) — the market&#39;s dominant product at 0.25% — creating the first direct fee-based competition from a bank-issued instrument since spot Bitcoin ETFs launched in January 2024. First-day trading cleared $34 million in volume, which Bloomberg Senior ETF Analyst Eric Balchunas placed in the top 1% of all ETF launches on record. The fund&#39;s distribution advantage is structural: Morgan Stanley&#39;s wealth management network spans 16,000 financial advisors overseeing $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle and required clients to access competing products through outside platforms.</div>
       <div class="s-source">
@@ -259,9 +264,12 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   </div>
   
   <div class="story">
-    <div class="story-num"><div class="s-n">2</div></div>
+    <div class="story-meta">
+      <span class="s-n">2</span>
+      <span class="s-meta-sep">·</span>
+      <span class="s-cat">Research</span>
+    </div>
     <div class="story-body">
-      <div class="s-cat">Research</div>
       <div class="s-title">StarkWare CPO Avihu Levy published a quantum-safe Bitcoin transaction scheme on April 9 that requires no soft fork, no miner signaling, and no changes to Bitcoin&#39;s existing consensus rules.</div>
       <div class="s-summary">The proposal, called QSB, uses hash-based cryptography built on RIPEMD-160 pre-image resistance — a function that quantum computers can only attack via Grover&#39;s algorithm, which yields a quadratic rather than exponential speedup, leaving approximately 118 bits of effective pre-image security and 78 bits of collision resistance at the recommended configuration. Transactions using the scheme cost $75–$150 in GPU compute, work entirely within legacy script rules, and can be submitted directly to miners willing to process them without routing through normal mempool infrastructure. The scheme protects newly created outputs only and does not retroactively secure the estimated 4 million BTC held in legacy P2PK addresses — the format most vulnerable to a future capable quantum adversary. Levy describes QSB explicitly as a last-resort contingency measure rather than a substitute for a forthcoming protocol-level upgrade, noting it cannot be used with the Lightning Network.</div>
       <div class="s-source">
