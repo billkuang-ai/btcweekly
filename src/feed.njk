@@ -1,0 +1,24 @@
+---
+permalink: /feed.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>BTC Weekly</title>
+  <subtitle>Weekly Bitcoin news digest — published every Saturday.</subtitle>
+  <link href="https://btcweekly.org/" rel="alternate"/>
+  <link href="https://btcweekly.org/feed.xml" rel="self"/>
+  <id>https://btcweekly.org/</id>
+  <author><name>BTC Weekly</name></author>
+  <updated>{{ collections.issues | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  {%- for issue in collections.issues %}
+  <entry>
+    <title>{{ issue.data.title | escape }}</title>
+    <link href="https://btcweekly.org{{ issue.url }}"/>
+    <id>https://btcweekly.org{{ issue.url }}</id>
+    <updated>{{ issue.date | dateToRfc3339 }}</updated>
+    <summary>{{ issue.data.stories[0].title | escape }}</summary>
+    <content type="html">{{ issue.data.stories[0].summary | escape }}</content>
+  </entry>
+  {%- endfor %}
+</feed>

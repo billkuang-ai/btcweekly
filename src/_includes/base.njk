@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>{{ title }} · BTC Weekly</title>
+<meta name="description" content="{{ stories[0].summary | truncate(160) }}">
+<meta property="og:title" content="{{ title }}">
+<meta property="og:description" content="{{ stories[0].summary | truncate(200) }}">
+<meta property="og:url" content="https://btcweekly.org{{ page.url }}">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BTC Weekly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="{{ title }}">
+<meta name="twitter:description" content="{{ stories[0].summary | truncate(200) }}">
+<style>
+/* Self-hosted fonts */
+@font-face {
+  font-family: 'Black Han Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/black-han-sans/black-han-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-700-normal.woff2') format('woff2');
+}
+
+:root {
+  --orange:        #F7931A;
+  --orange-bright: #FFAA3A;
+  --orange-soft:   #FFBE5C;
+  --orange-mist:   #FFD48C;
+  --orange-pale:   #FFE8BE;
+  --orange-faint:  #FFF5E6;
+
+  --bg:            #FFF6EC;
+  --white:         #FFFFFF;
+  --surface-soft:  #FFF9F2;
+  --border:        #EDDECC;
+  --border-soft:   #F5E9D8;
+
+  --text:          #1C1208;
+  --muted:         #52402C;
+  --faint:         #A08060;
+
+  --shadow-sm:   0 1px 3px rgba(247,147,26,0.08), 0 1px 8px rgba(247,147,26,0.05);
+  --shadow-lead: 0 2px 0 var(--orange-pale), 0 6px 24px rgba(247,147,26,0.12);
+
+  --text-label: clamp(12px, 1.8vw, 13px);
+  --text-meta:  clamp(13px, 2vw,   14px);
+  --text-body:  clamp(15px, 2.2vw, 16px);
+  --text-title: clamp(17px, 2.6vw, 18px);
+  --text-lead:  clamp(20px, 3.2vw, 22px);
+  --text-num:   clamp(24px, 3.8vw, 28px);
+  --text-mark:  clamp(58px, 13vw,  96px);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+body {
+  font-family:'Inter',sans-serif; background:var(--bg);
+  color:var(--text); font-size:var(--text-body);
+  line-height:1.65; min-height:100vh;
+}
+a { color:var(--orange); text-decoration:none; transition:color 150ms; }
+a:hover { color:var(--orange-bright); text-decoration:underline; }
+
+.wrapper { max-width:660px; margin:0 auto; padding:0 20px 72px; }
+
+/* ── TOP BAR ── */
+.top-bar {
+  background:var(--orange); padding:10px 20px; margin:0 -20px;
+  display:flex; align-items:center; justify-content:space-between;
+  box-shadow:0 3px 0 var(--orange-bright);
+}
+.top-bar-site { font-size:var(--text-label); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#fff; }
+.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; }
+.top-bar-tagline .hi { color:#fff; font-weight:700; }
+
+/* ── WORDMARK ── */
+.masthead-hero { padding:36px 0 0; }
+.wordmark {
+  font-family:'Black Han Sans',sans-serif;
+  font-size:var(--text-mark); line-height:0.88; letter-spacing:0.02em; display:block;
+}
+.w1 {
+  color:var(--orange);
+  text-shadow:2px 2px 0 var(--orange-bright),4px 4px 0 var(--orange-soft),6px 6px 0 var(--orange-mist);
+}
+.w2 {
+  color:var(--text);
+  -webkit-text-stroke:1.5px var(--orange);
+  text-shadow:3px 3px 0 var(--orange-pale),5px 5px 0 var(--orange-mist);
+}
+
+/* ── META ROW ── */
+.meta-row {
+  display:flex; align-items:center; justify-content:center;
+  margin-top:16px; padding:13px 0;
+  border-top:1px solid var(--border-soft); border-bottom:3px solid var(--orange);
+}
+.issue-pill {
+  background:var(--white); color:var(--orange);
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+  padding:6px 16px; border-radius:4px; white-space:nowrap;
+  border:1.5px solid var(--orange); box-shadow:2px 2px 0 var(--orange-pale);
+}
+
+.sponsor { display:none; }
+
+/* ── STORY CARD ── */
+.story {
+  display:flex; align-items:stretch;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:10px; margin-top:10px;
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+
+/* Story #1 elevated */
+.story.s1 {
+  border-left:4px solid var(--orange);
+  box-shadow:var(--shadow-lead);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .story:hover    { border-color:var(--orange-soft); }
+  .story.s1:hover { border-color:var(--orange-soft); border-left-color:var(--orange); }
+}
+
+/* ── NUMBER COLUMN ── */
+.story-num {
+  width:52px; flex-shrink:0;
+  display:flex; align-items:flex-start; justify-content:center;
+  padding-top:18px;
+  border-right:1px solid var(--border-soft);
+  background:var(--surface-soft);
+}
+.story.s1 .story-num {
+  background:var(--orange-faint);
+  border-right:none;
+}
+
+.s-n {
+  font-family:'Black Han Sans',sans-serif;
+  font-size:var(--text-num); line-height:1;
+  color:var(--orange);
+  text-shadow:1px 1px 0 var(--orange-bright), 2px 2px 0 var(--orange-soft);
+}
+
+/* ── STORY BODY ── */
+.story-body { flex:1; padding:18px 18px 18px 16px; }
+
+.s-cat {
+  display:inline-flex; background:var(--bg); color:var(--orange);
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  padding:3px 8px; border-radius:3px; border:1px solid var(--border-soft); margin-bottom:7px;
+}
+.story.s1 .s-cat { background:var(--orange-faint); border-color:var(--orange-pale); }
+
+.s-title { font-size:var(--text-title); font-weight:700; color:var(--text); line-height:1.32; }
+.story.s1 .s-title { font-size:var(--text-lead); }
+
+.s-summary { font-size:var(--text-body); color:var(--muted); line-height:1.62; margin-top:7px; }
+.s-source {
+  margin-top:10px; padding-top:10px; border-top:1px solid var(--border-soft);
+  font-size:var(--text-meta); color:var(--faint); display:flex; align-items:center; gap:5px; flex-wrap:wrap;
+}
+.s-source a { color:var(--orange); font-weight:500; }
+
+/* ── RSS ── */
+.rss {
+  margin:28px 0 24px; background:var(--white);
+  border:1px solid var(--border); border-radius:10px;
+  padding:20px 22px; display:flex; align-items:center; gap:16px;
+  box-shadow:var(--shadow-sm);
+}
+.rss-icon {
+  width:42px; height:42px; background:var(--orange); color:#fff;
+  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; box-shadow:2px 2px 0 var(--orange-bright),3px 3px 0 var(--orange-soft);
+}
+.rss-title { font-size:var(--text-title); font-weight:700; color:var(--text); margin-bottom:3px; }
+.rss-sub   { font-size:var(--text-body); color:var(--muted); }
+.rss-link  { display:inline-block; margin-top:6px; color:var(--orange); font-weight:700; font-size:var(--text-meta); }
+.rss-link:hover { color:var(--orange-bright); }
+
+/* ── FOOTER ── */
+.footer {
+  text-align:center; padding:24px 0; border-top:1px solid var(--border-soft);
+  font-size:var(--text-meta); color:var(--faint); line-height:2;
+}
+.footer a { color:var(--orange); }
+.footer a:hover { color:var(--orange-bright); }
+
+@media(max-width:480px){
+  .meta-row { flex-direction:column; align-items:flex-start; gap:8px; }
+  .top-bar  { flex-direction:column; align-items:flex-start; gap:5px; }
+  .story-num { width:44px; }
+  .rss { flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-site"><a href="/" style="color:#fff;text-decoration:none">btcweekly.org</a></div>
+      <div class="top-bar-tagline"><span class="hi">B</span>alanced · <span class="hi">T</span>rusted · <span class="hi">C</span>oncise</div>
+    </div>
+    <div class="masthead-hero">
+      <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>
+      <div class="meta-row">
+        <div class="issue-pill">Week {{ week }} · {{ dateRange }}</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="sponsor"><!-- sponsor placeholder --></div>
+
+  {% for story in stories %}
+  <div class="story{% if loop.first %} s1{% endif %}">
+    <div class="story-num"><div class="s-n">{{ loop.index }}</div></div>
+    <div class="story-body">
+      <div class="s-cat">{{ story.category }}</div>
+      <div class="s-title">{{ story.title }}</div>
+      <div class="s-summary">{{ story.summary }}</div>
+      <div class="s-source">
+        ({% for src in story.sources %}<a href="{{ src.url }}">{{ src.label }}</a>{% if not loop.last %}, {% endif %}{% endfor %})
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+
+  <div class="rss">
+    <div class="rss-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
+    </div>
+    <div>
+      <div class="rss-title">Follow via RSS</div>
+      <div class="rss-sub">Read BTC Weekly in any RSS reader. A new issue arrives every Saturday.</div>
+      <a href="/feed.xml" class="rss-link">btcweekly.org/feed.xml →</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div><a href="https://btcweekly.org">btcweekly.org</a> · <a href="/archive/">Archive</a> · <a href="/feed.xml">RSS</a></div>
+    <div style="margin-top:6px">© 2026 BTC Weekly · Not financial advice</div>
+  </footer>
+</div>
+</body>
+</html>
