@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archive · BTC Weekly</title>
+<meta name="description" content="Every issue of BTC Weekly — weekly Bitcoin news digest.">
+<style>
+@font-face {
+  font-family: 'Black Han Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/black-han-sans/black-han-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-700-normal.woff2') format('woff2');
+}
+
+:root {
+  --orange:        #F7931A;
+  --orange-bright: #FFAA3A;
+  --orange-soft:   #FFBE5C;
+  --orange-mist:   #FFD48C;
+  --orange-pale:   #FFE8BE;
+  --orange-faint:  #FFF5E6;
+  --bg:            #FFF6EC;
+  --white:         #FFFFFF;
+  --surface-soft:  #FFF9F2;
+  --border:        #EDDECC;
+  --border-soft:   #F5E9D8;
+  --text:          #1C1208;
+  --muted:         #52402C;
+  --faint:         #A08060;
+  --shadow-sm:     0 1px 3px rgba(247,147,26,0.08), 0 1px 8px rgba(247,147,26,0.05);
+  --text-label:    clamp(12px, 1.8vw, 13px);
+  --text-meta:     clamp(13px, 2vw,   14px);
+  --text-body:     clamp(15px, 2.2vw, 16px);
+  --text-title:    clamp(17px, 2.6vw, 18px);
+  --text-mark:     clamp(58px, 13vw,  96px);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-font-smoothing:antialiased; }
+body { font-family:'Inter',sans-serif; background:var(--bg); color:var(--text); font-size:var(--text-body); line-height:1.65; min-height:100vh; }
+a { color:var(--orange); text-decoration:none; transition:color 150ms; }
+a:hover { color:var(--orange-bright); text-decoration:underline; }
+
+.wrapper { max-width:660px; margin:0 auto; padding:0 20px 72px; }
+
+.top-bar {
+  background:var(--orange); padding:10px 20px; margin:0 -20px;
+  display:flex; align-items:center; justify-content:space-between;
+  box-shadow:0 3px 0 var(--orange-bright);
+}
+.top-bar-site { font-size:var(--text-label); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#fff; }
+.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; }
+.top-bar-tagline .hi { color:#fff; font-weight:700; }
+
+.masthead-hero { padding:36px 0 0; }
+.wordmark { font-family:'Black Han Sans',sans-serif; font-size:var(--text-mark); line-height:0.88; letter-spacing:0.02em; display:block; }
+.w1 { color:var(--orange); text-shadow:2px 2px 0 #FFAA3A,4px 4px 0 #FFBE5C,6px 6px 0 #FFD48C; }
+.w2 { color:var(--text); -webkit-text-stroke:1.5px var(--orange); text-shadow:3px 3px 0 #FFE8BE,5px 5px 0 #FFD48C; }
+
+.archive-heading {
+  margin-top:28px; padding-bottom:12px;
+  border-bottom:3px solid var(--orange);
+  font-size:var(--text-title); font-weight:700; color:var(--text);
+  letter-spacing:0.04em; text-transform:uppercase;
+}
+
+.archive-item {
+  display:flex; align-items:flex-start; gap:14px;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:10px; margin-top:10px; padding:16px 18px;
+  box-shadow:var(--shadow-sm); text-decoration:none; color:inherit;
+  transition:border-color 150ms;
+}
+.archive-item:hover { border-color:var(--orange-soft); text-decoration:none; }
+
+.arc-pill {
+  flex-shrink:0; background:var(--orange-faint); color:var(--orange);
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+  padding:4px 10px; border-radius:4px; border:1.5px solid var(--orange-pale);
+  white-space:nowrap; margin-top:2px;
+}
+.arc-body { flex:1; min-width:0; }
+.arc-date { font-size:var(--text-meta); color:var(--faint); margin-bottom:4px; }
+.arc-title { font-size:var(--text-body); font-weight:600; color:var(--text); line-height:1.35; }
+.arc-lead { font-size:var(--text-meta); color:var(--muted); margin-top:3px; line-height:1.45; }
+
+.footer {
+  text-align:center; padding:24px 0; border-top:1px solid var(--border-soft);
+  margin-top:28px; font-size:var(--text-meta); color:var(--faint); line-height:2;
+}
+.footer a { color:var(--orange); }
+
+@media(max-width:480px){
+  .top-bar { flex-direction:column; align-items:flex-start; gap:5px; }
+  .archive-item { flex-direction:column; gap:8px; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-site"><a href="/" style="color:#fff;text-decoration:none">btcweekly.org</a></div>
+      <div class="top-bar-tagline"><span class="hi">B</span>alanced · <span class="hi">T</span>rusted · <span class="hi">C</span>oncise</div>
+    </div>
+    <div class="masthead-hero">
+      <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>
+    </div>
+  </header>
+
+  <h2 class="archive-heading">All Issues</h2>
+
+  
+  <a href="/2026/week-13/" class="archive-item">
+    <div class="arc-pill">Week 13</div>
+    <div class="arc-body">
+      <div class="arc-date">Mar 22–28, 2026</div>
+      <div class="arc-title">BTC Weekly: Week 13 (2026)</div>
+      
+      <div class="arc-lead">MARA Holdings Sells 15,133 BTC for $1.1 Billion to Retire Convertible Debt at a 9% Discount</div>
+      
+    </div>
+  </a>
+  
+  <a href="/2026/week-12/" class="archive-item">
+    <div class="arc-pill">Week 12</div>
+    <div class="arc-body">
+      <div class="arc-date">Mar 15–21, 2026</div>
+      <div class="arc-title">BTC Weekly: Week 12 (2026)</div>
+      
+      <div class="arc-lead">SEC and CFTC Jointly Classify Bitcoin and 15 Other Crypto Assets as Digital Commodities</div>
+      
+    </div>
+  </a>
+  
+
+  <footer class="footer">
+    <div><a href="https://btcweekly.org">btcweekly.org</a> · <a href="/archive/">Archive</a> · <a href="/feed.xml">RSS</a></div>
+    <div style="margin-top:6px">© 2026 BTC Weekly · Not financial advice</div>
+  </footer>
+
+</div>
+</body>
+</html>

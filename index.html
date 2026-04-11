@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BTC Weekly: Week 13 (2026) · BTC Weekly</title>
+<meta name="description" content="MARA Holdings disclosed on March 26 that it sold 15,133 bitcoin between March 4 and March 25 at an average of approximately $65,300 per coin, using the proceeds...">
+<meta property="og:title" content="BTC Weekly: Week 13 (2026)">
+<meta property="og:description" content="MARA Holdings disclosed on March 26 that it sold 15,133 bitcoin between March 4 and March 25 at an average of approximately $65,300 per coin, using the proceeds to repurchase $1.0 billion face value...">
+<meta property="og:url" content="https://btcweekly.org/">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="BTC Weekly">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="BTC Weekly: Week 13 (2026)">
+<meta name="twitter:description" content="MARA Holdings disclosed on March 26 that it sold 15,133 bitcoin between March 4 and March 25 at an average of approximately $65,300 per coin, using the proceeds to repurchase $1.0 billion face value...">
+<style>
+/* Self-hosted fonts */
+@font-face {
+  font-family: 'Black Han Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/black-han-sans/black-han-sans-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-400-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-500-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-600-normal.woff2') format('woff2');
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url('/fonts/inter/inter-latin-700-normal.woff2') format('woff2');
+}
+
+:root {
+  --orange:        #F7931A;
+  --orange-bright: #FFAA3A;
+  --orange-soft:   #FFBE5C;
+  --orange-mist:   #FFD48C;
+  --orange-pale:   #FFE8BE;
+  --orange-faint:  #FFF5E6;
+
+  --bg:            #FFF6EC;
+  --white:         #FFFFFF;
+  --surface-soft:  #FFF9F2;
+  --border:        #EDDECC;
+  --border-soft:   #F5E9D8;
+
+  --text:          #1C1208;
+  --muted:         #52402C;
+  --faint:         #A08060;
+
+  --shadow-sm:   0 1px 3px rgba(247,147,26,0.08), 0 1px 8px rgba(247,147,26,0.05);
+  --shadow-lead: 0 2px 0 var(--orange-pale), 0 6px 24px rgba(247,147,26,0.12);
+
+  --text-label: clamp(12px, 1.8vw, 13px);
+  --text-meta:  clamp(13px, 2vw,   14px);
+  --text-body:  clamp(15px, 2.2vw, 16px);
+  --text-title: clamp(17px, 2.6vw, 18px);
+  --text-lead:  clamp(20px, 3.2vw, 22px);
+  --text-num:   clamp(24px, 3.8vw, 28px);
+  --text-mark:  clamp(58px, 13vw,  96px);
+}
+
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility; }
+body {
+  font-family:'Inter',sans-serif; background:var(--bg);
+  color:var(--text); font-size:var(--text-body);
+  line-height:1.65; min-height:100vh;
+}
+a { color:var(--orange); text-decoration:none; transition:color 150ms; }
+a:hover { color:var(--orange-bright); text-decoration:underline; }
+
+.wrapper { max-width:660px; margin:0 auto; padding:0 20px 72px; }
+
+/* ── TOP BAR ── */
+.top-bar {
+  background:var(--orange); padding:10px 20px; margin:0 -20px;
+  display:flex; align-items:center; justify-content:space-between;
+  box-shadow:0 3px 0 var(--orange-bright);
+}
+.top-bar-site { font-size:var(--text-label); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#fff; }
+.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; }
+.top-bar-tagline .hi { color:#fff; font-weight:700; }
+
+/* ── WORDMARK ── */
+.masthead-hero { padding:36px 0 0; }
+.wordmark {
+  font-family:'Black Han Sans',sans-serif;
+  font-size:var(--text-mark); line-height:0.88; letter-spacing:0.02em; display:block;
+}
+.w1 {
+  color:var(--orange);
+  text-shadow:2px 2px 0 var(--orange-bright),4px 4px 0 var(--orange-soft),6px 6px 0 var(--orange-mist);
+}
+.w2 {
+  color:var(--text);
+  -webkit-text-stroke:1.5px var(--orange);
+  text-shadow:3px 3px 0 var(--orange-pale),5px 5px 0 var(--orange-mist);
+}
+
+/* ── META ROW ── */
+.meta-row {
+  display:flex; align-items:center; justify-content:center;
+  margin-top:16px; padding:13px 0;
+  border-top:1px solid var(--border-soft); border-bottom:3px solid var(--orange);
+}
+.issue-pill {
+  background:var(--white); color:var(--orange);
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
+  padding:6px 16px; border-radius:4px; white-space:nowrap;
+  border:1.5px solid var(--orange); box-shadow:2px 2px 0 var(--orange-pale);
+}
+
+.sponsor { display:none; }
+
+/* ── STORY CARD ── */
+.story {
+  display:flex; align-items:stretch;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:10px; margin-top:10px;
+  box-shadow:var(--shadow-sm);
+  overflow:hidden;
+}
+
+/* Story #1 elevated */
+.story.s1 {
+  border-left:4px solid var(--orange);
+  box-shadow:var(--shadow-lead);
+}
+
+@media (hover: hover) and (pointer: fine) {
+  .story:hover    { border-color:var(--orange-soft); }
+  .story.s1:hover { border-color:var(--orange-soft); border-left-color:var(--orange); }
+}
+
+/* ── NUMBER COLUMN ── */
+.story-num {
+  width:52px; flex-shrink:0;
+  display:flex; align-items:flex-start; justify-content:center;
+  padding-top:18px;
+  border-right:1px solid var(--border-soft);
+  background:var(--surface-soft);
+}
+.story.s1 .story-num {
+  background:var(--orange-faint);
+  border-right:none;
+}
+
+.s-n {
+  font-family:'Black Han Sans',sans-serif;
+  font-size:var(--text-num); line-height:1;
+  color:var(--orange);
+  text-shadow:1px 1px 0 var(--orange-bright), 2px 2px 0 var(--orange-soft);
+}
+
+/* ── STORY BODY ── */
+.story-body { flex:1; padding:18px 18px 18px 16px; }
+
+.s-cat {
+  display:inline-flex; background:var(--bg); color:var(--orange);
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.14em; text-transform:uppercase;
+  padding:3px 8px; border-radius:3px; border:1px solid var(--border-soft); margin-bottom:7px;
+}
+.story.s1 .s-cat { background:var(--orange-faint); border-color:var(--orange-pale); }
+
+.s-title { font-size:var(--text-title); font-weight:700; color:var(--text); line-height:1.32; }
+.story.s1 .s-title { font-size:var(--text-lead); }
+
+.s-summary { font-size:var(--text-body); color:var(--muted); line-height:1.62; margin-top:7px; }
+.s-source {
+  margin-top:10px; padding-top:10px; border-top:1px solid var(--border-soft);
+  font-size:var(--text-meta); color:var(--faint); display:flex; align-items:center; gap:5px; flex-wrap:wrap;
+}
+.s-source a { color:var(--orange); font-weight:500; }
+
+/* ── RSS ── */
+.rss {
+  margin:28px 0 24px; background:var(--white);
+  border:1px solid var(--border); border-radius:10px;
+  padding:20px 22px; display:flex; align-items:center; gap:16px;
+  box-shadow:var(--shadow-sm);
+}
+.rss-icon {
+  width:42px; height:42px; background:var(--orange); color:#fff;
+  border-radius:8px; display:flex; align-items:center; justify-content:center;
+  flex-shrink:0; box-shadow:2px 2px 0 var(--orange-bright),3px 3px 0 var(--orange-soft);
+}
+.rss-title { font-size:var(--text-title); font-weight:700; color:var(--text); margin-bottom:3px; }
+.rss-sub   { font-size:var(--text-body); color:var(--muted); }
+.rss-link  { display:inline-block; margin-top:6px; color:var(--orange); font-weight:700; font-size:var(--text-meta); }
+.rss-link:hover { color:var(--orange-bright); }
+
+/* ── FOOTER ── */
+.footer {
+  text-align:center; padding:24px 0; border-top:1px solid var(--border-soft);
+  font-size:var(--text-meta); color:var(--faint); line-height:2;
+}
+.footer a { color:var(--orange); }
+.footer a:hover { color:var(--orange-bright); }
+
+@media(max-width:480px){
+  .meta-row { flex-direction:column; align-items:flex-start; gap:8px; }
+  .top-bar  { flex-direction:column; align-items:flex-start; gap:5px; }
+  .story-num { width:44px; }
+  .rss { flex-direction:column; align-items:flex-start; }
+}
+</style>
+</head>
+<body>
+<div class="wrapper">
+
+  <header>
+    <div class="top-bar">
+      <div class="top-bar-site"><a href="/" style="color:#fff;text-decoration:none">btcweekly.org</a></div>
+      <div class="top-bar-tagline"><span class="hi">B</span>alanced · <span class="hi">T</span>rusted · <span class="hi">C</span>oncise</div>
+    </div>
+    <div class="masthead-hero">
+      <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>
+      <div class="meta-row">
+        <div class="issue-pill">Week 13 · Mar 22–28, 2026</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="sponsor"><!-- sponsor placeholder --></div>
+
+  
+  <div class="story s1">
+    <div class="story-num"><div class="s-n">1</div></div>
+    <div class="story-body">
+      <div class="s-cat">Institutional</div>
+      <div class="s-title">MARA Holdings Sells 15,133 BTC for $1.1 Billion to Retire Convertible Debt at a 9% Discount</div>
+      <div class="s-summary">MARA Holdings disclosed on March 26 that it sold 15,133 bitcoin between March 4 and March 25 at an average of approximately $65,300 per coin, using the proceeds to repurchase $1.0 billion face value of its 0% convertible senior notes due 2030 and 2031 at roughly a 9% discount — acquiring $367.5 million of the 2030 notes for $322.9 million and $633.4 million of the 2031 notes for $589.9 million. The transaction reduces MARA&#39;s total debt load by approximately 30% and leaves the company holding 38,689 BTC. Shares rose approximately 10% in premarket trading on the day of the disclosure.</div>
+      <div class="s-source">
+        (<a href="https://ir.mara.com/news-events/press-releases/detail/1418/mara-holdings-inc-announces-1-0-billion-repurchase-of-0-00-convertible-senior-notes-due-2030-and-2031-and-sale-of-15133-bitcoin">MARA Holdings IR</a>, <a href="https://finance.yahoo.com/markets/crypto/articles/mara-stock-pops-1-1-144313571.html">Yahoo Finance</a>)
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div class="story-num"><div class="s-n">2</div></div>
+    <div class="story-body">
+      <div class="s-cat">Institutional</div>
+      <div class="s-title">CryptoQuant: Non-Strategy Corporate Bitcoin Treasury Buying Has Fallen 99% From Its August 2025 Peak</div>
+      <div class="s-summary">A CryptoQuant analysis published this week found that Strategy purchased approximately 45,000 BTC in the trailing 30 days — its fastest accumulation pace since April 2025 — while every other publicly traded corporate treasury company combined bought fewer than 1,000 BTC over the same period, down 99% from a peak of 69,000 BTC purchased by non-Strategy firms in August 2025. The number of active non-Strategy buyers fell to 13 from 54 at the height of what CryptoQuant called &quot;Bitcoin Treasury Summer.&quot; Strategy now holds an estimated 76% of all bitcoin owned by corporate treasury companies globally.</div>
+      <div class="s-source">
+        (<a href="https://www.coindesk.com/markets/2026/03/26/michael-saylor-s-strategy-dominates-dat-bitcoin-buying-as-treasury-demand-collapses">CoinDesk</a>, <a href="https://www.cnbc.com/2026/03/27/strategy-is-accelerating-its-crypto-purchases-as-rivals-sit-on-the-sidelines.html">CNBC</a>)
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div class="story-num"><div class="s-n">3</div></div>
+    <div class="story-body">
+      <div class="s-cat">Institutional</div>
+      <div class="s-title">Australia&#39;s $105 Billion Hostplus Pension Fund Is Exploring Bitcoin Exposure for 2.2 Million Members</div>
+      <div class="s-summary">Hostplus, one of Australia&#39;s largest superannuation funds with approximately A$150 billion ($105 billion) in assets and 2.2 million members, is assessing how to offer Bitcoin and other digital assets through its Choiceplus self-directed investment platform, according to comments from chief investment officer Sam Sicilia. A rollout could come as early as the next Australian financial year, pending regulatory approval and final product design. The fund&#39;s membership skews younger than the broader industry average, with rising member demand for crypto access cited as a driver; most of Australia&#39;s A$4.5 trillion pension sector has not yet made a comparable move.</div>
+      <div class="s-source">
+        (<a href="https://www.bloomberg.com/news/articles/2026-03-23/australian-pension-fund-mulls-offering-crypto-in-rare-move">Bloomberg</a>, <a href="https://bitcoinmagazine.com/news/australias-105-billion-hostplus-bitcoin">Bitcoin Magazine</a>)
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div class="story-num"><div class="s-n">4</div></div>
+    <div class="story-body">
+      <div class="s-cat">ETF</div>
+      <div class="s-title">U.S. Spot Bitcoin ETFs Accumulate $2.5 Billion in March, Closing In on a Full Recovery of 2026 Losses</div>
+      <div class="s-summary">U.S. spot bitcoin ETFs pulled in approximately $2.5 billion in gross inflows during March, reversing a four-month outflow streak that had totaled $6.4 billion between November 2025 and February 2026. Net outflows for all of 2026 are now approximately $210 million, putting the products within a single strong week of returning to positive year-to-date territory. BlackRock&#39;s iShares Bitcoin Trust (IBIT) captured roughly $1.7 billion of March&#39;s total, including back-to-back days of $200 million-plus inflows on March 16 and 17.</div>
+      <div class="s-source">
+        (<a href="https://decrypt.co/362301/bitcoin-etfs-draw-in-2-5b-in-a-month-close-to-erasing-ytd-losses">Decrypt</a>, <a href="https://thecryptobasic.com/2026/03/24/bitcoin-etfs-have-recorded-2-5b-inflows-in-march-on-track-to-recover-2026-losses/">The Crypto Basic</a>)
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div class="story-num"><div class="s-n">5</div></div>
+    <div class="story-body">
+      <div class="s-cat">Institutional</div>
+      <div class="s-title">Strategy Acquires 1,031 BTC for $76.6 Million in the Week of March 22</div>
+      <div class="s-summary">Strategy disclosed a purchase of 1,031 bitcoin at an average price of $74,326 per coin, funded through at-the-market equity sales, bringing total holdings to more than 762,000 BTC at a cumulative average cost of approximately $75,700 per coin. The weekly acquisition is substantially smaller than the company&#39;s first-quarter pace — Strategy bought more than 22,000 BTC over Q1 2026, its second-largest quarterly accumulation on record — but extends its unbroken run of weekly purchases.</div>
+      <div class="s-source">
+        (<a href="https://www.coindesk.com/markets/2026/03/23/strategy-returns-to-small-bitcoin-purchases-adding-usd76-6-million-in-btc-last-week">CoinDesk</a>)
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div class="story-num"><div class="s-n">6</div></div>
+    <div class="story-body">
+      <div class="s-cat">Institutional</div>
+      <div class="s-title">Metaplanet Raises $255 Million via Share Placement to Accelerate Bitcoin Accumulation Toward 100,000 BTC</div>
+      <div class="s-summary">Tokyo-listed Metaplanet raised approximately $255 million (40.8 billion yen) through a private share placement on March 16, priced at a 2% premium to market, with an accompanying warrant structure that could generate up to $276 million in additional capital if exercised. The company simultaneously introduced a moving-strike warrant series it describes as carrying the first mNAV clause attached to Japanese stock acquisition rights, which permits exercise only when shares trade above 1.01 times modified net asset value. Metaplanet, the fourth-largest publicly traded corporate bitcoin holder globally, is targeting 100,000 BTC by year-end 2026 and 210,000 BTC by end of 2027.</div>
+      <div class="s-source">
+        (<a href="https://decrypt.co/332007/metaplanet-bitcoin-holdings-steady-march-2026-goal">Decrypt</a>, <a href="https://www.coindesk.com/markets/2026/03/16/metaplanet-raises-usd255-million-to-accelerate-bitcoin-accumulation">CoinDesk</a>)
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div class="story-num"><div class="s-n">7</div></div>
+    <div class="story-body">
+      <div class="s-cat">Regulation</div>
+      <div class="s-title">Florida&#39;s Revised Bitcoin Reserve Bill Is in Committee With Discretionary Framework Replacing Prior Mandate</div>
+      <div class="s-summary">Florida House Bill 1039 and its Senate companion remain in committee hearings after lawmakers revised the prior 2025 proposal to remove a mandatory minimum allocation to Bitcoin and replace it with discretionary authority for the state&#39;s chief financial officer. The 2026 version would establish a Strategic Cryptocurrency Reserve Fund outside the state treasury, subject to independent auditing and an advisory committee, but leaves both the size and timing of any allocation to the CFO&#39;s judgment. No floor votes are scheduled.</div>
+      <div class="s-source">
+        (<a href="https://www.coindesk.com/policy/2026/01/08/florida-revives-push-for-bitcoin-reserve-with-new-2026-bill">CoinDesk</a>, <a href="https://bitcoinmagazine.com/news/florida-revives-bitcoin-reserve-push">Bitcoin Magazine</a>)
+      </div>
+    </div>
+  </div>
+  
+  <div class="story">
+    <div class="story-num"><div class="s-n">8</div></div>
+    <div class="story-body">
+      <div class="s-cat">Regulation</div>
+      <div class="s-title">Switzerland Registers Bitcoin-in-Reserves Constitutional Initiative; 100,000 Signatures Required by June 2026</div>
+      <div class="s-summary">A constitutional initiative titled &quot;Financially Strong, Sovereign, and Responsible Switzerland&quot; has formally entered Switzerland&#39;s national referendum process, seeking to amend Article 99 of the Swiss Constitution to require the Swiss National Bank to hold Bitcoin alongside gold as a reserve asset. Organizers must collect 100,000 signatures within 18 months — with a campaign deadline effectively in mid-2026 — to qualify for a binding national vote. The initiative is co-led by Tether&#39;s vice president of energy and mining, Giw Zanganeh, and Swiss Bitcoin nonprofit 2B4CH. SNB Chairman Martin Schlegel has publicly opposed the proposal, citing price volatility.</div>
+      <div class="s-source">
+        (<a href="https://www.swissinfo.ch/eng/swiss-politics/campaigners-want-swiss-national-bank-to-hold-bitcoin-in-reserves/88663429">SWI swissinfo.ch</a>)
+      </div>
+    </div>
+  </div>
+  
+
+  <div class="rss">
+    <div class="rss-icon">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
+    </div>
+    <div>
+      <div class="rss-title">Follow via RSS</div>
+      <div class="rss-sub">Read BTC Weekly in any RSS reader. A new issue arrives every Saturday.</div>
+      <a href="/feed.xml" class="rss-link">btcweekly.org/feed.xml →</a>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <div><a href="https://btcweekly.org">btcweekly.org</a> · <a href="/archive/">Archive</a> · <a href="/feed.xml">RSS</a></div>
+    <div style="margin-top:6px">© 2026 BTC Weekly · Not financial advice</div>
+  </footer>
+</div>
+</body>
+</html>
