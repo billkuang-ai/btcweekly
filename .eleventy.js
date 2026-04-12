@@ -17,9 +17,6 @@ module.exports = function(eleventyConfig) {
     "node_modules/@fontsource/black-han-sans/files": "fonts/black-han-sans"
   });
 
-  // Static OG image
-  eleventyConfig.addPassthroughCopy("src/og.png");
-
   return {
     dir: {
       input: "src",

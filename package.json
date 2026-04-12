@@ -1,8 +1,7 @@
 {
   "scripts": {
     "start": "eleventy --serve",
-    "build": "eleventy",
-    "generate-og": "node scripts/generate-og.js"
+    "build": "eleventy"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
