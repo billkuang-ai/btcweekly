@@ -10,6 +10,8 @@
 <meta property="og:url" content="https://btcweekly.org{{ page.url }}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="BTC Weekly">
+<meta property="og:image" content="https://btcweekly.org/og.png">
+<meta name="twitter:image" content="https://btcweekly.org/og.png">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ stories[0].summary | truncate(200) }}">
@@ -220,6 +222,26 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 .footer a { color:var(--orange); }
 .footer a:hover { color:var(--orange-bright); }
 
+/* ── PREV / NEXT NAV ── */
+.issue-nav {
+  display:flex; justify-content:space-between; align-items:center;
+  margin-top:28px;
+}
+.issue-nav a {
+  display:flex; align-items:center; justify-content:center;
+  width:40px; height:40px; border-radius:50%;
+  background:var(--white); border:1.5px solid var(--border);
+  color:var(--orange); font-size:18px; line-height:1;
+  box-shadow:var(--shadow-sm); transition:border-color 150ms, box-shadow 150ms;
+  text-decoration:none;
+}
+.issue-nav a:hover {
+  border-color:var(--orange-soft);
+  box-shadow:2px 2px 0 var(--orange-pale), var(--shadow-sm);
+  text-decoration:none;
+}
+.issue-nav .spacer { width:40px; }
+
 @media(max-width:480px){
   .meta-row { flex-direction:column; align-items:flex-start; gap:8px; }
   .rss { flex-direction:column; align-items:flex-start; }
@@ -259,6 +281,13 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
   </div>
   {% endfor %}
+
+  {% if prevIssue or nextIssue %}
+  <nav class="issue-nav">
+    {% if prevIssue %}<a href="{{ prevIssue.url }}" title="← Older">←</a>{% else %}<span class="spacer"></span>{% endif %}
+    {% if nextIssue %}<a href="{{ nextIssue.url }}" title="Newer →">→</a>{% else %}<span class="spacer"></span>{% endif %}
+  </nav>
+  {% endif %}
 
   <div class="rss">
     <div class="rss-icon">
