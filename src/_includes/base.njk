@@ -243,6 +243,76 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   .meta-row { flex-direction:column; align-items:flex-start; gap:8px; }
   .rss { flex-direction:column; align-items:flex-start; }
 }
+
+/* ── EDITOR'S CHOICE CARD ── */
+.ec-card {
+  margin-top:10px;
+  background:var(--orange-faint);
+  border:1px solid var(--border);
+  border-radius:10px;
+  overflow:hidden;
+  box-shadow:var(--shadow-sm);
+}
+.ec-label {
+  padding:7px 16px;
+  background:var(--surface-soft);
+  border-bottom:1px solid var(--border-soft);
+  font-size:var(--text-label);
+  font-weight:700;
+  letter-spacing:0.1em;
+  text-transform:uppercase;
+  color:var(--faint);
+}
+.ec-grid {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+}
+.ec-col {
+  padding:14px 16px;
+  background:var(--orange-faint);
+}
+.ec-col:first-child {
+  border-right:1px solid var(--border-soft);
+}
+.ec-cat {
+  font-size:var(--text-label);
+  font-weight:700;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--orange);
+  margin-bottom:4px;
+}
+.ec-title {
+  font-size:var(--text-meta);
+  font-weight:700;
+  color:var(--text);
+  line-height:1.3;
+  margin-bottom:6px;
+}
+.ec-copy {
+  font-size:var(--text-meta);
+  color:var(--muted);
+  line-height:1.55;
+}
+.ec-cta {
+  display:inline-block;
+  margin-top:8px;
+  font-size:var(--text-label);
+  font-weight:700;
+  color:var(--orange);
+}
+.ec-cta:hover { color:var(--orange-bright); }
+.ec-disclosure {
+  padding:8px 16px;
+  border-top:1px solid var(--border-soft);
+  font-size:11px;
+  color:var(--faint);
+  background:var(--surface-soft);
+}
+@media(max-width:480px) {
+  .ec-grid { grid-template-columns:1fr; }
+  .ec-col:first-child { border-right:none; border-bottom:1px solid var(--border-soft); }
+}
 </style>
 </head>
 <body>
@@ -278,6 +348,25 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
   </div>
   {% endfor %}
+
+  <div class="ec-card">
+    <div class="ec-label">Editor's Choice</div>
+    <div class="ec-grid">
+      <div class="ec-col">
+        <div class="ec-cat">🔑 Hardware</div>
+        <div class="ec-title">Bitkey Bitcoin Hardware Wallet</div>
+        <p class="ec-copy">Self-custody made simple. Built by Block, Jack Dorsey's company, for real-world Bitcoin storage and everyday use.</p>
+        <a href="https://amzn.to/4dHllLf" class="ec-cta">View on Amazon →</a>
+      </div>
+      <div class="ec-col">
+        <div class="ec-cat">☕ Coffee</div>
+        <div class="ec-title">Bean of Fire Exotic Variety Box</div>
+        <p class="ec-copy">Exotic single-origin coffees created by Nayib Bukele — the president who made El Salvador the first nation to adopt Bitcoin as legal tender.</p>
+        <a href="https://amzn.to/41wynUA" class="ec-cta">View on Amazon →</a>
+      </div>
+    </div>
+    <div class="ec-disclosure">Amazon affiliate links. Purchases support BTC Weekly.</div>
+  </div>
 
   {% if prevIssue or nextIssue %}
   <nav class="issue-nav">
