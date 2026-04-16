@@ -198,6 +198,16 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 }
 .s-source a { color:var(--orange); font-weight:500; }
 
+/* ── WEEKLY INTRO ── */
+.issue-intro {
+  margin-top:20px; padding:14px 18px;
+  border-left:3px solid var(--orange);
+  background:var(--orange-faint);
+  border-radius:0 8px 8px 0;
+  font-size:var(--text-body); color:var(--muted); line-height:1.65;
+  font-style:italic;
+}
+
 /* ── RSS ── */
 .rss {
   margin:28px 0 24px; background:var(--white);
@@ -337,6 +347,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   </header>
 
   <div class="sponsor"><!-- sponsor placeholder --></div>
+
+  {% if intro %}<div class="issue-intro">{{ intro }}</div>{% endif %}
 
   {% for story in stories %}
   <div class="story{% if loop.first %} s1{% endif %}">
