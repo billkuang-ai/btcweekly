@@ -13,6 +13,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ stories[0].summary | truncate(200) }}">
+<link rel="icon" type="image/png" href="/images/logo.png">
 <style>
 /* Self-hosted fonts */
 @font-face {
@@ -96,14 +97,17 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 /* ── TOP BAR ── */
 .top-bar {
   background:var(--orange); padding:10px 20px; margin:0 -20px;
-  display:flex; align-items:center; justify-content:center;
+  display:flex; align-items:center; justify-content:space-between;
   box-shadow:0 3px 0 var(--orange-bright);
 }
 .top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; white-space:nowrap; }
 .top-bar-tagline .hi { color:#fff; font-weight:700; }
+.top-bar-logo { height:28px; width:auto; flex-shrink:0; }
+.top-bar-spacer { width:28px; flex-shrink:0; }
 
 /* ── WORDMARK ── */
 .masthead-hero { padding:36px 0 0; }
+.footer-logo { height:auto; width:180px; display:block; margin:12px auto 4px; }
 .wordmark {
   font-family:'Black Han Sans',sans-serif;
   font-size:var(--text-mark); line-height:0.88; letter-spacing:0.02em; display:block;
@@ -320,7 +324,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <header>
     <div class="top-bar">
+      <img src="/images/logo.png" class="top-bar-logo" alt="BTC Weekly">
       <div class="top-bar-tagline"><span class="hi">B</span>alanced · <span class="hi">T</span>rusted · <span class="hi">C</span>oncise</div>
+      <div class="top-bar-spacer"></div>
     </div>
     <div class="masthead-hero">
       <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>
@@ -388,7 +394,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <footer class="footer">
     <div><a href="https://btcweekly.org">btcweekly.org</a> · <a href="/archive/">Archive</a> · <a href="/feed.xml">RSS</a></div>
-    <div style="margin-top:6px">© 2026 BTC Weekly · Not financial advice</div>
+    <img src="/images/logo.png" class="footer-logo" alt="BTC Weekly">
+    <div>© 2026 BTC Weekly · Not financial advice</div>
   </footer>
 </div>
 </body>
