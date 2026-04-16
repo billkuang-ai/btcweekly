@@ -4,15 +4,15 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>BTC Weekly: Week 15 (2026) · BTC Weekly</title>
-<meta name="description" content="Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent and the fund benchmarked to the CoinDesk Bitcoin Benchmark Rate...">
+<meta name="description" content="MSBT launched April 8 at a 0.14% sponsor fee — undercutting BlackRock&#39;s iShares Bitcoin Trust (IBIT) at 0.25%, the market&#39;s dominant product, marking the first...">
 <meta property="og:title" content="BTC Weekly: Week 15 (2026)">
-<meta property="og:description" content="Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent and the fund benchmarked to the CoinDesk Bitcoin Benchmark Rate Index. At 0.14%, MSBT undercuts BlackRock&#39;s...">
+<meta property="og:description" content="MSBT launched April 8 at a 0.14% sponsor fee — undercutting BlackRock&#39;s iShares Bitcoin Trust (IBIT) at 0.25%, the market&#39;s dominant product, marking the first direct fee-based competition from a...">
 <meta property="og:url" content="https://btcweekly.org/2026/week-15/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="BTC Weekly">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="BTC Weekly: Week 15 (2026)">
-<meta name="twitter:description" content="Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent and the fund benchmarked to the CoinDesk Bitcoin Benchmark Rate Index. At 0.14%, MSBT undercuts BlackRock&#39;s...">
+<meta name="twitter:description" content="MSBT launched April 8 at a 0.14% sponsor fee — undercutting BlackRock&#39;s iShares Bitcoin Trust (IBIT) at 0.25%, the market&#39;s dominant product, marking the first direct fee-based competition from a...">
 <link rel="icon" type="image/png" href="/images/logo.png">
 <style>
 /* Self-hosted fonts */
@@ -198,6 +198,16 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 }
 .s-source a { color:var(--orange); font-weight:500; }
 
+/* ── WEEKLY INTRO ── */
+.issue-intro {
+  margin-top:20px; padding:14px 18px;
+  border-left:3px solid var(--orange);
+  background:var(--orange-faint);
+  border-radius:0 8px 8px 0;
+  font-size:var(--text-body); color:var(--muted); line-height:1.65;
+  font-style:italic;
+}
+
 /* ── RSS ── */
 .rss {
   margin:28px 0 24px; background:var(--white);
@@ -338,6 +348,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <div class="sponsor"><!-- sponsor placeholder --></div>
 
+  <div class="issue-intro">Two milestones landed this week at opposite ends of Bitcoin&#39;s maturity curve. Morgan Stanley launched the cheapest bank-issued spot ETF on record, while a researcher published a quantum-safe transaction scheme that requires no changes to Bitcoin&#39;s protocol.</div>
+
   
   <div class="story s1">
     <div class="story-meta">
@@ -346,8 +358,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
       <span class="s-cat">Banking</span>
     </div>
     <div class="story-body">
-      <div class="s-title">Morgan Stanley became the first major U.S. bank to issue its own spot Bitcoin ETF, launching MSBT on April 8 at a 0.14% sponsor fee — the lowest of any Bitcoin ETP currently trading.</div>
-      <div class="s-summary">Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent and the fund benchmarked to the CoinDesk Bitcoin Benchmark Rate Index. At 0.14%, MSBT undercuts BlackRock&#39;s iShares Bitcoin Trust (IBIT) — the market&#39;s dominant product at 0.25% — creating the first direct fee-based competition from a bank-issued instrument since spot Bitcoin ETFs launched in January 2024. First-day trading cleared $34 million in volume, which Bloomberg Senior ETF Analyst Eric Balchunas placed in the top 1% of all ETF launches on record. The distribution advantage is structural: Morgan Stanley&#39;s wealth management network spans 16,000 financial advisors overseeing $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle and required clients to access competing products through outside platforms.</div>
+      <div class="s-title">Morgan Stanley launched the first spot Bitcoin ETF issued directly by a major U.S. bank — undercutting every existing product on price.</div>
+      <div class="s-summary">MSBT launched April 8 at a 0.14% sponsor fee — undercutting BlackRock&#39;s iShares Bitcoin Trust (IBIT) at 0.25%, the market&#39;s dominant product, marking the first direct fee-based competition from a bank-issued instrument since spot ETFs launched in January 2024. Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent. First-day trading cleared $34 million in volume, which Bloomberg Senior ETF Analyst Eric Balchunas placed in the top 1% of all ETF launches on record. The distribution advantage is structural: Morgan Stanley&#39;s 16,000 financial advisors oversee $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle. That network is now a direct distribution channel for Bitcoin exposure at the lowest fee of any U.S.-listed ETP.</div>
       <div class="s-source">
         (<a href="https://www.bloomberg.com/news/articles/2026-04-08/morgan-stanley-debuts-bitcoin-etf-as-price-slump-rattles-holders">Bloomberg</a>, <a href="https://fortune.com/2026/04/08/morgan-stanley-bitcoin-etf-msbt-launch-ethereum-solana/">Fortune</a>)
       </div>
@@ -361,8 +373,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
       <span class="s-cat">Research</span>
     </div>
     <div class="story-body">
-      <div class="s-title">StarkWare CPO Avihu Levy published a quantum-safe Bitcoin transaction scheme on April 9 that requires no soft fork, no miner signaling, and no changes to Bitcoin&#39;s existing consensus rules.</div>
-      <div class="s-summary">Named QSB, the approach relies on RIPEMD-160 pre-image resistance — a hash function quantum computers can only attack via Grover&#39;s algorithm, which yields a quadratic rather than exponential speedup, leaving approximately 118 bits of effective pre-image security at the recommended configuration. Each transaction costs $75–$150 in GPU compute, works entirely within legacy script rules, and reaches miners directly without routing through normal mempool infrastructure. Protection applies only to newly created outputs; the estimated 4 million BTC held in legacy P2PK addresses — the format most vulnerable to a capable quantum adversary — remains unaffected. Levy describes QSB as a last-resort contingency measure rather than a substitute for a forthcoming protocol-level upgrade, and notes it cannot be used with the Lightning Network.</div>
+      <div class="s-title">A quantum-safe Bitcoin transaction scheme published this week requires no protocol changes — and no miner consensus.</div>
+      <div class="s-summary">Named QSB, the scheme was published April 9 by StarkWare CPO Avihu Levy and works entirely within Bitcoin&#39;s existing script rules — no soft fork, no miner signaling required. It relies on RIPEMD-160 pre-image resistance, a hash function quantum computers can only attack via Grover&#39;s algorithm, which yields a quadratic rather than exponential speedup, leaving roughly 118 bits of effective security. Each transaction costs $75–$150 in GPU compute and routes directly to miners outside the normal mempool. The tradeoffs are significant: protection applies only to newly created outputs, Lightning Network compatibility is absent, and the estimated 4 million BTC in legacy P2PK addresses — the most quantum-vulnerable format — remains unaffected. Levy frames QSB explicitly as a last-resort contingency, not a replacement for a protocol-level upgrade — but it establishes that a quantum emergency response exists within Bitcoin&#39;s current ruleset, requiring no one&#39;s permission to deploy.</div>
       <div class="s-source">
         (<a href="https://www.coindesk.com/markets/2026/04/10/quantum-safe-bitcoin-now-possible-without-a-soft-fork-but-costs-usd200-a-pop">CoinDesk</a>, <a href="https://unchainedcrypto.com/starkwares-quantum-safe-bitcoin-scheme-requires-no-protocol-changes-just-150-in-gpu-compute-unchained/">Unchained</a>)
       </div>
