@@ -128,11 +128,38 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   display:flex; align-items:center; justify-content:center;
   margin-top:16px; padding:13px 0;
 }
+.issue-pill-wrap { position:relative; display:inline-block; }
 .issue-pill {
   background:var(--white); color:var(--orange);
   font-size:var(--text-label); font-weight:700; letter-spacing:0.1em; text-transform:uppercase;
   padding:6px 16px; border-radius:4px; white-space:nowrap;
   border:1.5px solid var(--orange); box-shadow:2px 2px 0 var(--orange-pale);
+  cursor:pointer; font-family:inherit;
+  display:flex; align-items:center; gap:8px;
+  transition:background 150ms, color 150ms;
+}
+.issue-pill:hover { background:var(--orange-faint); }
+.pill-chevron { transition:transform 150ms; flex-shrink:0; }
+.issue-pill[aria-expanded="true"] .pill-chevron { transform:rotate(180deg); }
+.issue-dropdown {
+  position:absolute; top:calc(100% + 6px); left:50%; transform:translateX(-50%);
+  background:var(--white); border:1.5px solid var(--orange); border-radius:8px;
+  box-shadow:0 8px 24px rgba(0,0,0,0.13);
+  min-width:230px; z-index:200; overflow:hidden;
+}
+.issue-dropdown[hidden] { display:none; }
+.issue-dropdown-item {
+  display:block; padding:9px 16px;
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.08em; text-transform:uppercase;
+  color:var(--orange); text-decoration:none;
+  border-bottom:1px solid var(--border-soft);
+  transition:background 150ms;
+}
+.issue-dropdown-item:last-child { border-bottom:none; }
+.issue-dropdown-item:hover { background:var(--orange-faint); text-decoration:none; }
+.issue-dropdown-item.is-current {
+  background:var(--orange-faint); color:var(--faint);
+  cursor:default; pointer-events:none;
 }
 
 .sponsor { display:none; }
@@ -233,25 +260,6 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 .footer a { color:var(--orange); }
 .footer a:hover { color:var(--orange-bright); }
 
-/* ── PREV / NEXT NAV ── */
-.issue-nav {
-  display:flex; justify-content:space-between; align-items:center;
-  margin-top:28px;
-}
-.issue-nav a {
-  display:flex; align-items:center; justify-content:center;
-  width:40px; height:40px; border-radius:50%;
-  background:var(--white); border:1.5px solid var(--border);
-  color:var(--orange); font-size:18px; line-height:1;
-  box-shadow:var(--shadow-sm); transition:border-color 150ms, box-shadow 150ms;
-  text-decoration:none;
-}
-.issue-nav a:hover {
-  border-color:var(--orange-soft);
-  box-shadow:2px 2px 0 var(--orange-pale), var(--shadow-sm);
-  text-decoration:none;
-}
-.issue-nav .spacer { width:40px; }
 
 @media(max-width:480px){
   .meta-row { flex-direction:column; align-items:flex-start; gap:8px; }
@@ -341,7 +349,19 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div class="masthead-hero">
       <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>
       <div class="meta-row">
-        <div class="issue-pill">Week {{ week }} · {{ dateRange }}</div>
+        <div class="issue-pill-wrap">
+          <button class="issue-pill" id="issue-btn" aria-haspopup="listbox" aria-expanded="false">
+            Week {{ week }} · {{ dateRange }}
+            <svg class="pill-chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
+          </button>
+          <div class="issue-dropdown" id="issue-dropdown" hidden>
+            {% for issue in collections.issues %}
+            <a href="{{ issue.url }}" class="issue-dropdown-item{% if issue.data.week == week and issue.data.year == year %} is-current{% endif %}">
+              Week {{ issue.data.week }} · {{ issue.data.dateRange }}
+            </a>
+            {% endfor %}
+          </div>
+        </div>
       </div>
     </div>
   </header>
@@ -386,13 +406,6 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div class="ec-disclosure">Amazon affiliate links. Purchases support BTC Weekly.</div>
   </div>
 
-  {% if prevIssue or nextIssue %}
-  <nav class="issue-nav">
-    {% if prevIssue %}<a href="{{ prevIssue.url }}" title="← Older">←</a>{% else %}<span class="spacer"></span>{% endif %}
-    {% if nextIssue %}<a href="{{ nextIssue.url }}" title="Newer →">→</a>{% else %}<span class="spacer"></span>{% endif %}
-  </nav>
-  {% endif %}
-
   <div class="rss">
     <div class="rss-icon">
       <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M4 11a9 9 0 0 1 9 9"/><path d="M4 4a16 16 0 0 1 16 16"/><circle cx="5" cy="19" r="1" fill="currentColor"/></svg>
@@ -410,5 +423,25 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div>© 2026 BTC Weekly · Not financial advice</div>
   </footer>
 </div>
+<script>
+(function(){
+  var btn = document.getElementById('issue-btn');
+  var dd  = document.getElementById('issue-dropdown');
+  if (!btn || !dd) return;
+  btn.addEventListener('click', function(e){
+    e.stopPropagation();
+    var open = btn.getAttribute('aria-expanded') === 'true';
+    btn.setAttribute('aria-expanded', String(!open));
+    dd.hidden = open;
+  });
+  document.addEventListener('click', function(){
+    btn.setAttribute('aria-expanded', 'false');
+    dd.hidden = true;
+  });
+  document.addEventListener('keydown', function(e){
+    if (e.key === 'Escape'){ btn.setAttribute('aria-expanded','false'); dd.hidden = true; }
+  });
+})();
+</script>
 </body>
 </html>
