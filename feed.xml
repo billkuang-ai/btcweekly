@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-04-18T00:00:00Z</updated>
+  <updated>2026-04-25T00:00:00Z</updated>
+  <entry>
+    <title>BTC Weekly: Week 17 (2026)</title>
+    <link href="https://btcweekly.org/2026/week-17/"/>
+    <id>https://btcweekly.org/2026/week-17/</id>
+    <updated>2026-04-25T00:00:00Z</updated>
+    <summary>Strategy bought 34,164 BTC for $2.54 billion — making it the largest institutional Bitcoin holder on earth.</summary>
+    <content type="html">On April 20, Strategy disclosed the purchase of 34,164 BTC at an average of $74,395 per coin, totaling $2.54 billion — the firm&#39;s largest single acquisition since its November 2024 buying spree. The purchase pushed Strategy&#39;s total holdings to 815,061 BTC, surpassing BlackRock&#39;s iShares Bitcoin Trust, which held 806,700 BTC as of April 23, and making Strategy the single largest institutional holder of Bitcoin on earth. Executive Chairman Michael Saylor signaled the buy a day earlier with his customary on-chain chart post on X, which markets have long treated as a reliable accumulation signal — and which proved correct. The acquisition was funded through Strategy&#39;s STRC preferred stock program, which continues to provide the firm capital access without requiring asset sales. At 815,061 BTC, Strategy now holds approximately 3.9% of the 21 million coin hard cap, and analysts tracking the firm&#39;s acquisition pace project it will cross one million BTC by November 2026 if the current run rate holds. The gap between Strategy and IBIT — 8,300 BTC — narrows and widens week to week depending on which vehicle is drawing heavier institutional flows, a dynamic that functions as a live barometer of whether the institutional Bitcoin allocation trend is flowing into passive ETF vehicles or active corporate balance-sheet holders.</content>
+  </entry>
   <entry>
     <title>BTC Weekly: Week 16 (2026)</title>
     <link href="https://btcweekly.org/2026/week-16/"/>
