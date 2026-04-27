@@ -219,6 +219,16 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 .s-title { font-size:var(--text-title); font-weight:700; color:var(--text); line-height:1.32; }
 
 .s-summary { font-size:var(--text-body); color:var(--muted); line-height:1.62; margin-top:7px; }
+.s-consequence {
+  margin-top:10px;
+  padding:8px 12px;
+  border-left:3px solid var(--orange-pale);
+  background:var(--orange-faint);
+  border-radius:0 4px 4px 0;
+  font-size:var(--text-body);
+  color:var(--muted);
+  line-height:1.62;
+}
 .s-source {
   margin-top:10px; padding-top:10px; border-top:1px solid var(--border-soft);
   font-size:var(--text-meta); color:var(--faint); display:flex; align-items:center; gap:5px; flex-wrap:wrap;
@@ -292,6 +302,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 .ec-col {
   padding:14px 16px;
   background:var(--orange-faint);
+  display:flex;
+  flex-direction:column;
 }
 .ec-col:first-child {
   border-right:1px solid var(--border-soft);
@@ -302,7 +314,27 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   letter-spacing:0.14em;
   text-transform:uppercase;
   color:var(--orange);
-  margin-bottom:4px;
+  margin-bottom:10px;
+}
+.ec-cat a { color:inherit; text-decoration:none; }
+.ec-cat a:hover { color:var(--orange-bright); text-decoration:none; }
+.ec-img-wrap {
+  background:var(--white);
+  border:1px solid var(--border-soft);
+  border-radius:6px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:10px;
+  margin-bottom:12px;
+  text-decoration:none;
+}
+.ec-img-wrap:hover { border-color:var(--orange-soft); text-decoration:none; }
+.ec-img {
+  display:block;
+  width:100%;
+  max-height:130px;
+  object-fit:contain;
 }
 .ec-title {
   font-size:var(--text-meta);
@@ -311,19 +343,23 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   line-height:1.3;
   margin-bottom:6px;
 }
+.ec-title a { color:inherit; text-decoration:none; }
+.ec-title a:hover { color:var(--orange); text-decoration:none; }
 .ec-copy {
   font-size:var(--text-meta);
   color:var(--muted);
   line-height:1.55;
+  flex:1;
 }
 .ec-cta {
   display:inline-block;
-  margin-top:8px;
-  font-size:var(--text-label);
+  margin-top:10px;
+  font-size:var(--text-meta);
   font-weight:700;
   color:var(--orange);
+  text-decoration:none;
 }
-.ec-cta:hover { color:var(--orange-bright); }
+.ec-cta:hover { color:var(--orange-bright); text-decoration:underline; }
 .ec-disclosure {
   padding:8px 16px;
   border-top:1px solid var(--border-soft);
@@ -387,7 +423,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
     <div class="story-body">
       <div class="s-title">Morgan Stanley launched the first spot Bitcoin ETF issued directly by a major U.S. bank — undercutting every existing product on price.</div>
-      <div class="s-summary">MSBT launched April 8 at a 0.14% sponsor fee — undercutting BlackRock&#39;s iShares Bitcoin Trust (IBIT) at 0.25%, the market&#39;s dominant product, marking the first direct fee-based competition from a bank-issued instrument since spot ETFs launched in January 2024. Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent. First-day trading cleared $34 million in volume, which Bloomberg Senior ETF Analyst Eric Balchunas placed in the top 1% of all ETF launches on record. The distribution advantage is structural: Morgan Stanley&#39;s 16,000 financial advisors oversee $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle. That network is now a direct distribution channel for Bitcoin exposure at the lowest fee of any U.S.-listed ETP.</div>
+      <div class="s-summary">MSBT launched April 8 at a 0.14% sponsor fee — undercutting BlackRock&#39;s iShares Bitcoin Trust (IBIT) at 0.25%, the market&#39;s dominant product, marking the first direct fee-based competition from a bank-issued instrument since spot ETFs launched in January 2024. Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent. First-day trading cleared $34 million in volume, which Bloomberg Senior ETF Analyst Eric Balchunas placed in the top 1% of all ETF launches on record. The distribution advantage is structural: Morgan Stanley&#39;s 16,000 financial advisors oversee $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle.</div>
+      <div class="s-consequence">That network is now a direct distribution channel for Bitcoin exposure at the lowest fee of any U.S.-listed ETP.</div>
       <div class="s-source">
         (<a href="https://www.bloomberg.com/news/articles/2026-04-08/morgan-stanley-debuts-bitcoin-etf-as-price-slump-rattles-holders">Bloomberg</a>, <a href="https://fortune.com/2026/04/08/morgan-stanley-bitcoin-etf-msbt-launch-ethereum-solana/">Fortune</a>)
       </div>
@@ -402,7 +439,8 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
     <div class="story-body">
       <div class="s-title">A quantum-safe Bitcoin transaction scheme published this week requires no protocol changes — and no miner consensus.</div>
-      <div class="s-summary">Named QSB, the scheme was published April 9 by StarkWare CPO Avihu Levy and works entirely within Bitcoin&#39;s existing script rules — no soft fork, no miner signaling required. It relies on RIPEMD-160 pre-image resistance, a hash function quantum computers can only attack via Grover&#39;s algorithm, which yields a quadratic rather than exponential speedup, leaving roughly 118 bits of effective security. Each transaction costs $75–$150 in GPU compute and routes directly to miners outside the normal mempool. The tradeoffs are significant: protection applies only to newly created outputs, Lightning Network compatibility is absent, and the estimated 4 million BTC in legacy P2PK addresses — the most quantum-vulnerable format — remains unaffected. Levy frames QSB explicitly as a last-resort contingency, not a replacement for a protocol-level upgrade — but it establishes that a quantum emergency response exists within Bitcoin&#39;s current ruleset, requiring no one&#39;s permission to deploy.</div>
+      <div class="s-summary">Named QSB, the scheme was published April 9 by StarkWare CPO Avihu Levy and works entirely within Bitcoin&#39;s existing script rules — no soft fork, no miner signaling required. It relies on RIPEMD-160 pre-image resistance, a hash function quantum computers can only attack via Grover&#39;s algorithm, which yields a quadratic rather than exponential speedup, leaving roughly 118 bits of effective security. Each transaction costs $75–$150 in GPU compute and routes directly to miners outside the normal mempool. The tradeoffs are significant: protection applies only to newly created outputs, Lightning Network compatibility is absent, and the estimated 4 million BTC in legacy P2PK addresses — the most quantum-vulnerable format — remains unaffected.</div>
+      <div class="s-consequence">Levy frames QSB explicitly as a last-resort contingency, not a replacement for a protocol-level upgrade — but it establishes that a quantum emergency response exists within Bitcoin&#39;s current ruleset, requiring no one&#39;s permission to deploy.</div>
       <div class="s-source">
         (<a href="https://www.coindesk.com/markets/2026/04/10/quantum-safe-bitcoin-now-possible-without-a-soft-fork-but-costs-usd200-a-pop">CoinDesk</a>, <a href="https://unchainedcrypto.com/starkwares-quantum-safe-bitcoin-scheme-requires-no-protocol-changes-just-150-in-gpu-compute-unchained/">Unchained</a>)
       </div>
@@ -414,16 +452,22 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div class="ec-label">Editor's Choice</div>
     <div class="ec-grid">
       <div class="ec-col">
-        <div class="ec-cat">🔑 Hardware</div>
-        <div class="ec-title">Bitkey Bitcoin Hardware Wallet</div>
+        <div class="ec-cat"><a href="https://amzn.to/4dHllLf">🔑 Hardware</a></div>
+        <a href="https://amzn.to/4dHllLf" class="ec-img-wrap">
+          <img src="/images/bitkey.jpg" alt="Bitkey Bitcoin Hardware Wallet" class="ec-img">
+        </a>
+        <div class="ec-title"><a href="https://amzn.to/4dHllLf">Bitkey Bitcoin Hardware Wallet</a></div>
         <p class="ec-copy">Self-custody made simple. Built by Block, Jack Dorsey's company, for real-world Bitcoin storage and everyday use.</p>
-        <a href="https://amzn.to/4dHllLf" class="ec-cta">View on Amazon →</a>
+        <a href="https://amzn.to/4dHllLf" class="ec-cta">$149.99 from Amazon</a>
       </div>
       <div class="ec-col">
-        <div class="ec-cat">☕ Coffee</div>
-        <div class="ec-title">Bean of Fire Exotic Variety Box</div>
+        <div class="ec-cat"><a href="https://amzn.to/41wynUA">☕ Coffee</a></div>
+        <a href="https://amzn.to/41wynUA" class="ec-img-wrap">
+          <img src="/images/beanoffire.jpg" alt="Bean of Fire Exotic Variety Box" class="ec-img">
+        </a>
+        <div class="ec-title"><a href="https://amzn.to/41wynUA">Bean of Fire Exotic Variety Box</a></div>
         <p class="ec-copy">Exotic single-origin coffees created by Nayib Bukele — the president who made El Salvador the first nation to adopt Bitcoin as legal tender.</p>
-        <a href="https://amzn.to/41wynUA" class="ec-cta">View on Amazon →</a>
+        <a href="https://amzn.to/41wynUA" class="ec-cta">$85.00 from Amazon</a>
       </div>
     </div>
     <div class="ec-disclosure">Amazon affiliate links. Purchases support BTC Weekly.</div>
