@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-04-25T00:00:00Z</updated>
+  <updated>2026-05-02T00:00:00Z</updated>
+  <entry>
+    <title>Week 18 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-18/"/>
+    <id>https://btcweekly.org/2026/week-18/</id>
+    <updated>2026-05-02T00:00:00Z</updated>
+    <summary>Senators Tillis and Alsobrooks struck a stablecoin yield deal on May 1 — clearing the Clarity Act&#39;s last obstacle and scheduling a Senate Banking markup for the week of May 11.</summary>
+    <content type="html">After months of impasse, Senators Thom Tillis and Angela Alsobrooks released compromise language on May 1 resolving the stablecoin yield dispute that had stalled the Clarity Act since its missed April markup deadline. The deal bans yield equivalent to bank deposit interest — the provision the banking lobby required — while explicitly permitting activity-based rewards tied to actual platform usage, the floor the crypto industry demanded. By May 2, Coinbase, Circle, and the Crypto Council for Innovation had all publicly endorsed the compromise, and the Senate Banking Committee announced a markup target for the week of May 11 — the last available slot before the Memorial Day recess closes the chamber on May 21. For Bitcoin specifically, the bill&#39;s defining provision classifies BTC as a CFTC-regulated digital commodity, providing the permanent legislative certainty that has kept some institutional custodians cautious about offering direct Bitcoin exposure. Four steps remain between the markup and a presidential signature: a 60-vote Senate floor threshold, reconciliation between Senate Agriculture and Banking Committee versions, reconciliation with the House-passed text from July 2025, and the president&#39;s signature.</content>
+  </entry>
   <entry>
     <title>Week 17 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-17/"/>
