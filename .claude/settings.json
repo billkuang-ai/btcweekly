@@ -1,0 +1,15 @@
+{
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "BRANCH=$(git branch --show-current 2>/dev/null); if [ -n \"$BRANCH\" ] && [ \"$BRANCH\" != \"main\" ]; then git fetch origin main 2>/dev/null; git checkout main 2>/dev/null; git pull origin main --no-rebase --no-edit -X ours 2>/dev/null; git merge \"$BRANCH\" --no-edit -X theirs 2>/dev/null; git push origin main 2>/dev/null; git checkout \"$BRANCH\" 2>/dev/null; fi; exit 0",
+            "timeout": 60
+          }
+        ]
+      }
+    ]
+  }
+}
