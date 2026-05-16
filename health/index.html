@@ -46,8 +46,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
 .wrapper { max-width:660px; margin:0 auto; padding:0 20px 72px; }
 .top-bar { background:var(--orange); padding:10px 20px; margin:0 -20px; display:flex; align-items:center; justify-content:space-between; box-shadow:0 3px 0 var(--orange-bright); }
-.top-bar-site { font-size:var(--text-label); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#fff; }
-.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; }
+.top-bar-logo { height:28px; width:auto; flex-shrink:0; }
+.top-bar-spacer { width:28px; flex-shrink:0; }
+.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; white-space:nowrap; }
 .top-bar-tagline .hi { color:#fff; font-weight:700; }
 .masthead-hero { padding:36px 0 0; }
 .wordmark { font-family:'Black Han Sans',sans-serif; font-size:var(--text-mark); line-height:0.88; letter-spacing:0.02em; display:block; }
@@ -63,7 +64,13 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 .therm-wrap { display:flex; gap:24px; align-items:center; justify-content:center; padding:18px 0 6px; }
 .therm-body { position:relative; width:74px; height:300px; }
 .therm-tube { position:absolute; left:50%; top:0; transform:translateX(-50%); width:34px; height:260px; background:var(--orange-faint); border:2px solid var(--orange); border-radius:18px; overflow:hidden; }
-.therm-fill { position:absolute; bottom:0; left:0; right:0; background:linear-gradient(to top, #c9302c, #F7931A 35%, #FFAA3A 55%, #5cb85c 75%, #1f9e4a); }
+.therm-fill {
+  position:absolute; bottom:0; left:0; right:0;
+  background-image:linear-gradient(to top, #c9302c 0%, #F7931A 32%, #FFD93C 55%, #8BC34A 72%, #1f9e4a 100%);
+  background-size:100% 256px;
+  background-position:0 bottom;
+  background-repeat:no-repeat;
+}
 .therm-bulb { position:absolute; bottom:0; left:50%; transform:translateX(-50%); width:58px; height:58px; border:4px solid var(--orange); border-radius:50%; z-index:2; background:#fff; display:flex; align-items:center; justify-content:center; overflow:hidden; }
 .therm-bulb img { width:78%; height:78%; object-fit:contain; }
 .therm-scale { display:flex; flex-direction:column; justify-content:space-between; height:260px; padding:4px 0; font-size:11px; color:var(--faint); font-weight:700; letter-spacing:0.08em; text-transform:uppercase; }
@@ -139,8 +146,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <header>
     <div class="top-bar">
-      <div class="top-bar-site"><a href="/" style="color:#fff;text-decoration:none">btcweekly.org</a></div>
+      <a href="/"><img src="/images/logo.png" class="top-bar-logo" alt="BTC Weekly"></a>
       <div class="top-bar-tagline"><span class="hi">B</span>alanced · <span class="hi">T</span>rusted · <span class="hi">C</span>oncise</div>
+      <div class="top-bar-spacer"></div>
     </div>
     <div class="masthead-hero">
       <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>

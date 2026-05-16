@@ -295,6 +295,66 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   .rss { flex-direction:column; align-items:flex-start; }
 }
 
+/* ── HEALTH METER MINI ── */
+.hm-mini {
+  display:block; margin-top:14px;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:10px; padding:14px 16px 12px;
+  box-shadow:var(--shadow-sm);
+  color:inherit; text-decoration:none;
+  transition:border-color 150ms, box-shadow 150ms;
+}
+.hm-mini:hover { border-color:var(--orange-soft); box-shadow:0 2px 12px rgba(247,147,26,0.18); text-decoration:none; }
+.hm-mini-label {
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--faint);
+}
+.hm-mini-cta {
+  margin-top:12px; padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  text-align:right;
+  font-size:var(--text-meta); font-weight:700; color:var(--orange);
+  letter-spacing:0.04em;
+}
+.hm-mini:hover .hm-mini-cta { color:var(--orange-bright); }
+.hm-mini-composite { margin-top:8px; }
+.hm-mini-comp-row { display:flex; align-items:baseline; gap:14px; }
+.hm-mini-score {
+  font-family:'Black Han Sans',sans-serif; font-size:clamp(36px, 8vw, 48px); line-height:1;
+}
+.hm-mini-status { font-size:var(--text-title); font-weight:700; }
+.hm-mini-comp-bar {
+  height:10px; background:var(--orange-faint); border-radius:5px;
+  margin-top:8px; overflow:hidden;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,0.06);
+}
+.hm-mini-comp-fill { height:100%; border-radius:5px; transition:width 600ms; }
+.hm-mini-subs {
+  display:grid; grid-template-columns:repeat(5, 1fr); gap:8px;
+  margin-top:14px; padding-top:12px;
+  border-top:1px solid var(--border-soft);
+}
+.hm-mini-sub { min-width:0; }
+.hm-mini-sub-top { display:flex; flex-direction:column; gap:2px; }
+.hm-mini-sub-name {
+  font-size:10px; font-weight:700; color:var(--faint);
+  letter-spacing:0.04em; text-transform:uppercase;
+  white-space:nowrap;
+}
+.hm-mini-sub-val {
+  font-family:'Black Han Sans',sans-serif; font-size:18px; line-height:1;
+}
+.hm-mini-sub-bar {
+  height:5px; background:var(--orange-faint); border-radius:3px;
+  margin-top:6px; overflow:hidden;
+}
+.hm-mini-sub-fill { height:100%; border-radius:3px; }
+@media(max-width:480px) {
+  .hm-mini-subs { gap:6px; }
+  .hm-mini-sub-name { font-size:9px; letter-spacing:0; }
+  .hm-mini-sub-val { font-size:16px; }
+}
+
 /* ── EDITOR'S CHOICE CARD ── */
 .ec-card {
   margin-top:10px;
@@ -491,6 +551,66 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   </div>
   
 
+  
+  
+  
+  <a href="/health/" class="hm-mini">
+    <div class="hm-mini-label">Bitcoin Health Meter</div>
+    <div class="hm-mini-composite">
+      <div class="hm-mini-comp-row">
+        <span class="hm-mini-score" style="color:#FFAA3A">54</span>
+        <span class="hm-mini-status" style="color:#FFAA3A">Mixed</span>
+      </div>
+      <div class="hm-mini-comp-bar"><div class="hm-mini-comp-fill" style="width:54.2%; background:#FFAA3A"></div></div>
+    </div>
+    
+    <div class="hm-mini-subs">
+      
+      <div class="hm-mini-sub">
+        <div class="hm-mini-sub-top">
+          <span class="hm-mini-sub-name">Network</span>
+          <span class="hm-mini-sub-val" style="color:#F7931A">42</span>
+        </div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:41.6%; background:#F7931A"></div></div>
+      </div>
+      
+      <div class="hm-mini-sub">
+        <div class="hm-mini-sub-top">
+          <span class="hm-mini-sub-name">Demand</span>
+          <span class="hm-mini-sub-val" style="color:#F7931A">48</span>
+        </div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:48%; background:#F7931A"></div></div>
+      </div>
+      
+      <div class="hm-mini-sub">
+        <div class="hm-mini-sub-top">
+          <span class="hm-mini-sub-name">Holder</span>
+          <span class="hm-mini-sub-val" style="color:#5cb85c">78</span>
+        </div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:78%; background:#5cb85c"></div></div>
+      </div>
+      
+      <div class="hm-mini-sub">
+        <div class="hm-mini-sub-top">
+          <span class="hm-mini-sub-name">Market</span>
+          <span class="hm-mini-sub-val" style="color:#F7931A">45</span>
+        </div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:45%; background:#F7931A"></div></div>
+      </div>
+      
+      <div class="hm-mini-sub">
+        <div class="hm-mini-sub-top">
+          <span class="hm-mini-sub-name">Macro</span>
+          <span class="hm-mini-sub-val" style="color:#5cb85c">69</span>
+        </div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:69.2%; background:#5cb85c"></div></div>
+      </div>
+      
+    </div>
+    <div class="hm-mini-cta">View breakdown →</div>
+  </a>
+  
+
   <div class="ec-card">
     <div class="ec-label">Editor's Choice</div>
     <div class="ec-grid">
@@ -501,7 +621,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
         </a>
         <div class="ec-title"><a href="https://amzn.to/4dHllLf">Bitkey Bitcoin Hardware Wallet</a></div>
         <p class="ec-copy">Self-custody made simple. Built by Block, Jack Dorsey's company, for real-world Bitcoin storage and everyday use.</p>
-        <a href="https://amzn.to/4dHllLf" class="ec-cta">$149.99 from Amazon</a>
+        <a href="https://amzn.to/4dHllLf" class="ec-cta">View on Amazon</a>
       </div>
       <div class="ec-col">
         <div class="ec-cat"><a href="https://amzn.to/41wynUA">☕ Coffee</a></div>
@@ -510,7 +630,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
         </a>
         <div class="ec-title"><a href="https://amzn.to/41wynUA">Bean of Fire Exotic Variety Box</a></div>
         <p class="ec-copy">Exotic single-origin coffees created by Nayib Bukele — the president who made El Salvador the first nation to adopt Bitcoin as legal tender.</p>
-        <a href="https://amzn.to/41wynUA" class="ec-cta">$79.00 from Amazon</a>
+        <a href="https://amzn.to/41wynUA" class="ec-cta">View on Amazon</a>
       </div>
     </div>
     <div class="ec-disclosure">Amazon affiliate links. Purchases support BTC Weekly.</div>
