@@ -95,8 +95,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   display:flex; align-items:center; justify-content:space-between;
   box-shadow:0 3px 0 var(--orange-bright);
 }
-.top-bar-site { font-size:var(--text-label); font-weight:700; letter-spacing:0.2em; text-transform:uppercase; color:#fff; }
-.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; }
+.top-bar-logo { height:28px; width:auto; flex-shrink:0; }
+.top-bar-spacer { width:28px; flex-shrink:0; }
+.top-bar-tagline { font-size:var(--text-label); font-weight:600; color:rgba(255,255,255,0.76); letter-spacing:0.06em; white-space:nowrap; }
 .top-bar-tagline .hi { color:#fff; font-weight:700; }
 
 .masthead-hero { padding:36px 0 0; }
@@ -138,7 +139,6 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 .footer a { color:var(--orange); }
 
 @media(max-width:480px){
-  .top-bar { flex-direction:column; align-items:flex-start; gap:5px; }
   .archive-item { flex-direction:column; gap:8px; }
 }
 </style>
@@ -148,8 +148,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <header>
     <div class="top-bar">
-      <div class="top-bar-site"><a href="/" style="color:#fff;text-decoration:none">btcweekly.org</a></div>
+      <a href="/"><img src="/images/logo.png" class="top-bar-logo" alt="BTC Weekly"></a>
       <div class="top-bar-tagline"><span class="hi">B</span>alanced · <span class="hi">T</span>rusted · <span class="hi">C</span>oncise</div>
+      <div class="top-bar-spacer"></div>
     </div>
     <div class="masthead-hero">
       <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>

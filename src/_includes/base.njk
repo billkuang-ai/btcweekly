@@ -295,6 +295,66 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   .rss { flex-direction:column; align-items:flex-start; }
 }
 
+/* ── HEALTH METER MINI ── */
+.hm-mini {
+  display:block; margin-top:14px;
+  background:var(--white); border:1px solid var(--border);
+  border-radius:10px; padding:14px 16px 12px;
+  box-shadow:var(--shadow-sm);
+  color:inherit; text-decoration:none;
+  transition:border-color 150ms, box-shadow 150ms;
+}
+.hm-mini:hover { border-color:var(--orange-soft); box-shadow:0 2px 12px rgba(247,147,26,0.18); text-decoration:none; }
+.hm-mini-label {
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.14em;
+  text-transform:uppercase; color:var(--faint);
+}
+.hm-mini-cta {
+  margin-top:12px; padding-top:10px;
+  border-top:1px solid var(--border-soft);
+  text-align:right;
+  font-size:var(--text-meta); font-weight:700; color:var(--orange);
+  letter-spacing:0.04em;
+}
+.hm-mini:hover .hm-mini-cta { color:var(--orange-bright); }
+.hm-mini-composite { margin-top:8px; }
+.hm-mini-comp-row { display:flex; align-items:baseline; gap:14px; }
+.hm-mini-score {
+  font-family:'Black Han Sans',sans-serif; font-size:clamp(36px, 8vw, 48px); line-height:1;
+}
+.hm-mini-status { font-size:var(--text-title); font-weight:700; }
+.hm-mini-comp-bar {
+  height:10px; background:var(--orange-faint); border-radius:5px;
+  margin-top:8px; overflow:hidden;
+  box-shadow:inset 0 1px 2px rgba(0,0,0,0.06);
+}
+.hm-mini-comp-fill { height:100%; border-radius:5px; transition:width 600ms; }
+.hm-mini-subs {
+  display:grid; grid-template-columns:repeat(5, 1fr); gap:8px;
+  margin-top:14px; padding-top:12px;
+  border-top:1px solid var(--border-soft);
+}
+.hm-mini-sub { min-width:0; }
+.hm-mini-sub-top { display:flex; flex-direction:column; gap:2px; }
+.hm-mini-sub-name {
+  font-size:10px; font-weight:700; color:var(--faint);
+  letter-spacing:0.04em; text-transform:uppercase;
+  white-space:nowrap;
+}
+.hm-mini-sub-val {
+  font-family:'Black Han Sans',sans-serif; font-size:18px; line-height:1;
+}
+.hm-mini-sub-bar {
+  height:5px; background:var(--orange-faint); border-radius:3px;
+  margin-top:6px; overflow:hidden;
+}
+.hm-mini-sub-fill { height:100%; border-radius:3px; }
+@media(max-width:480px) {
+  .hm-mini-subs { gap:6px; }
+  .hm-mini-sub-name { font-size:9px; letter-spacing:0; }
+  .hm-mini-sub-val { font-size:16px; }
+}
+
 /* ── EDITOR'S CHOICE CARD ── */
 .ec-card {
   margin-top:10px;
@@ -443,6 +503,42 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   </div>
   {% endfor %}
 
+  {% if health %}
+  {% macro _hcol(s) -%}
+  {% if s == null %}#A08060{% elif s >= 80 %}#1f9e4a{% elif s >= 65 %}#5cb85c{% elif s >= 50 %}#FFAA3A{% elif s >= 35 %}#F7931A{% else %}#c9302c{% endif %}
+  {%- endmacro %}
+  {% set _hc = health.composite %}
+  <a href="/health/" class="hm-mini">
+    <div class="hm-mini-label">Bitcoin Health Meter</div>
+    <div class="hm-mini-composite">
+      <div class="hm-mini-comp-row">
+        <span class="hm-mini-score" style="color:{{ _hcol(_hc) }}">{{ _hc | round }}</span>
+        <span class="hm-mini-status" style="color:{{ _hcol(_hc) }}">{{ health.label }}</span>
+      </div>
+      <div class="hm-mini-comp-bar"><div class="hm-mini-comp-fill" style="width:{{ _hc }}%; background:{{ _hcol(_hc) }}"></div></div>
+    </div>
+    {% set _subs = [
+      ["Network", health.subScores.networkHealth],
+      ["Demand", health.subScores.demandStack],
+      ["Holder", health.subScores.holderConviction],
+      ["Market", health.subScores.marketStructure],
+      ["Macro", health.subScores.macroSentiment]
+    ] %}
+    <div class="hm-mini-subs">
+      {% for s in _subs %}
+      <div class="hm-mini-sub">
+        <div class="hm-mini-sub-top">
+          <span class="hm-mini-sub-name">{{ s[0] }}</span>
+          <span class="hm-mini-sub-val" style="color:{{ _hcol(s[1]) }}">{{ s[1] | round if s[1] != null else "—" }}</span>
+        </div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:{{ s[1] if s[1] != null else 0 }}%; background:{{ _hcol(s[1]) }}"></div></div>
+      </div>
+      {% endfor %}
+    </div>
+    <div class="hm-mini-cta">View breakdown →</div>
+  </a>
+  {% endif %}
+
   <div class="ec-card">
     <div class="ec-label">Editor's Choice</div>
     <div class="ec-grid">
@@ -453,7 +549,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
         </a>
         <div class="ec-title"><a href="https://amzn.to/4dHllLf">Bitkey Bitcoin Hardware Wallet</a></div>
         <p class="ec-copy">Self-custody made simple. Built by Block, Jack Dorsey's company, for real-world Bitcoin storage and everyday use.</p>
-        <a href="https://amzn.to/4dHllLf" class="ec-cta">$149.99 from Amazon</a>
+        <a href="https://amzn.to/4dHllLf" class="ec-cta">View on Amazon</a>
       </div>
       <div class="ec-col">
         <div class="ec-cat"><a href="https://amzn.to/41wynUA">☕ Coffee</a></div>
@@ -462,7 +558,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
         </a>
         <div class="ec-title"><a href="https://amzn.to/41wynUA">Bean of Fire Exotic Variety Box</a></div>
         <p class="ec-copy">Exotic single-origin coffees created by Nayib Bukele — the president who made El Salvador the first nation to adopt Bitcoin as legal tender.</p>
-        <a href="https://amzn.to/41wynUA" class="ec-cta">$79.00 from Amazon</a>
+        <a href="https://amzn.to/41wynUA" class="ec-cta">View on Amazon</a>
       </div>
     </div>
     <div class="ec-disclosure">Amazon affiliate links. Purchases support BTC Weekly.</div>
