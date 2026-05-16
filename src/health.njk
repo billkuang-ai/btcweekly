@@ -158,10 +158,6 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <h2 class="page-heading">Bitcoin Health Meter</h2>
 
-  <div class="hm-intro">
-    A proprietary composite of nine free, public data streams — network security, the corporate BTC bid, holder behavior, market structure, and macro. Higher is healthier. Refreshes daily.
-  </div>
-
   <div class="hm-hero">
     <div class="hm-hero-label">Composite Score</div>
     <div class="therm-wrap">
@@ -182,6 +178,10 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div class="hm-hero-meta">As of {{ h.date }} · 0 fragile · 100 robust</div>
     <div class="hm-hero-explain"><strong>Robust</strong> = network expanding, corporate bid active, holders patient, leverage clean. <strong>Fragile</strong> = the opposite.</div>
     {% if h.btcSpot %}<div class="hm-spot">BTC ${{ h.btcSpot.price | round }} ({% if h.btcSpot.change24h >= 0 %}+{% endif %}{{ h.btcSpot.change24h | round(2) }}% 24h)</div>{% endif %}
+  </div>
+
+  <div class="hm-intro">
+    A proprietary composite of nine free, public data streams — network security, the corporate BTC bid, holder behavior, market structure, and macro. Higher is healthier. Refreshes daily.
   </div>
 
   <div class="hm-section-label">Sub-scores</div>
