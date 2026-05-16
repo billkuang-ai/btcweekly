@@ -1,0 +1,24 @@
+[
+  {
+    "date": "2026-05-14",
+    "composite": 63,
+    "subScores": {
+      "networkHealth": 57.6,
+      "demandStack": 60.8,
+      "holderConviction": 78,
+      "marketStructure": 53.5,
+      "macroSentiment": 69.2
+    }
+  },
+  {
+    "date": "2026-05-16",
+    "composite": 54.2,
+    "subScores": {
+      "networkHealth": 41.6,
+      "demandStack": 48,
+      "holderConviction": 78,
+      "marketStructure": 45,
+      "macroSentiment": 69.2
+    }
+  }
+]
