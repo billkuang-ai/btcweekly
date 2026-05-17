@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-05-09T00:00:00Z</updated>
+  <updated>2026-05-16T00:00:00Z</updated>
+  <entry>
+    <title>Week 20 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-20/"/>
+    <id>https://btcweekly.org/2026/week-20/</id>
+    <updated>2026-05-16T00:00:00Z</updated>
+    <summary>Senate Banking Committee Advanced the CLARITY Act on a 15–9 Vote — the First Comprehensive Crypto Market Structure Bill to Clear a Major Committee</summary>
+    <content type="html">The Digital Asset Market Clarity Act of 2025 assigns the CFTC as primary regulator for most digital commodities while preserving SEC jurisdiction over digital securities — the first statutory framework to draw that boundary in U.S. law. Two Democrats — Ruben Gallego of Arizona and Angela Alsobrooks of Maryland — joined all Republicans on the panel in voting for the bill. The legislation now moves to a floor merge with a parallel version approved by the Senate Agriculture Committee before a full Senate vote; no floor date has been scheduled. More than 100 amendments are pending — including over 40 filed by Senator Elizabeth Warren — with debates centering on stablecoin yield restrictions and ethics language governing elected officials&#39; crypto holdings.</content>
+  </entry>
   <entry>
     <title>Week 19 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-19/"/>
