@@ -11,6 +11,11 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://btcweekly.org/health/</loc>
+    <changefreq>daily</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://btcweekly.org/2026/week-21/</loc>
     <lastmod>2026-05-23T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
