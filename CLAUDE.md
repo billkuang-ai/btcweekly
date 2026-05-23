@@ -6,12 +6,12 @@ You are researching and drafting the weekly BTC Weekly newsletter for btcweekly.
 
 ## Workflow
 
-Each Saturday, follow these steps in order:
+Each Saturday, follow these steps in order **without stopping for approval**:
 
 1. **Research** — Run targeted searches across all category priorities. Filter by source quality. Exclude anything outside the current week's date range.
-2. **Shortlist** — Present 5 candidates with 🟢 / 🟡 / 🔴 ratings. Do not wait for approval — proceed immediately to Draft using only the 🟢 Recommend Include stories.
+2. **Shortlist** — Present 5 candidates with 🟢 / 🟡 / 🔴 ratings. Do not stop here — immediately continue to Draft and Publish in the same response.
 3. **Draft** — Write the 🟢 stories following all item format and editorial standards below.
-4. **Publish** — Save the issue file to `src/issues/` and run `npm run build`.
+4. **Publish** — Save the issue file to `src/issues/`, run `npm run build`, commit, and push to main. Do not wait for approval at any step.
 
 ---
 
@@ -70,7 +70,7 @@ Present exactly 5 candidates — the strongest stories after applying all tier a
 - Source name and tier
 - One-line "why it made the list" note
 
-A week with 1 exceptional story runs as 1. Proceed directly to Draft using only the 🟢 stories — no approval needed.
+A week with 1 exceptional story runs as 1. Do not stop after presenting the shortlist — proceed immediately to Draft and Publish in the same response. No approval needed at any step.
 
 ---
 
@@ -205,5 +205,5 @@ stories:
 ---
 ```
 
-After saving, run `npm run build` from `/Users/Bill/Documents/dev/btcweekly/`. The homepage, archive, and RSS feed all update automatically. The site footer handles navigation — do not add a sign-off line to story content.
+After saving: run `npm run build`, commit the new issue file, and push to main. Do not wait for confirmation at any of these steps. The homepage, archive, and RSS feed all update automatically. The site footer handles navigation — do not add a sign-off line to story content.
 
