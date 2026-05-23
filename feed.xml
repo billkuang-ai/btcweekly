@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-05-16T00:00:00Z</updated>
+  <updated>2026-05-23T00:00:00Z</updated>
+  <entry>
+    <title>Week 21 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-21/"/>
+    <id>https://btcweekly.org/2026/week-21/</id>
+    <updated>2026-05-23T00:00:00Z</updated>
+    <summary>Trump Orders the Fed to Evaluate Whether Crypto Firms Can Access U.S. Payment Rails Directly</summary>
+    <content type="html">The order, signed May 19 and titled &quot;Integrating Financial Technology Innovation into Regulatory Frameworks,&quot; gives the Federal Reserve 120 days to assess whether non-bank fintechs — stablecoin issuers, crypto exchanges, and blockchain payment processors — qualify for direct access to Federal Reserve payment accounts and services. Six additional federal financial regulators, including the SEC and CFTC, face a parallel 180-day mandate to identify rules that unfairly restrict non-bank entities from accessing the banking system. The Fed must publish application procedures for payment account access and, where existing authority permits, deliver decisions within 90 days of an application. Following the review periods, agencies have six months to take concrete implementation steps. The order explicitly frames restrictive access standards as advantages that protect incumbent banks at the expense of innovation.</content>
+  </entry>
   <entry>
     <title>Week 20 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-20/"/>
