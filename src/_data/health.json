@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-23T04:12:54.794Z",
-  "date": "2026-05-23",
+  "generatedAt": "2026-05-24T04:45:49.019Z",
+  "date": "2026-05-24",
   "composite": 57.7,
   "label": "Mixed",
   "subScores": {
@@ -12,16 +12,16 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 986.2535988646205,
-      "ma30EH": 967.1112837844933,
-      "ma90EH": 981.1590689963159,
-      "ratio": 0.9856824589857862,
+      "currentEH": 984.8051362457944,
+      "ma30EH": 976.9961515264371,
+      "ma90EH": 980.5833464638831,
+      "ratio": 0.9963417745667597,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": 0.17111409147667622,
+      "estimatedChange": 0.6968187294454697,
       "previousChange": 3.121459198862496,
-      "progressPercent": 53.67063492063492,
+      "progressPercent": 61.30952380952381,
       "score": 55
     },
     "strc": {
@@ -33,30 +33,30 @@
       "score": 78
     },
     "mnav": {
-      "value": 0.9969963419411504,
+      "value": 0.9823547095408826,
       "mstrPrice": 159.89,
-      "btcPrice": 75547,
+      "btcPrice": 76673,
       "btcHeld": 605000,
       "score": 25
     },
     "mvrv": {
-      "value": 1.3951977957217803,
+      "value": 1.4145646606056597,
       "score": 78
     },
     "funding": {
-      "rate8h": 0.000062935551247,
-      "annualizedPct": 6.8914428615464995,
+      "rate8h": 0.0000402525388025,
+      "annualizedPct": 4.40765299887375,
       "score": 72
     },
     "stablecoins": {
-      "totalUSD": 270611381700.01178,
-      "prevWeekUSD": 271245211443.1132,
-      "delta7dPct": -0.23367407657787892,
+      "totalUSD": 270520304513.09055,
+      "prevWeekUSD": 271185112410.65155,
+      "delta7dPct": -0.24514911296247563,
       "score": 52
     },
     "fearGreed": {
-      "value": 28,
-      "label": "Fear",
+      "value": 25,
+      "label": "Extreme Fear",
       "score": 70
     },
     "dxy": {
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 75547,
-    "change24h": -2.879589813428804
+    "price": 76673,
+    "change24h": 1.6494465922908115
   }
 }
