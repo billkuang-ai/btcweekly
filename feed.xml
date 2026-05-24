@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-05-23T00:00:00Z</updated>
+  <updated>2026-05-24T00:00:00Z</updated>
+  <entry>
+    <title>Week 22 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-22/"/>
+    <id>https://btcweekly.org/2026/week-22/</id>
+    <updated>2026-05-24T00:00:00Z</updated>
+    <summary>An OCC-Chartered Bank Trust Activated Lightning Network Payments Directly From Institutional Bitcoin Custody</summary>
+    <content type="html">BitGo Bank &amp; Trust, National Association — a federally chartered national trust bank supervised by the Office of the Comptroller of the Currency — activated Lightning Network payment capabilities directly from its qualified custody platform on May 19, through an expanded partnership with payment infrastructure firm Voltage. Voltage handles node deployment, liquidity provisioning, and key management on behalf of clients; institutional counterparties access Lightning wallets, invoices, and payment settlement through the same APIs that interface with BitGo&#39;s existing custody environment. The May release represents the third phase of a deliberate build: a BitGo-Voltage routing agreement in April 2025, a custody-layer Lightning integration in December 2025, and now a full Crypto-as-a-Service product that bundles both capabilities and adds stablecoin settlement over Lightning to the near-term roadmap. The trust bank holds a nationwide OCC charter.</content>
+  </entry>
   <entry>
     <title>Week 21 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-21/"/>
