@@ -6,14 +6,14 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-05-24T00:00:00Z</updated>
+  <updated>2026-05-30T00:00:00Z</updated>
   <entry>
     <title>Week 22 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-22/"/>
     <id>https://btcweekly.org/2026/week-22/</id>
-    <updated>2026-05-24T00:00:00Z</updated>
-    <summary>An OCC-Chartered Bank Trust Activated Lightning Network Payments Directly From Institutional Bitcoin Custody</summary>
-    <content type="html">BitGo Bank &amp; Trust, National Association — a federally chartered national trust bank supervised by the Office of the Comptroller of the Currency — activated Lightning Network payment capabilities directly from its qualified custody platform on May 19, through an expanded partnership with payment infrastructure firm Voltage. Voltage handles node deployment, liquidity provisioning, and key management on behalf of clients; institutional counterparties access Lightning wallets, invoices, and payment settlement through the same APIs that interface with BitGo&#39;s existing custody environment. The May release represents the third phase of a deliberate build: a BitGo-Voltage routing agreement in April 2025, a custody-layer Lightning integration in December 2025, and now a full Crypto-as-a-Service product that bundles both capabilities and adds stablecoin settlement over Lightning to the near-term roadmap. The trust bank holds a nationwide OCC charter.</content>
+    <updated>2026-05-30T00:00:00Z</updated>
+    <summary>Perpetual Bitcoin Futures Are Now Legal on a Regulated U.S. Exchange — a Derivative That Has Only Existed Offshore</summary>
+    <content type="html">On May 29, the CFTC approved KalshiEX&#39;s BTCPERP contract under Section 5c(c)(4) of the Commodity Exchange Act, making KalshiEX the first designated contract market in the United States to list a perpetual futures product referencing Bitcoin&#39;s spot price. The contract trades in units of one ten-thousandth of a bitcoin, settles in cash, runs 24 hours a day seven days a week, and carries no expiration date — the structural feature that distinguishes perpetuals from quarterly futures and has made them the dominant derivative instrument on offshore venues. The Commission determined BTCPERP complies with all applicable Core Principles for designated contract markets; CFTC Chairman Mike Selig called the approval a &quot;major step forward&quot; for U.S. crypto policy. Perpetual futures have accounted for the majority of Bitcoin&#39;s global trading volume for years but operated exclusively on offshore, largely unregulated exchanges — leaving U.S. participants without regulated domestic access. Kalshi stated its intention to expand crypto perpetuals to more than a dozen digital currencies, subject to further regulatory review.</content>
   </entry>
   <entry>
     <title>Week 21 (2026) · BTC Weekly</title>
