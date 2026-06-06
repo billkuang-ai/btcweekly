@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-05-30T00:00:00Z</updated>
+  <updated>2026-06-06T00:00:00Z</updated>
+  <entry>
+    <title>Week 23 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-23/"/>
+    <id>https://btcweekly.org/2026/week-23/</id>
+    <updated>2026-06-06T00:00:00Z</updated>
+    <summary>Three Federal Banking Regulators Scrubbed &#39;Reputation Risk&#39; From 27 Years of Interagency Guidance — Eliminating the Last Supervisory Hook for Crypto Debanking</summary>
+    <content type="html">On June 2, the Federal Reserve, OCC, and FDIC jointly reissued 15 interagency guidance documents — spanning a 1997 statement on loan participations through 2024 elder financial exploitation guidance — with all references to &quot;reputation risk&quot; removed. The action followed a joint FDIC-OCC final rule, adopted in April and formally effective June 6, that prohibits either agency from making examination findings based on reputation risk. The agencies stated the concept &quot;could be misused as a basis to restrict individuals&#39; and legal businesses&#39; access to financial services due to their constitutionally protected political or religious beliefs, speech, or conduct or lawful business activities.&quot; An OCC report published earlier this year found the nine largest U.S. banks used reputation risk to close at least 30 crypto-firm accounts between 2020 and 2023. With the final rule in force and all legacy interagency guidance now reissued, bank examiners have no remaining supervisory text supporting crypto account restrictions on reputational grounds — decisions must rest on documented credit, market, liquidity, or BSA/AML risk.</content>
+  </entry>
   <entry>
     <title>Week 22 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-22/"/>
