@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-11T05:07:01.925Z",
-  "date": "2026-06-11",
+  "generatedAt": "2026-06-12T05:12:57.045Z",
+  "date": "2026-06-12",
   "composite": 50.1,
   "label": "Mixed",
   "subScores": {
@@ -12,46 +12,46 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 876.8545406575789,
-      "ma30EH": 941.7309022332238,
-      "ma90EH": 959.5488915350891,
-      "ratio": 0.9814308687560881,
+      "currentEH": 892.1678697654941,
+      "ma30EH": 943.9703985497937,
+      "ma90EH": 960.2538390088847,
+      "ratio": 0.983042566665604,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": -10.905674531199317,
+      "estimatedChange": -10.493720869091183,
       "previousChange": 1.7190077664198355,
-      "progressPercent": 81.25,
+      "progressPercent": 88.04563492063492,
       "score": 18
     },
     "strc": {
-      "price": 95.81,
+      "price": 96.49,
       "high52": 100.418,
       "low52": 90.38,
       "source": "yahoo",
-      "distanceFromPar": -4.189999999999998,
+      "distanceFromPar": -3.510000000000005,
       "score": 22
     },
     "mnav": {
-      "value": 0.8690394509902301,
-      "mstrPrice": 115.35,
-      "btcPrice": 62527,
+      "value": 0.8912478628296461,
+      "mstrPrice": 120.15,
+      "btcPrice": 63506,
       "btcHeld": 605000,
       "score": 25
     },
     "mvrv": {
-      "value": 1.148835844703938,
+      "value": 1.1875449707608752,
       "score": 78
     },
     "funding": {
-      "rate8h": -0.000060917544266,
-      "annualizedPct": -6.670471097127,
+      "rate8h": -0.000036012844703,
+      "annualizedPct": -3.9434064949785,
       "score": 82
     },
     "stablecoins": {
-      "totalUSD": 266172196748.34503,
-      "prevWeekUSD": 267814117519.01468,
-      "delta7dPct": -0.6130822325126575,
+      "totalUSD": 265995621002.9981,
+      "prevWeekUSD": 267265735263.79196,
+      "delta7dPct": -0.4752252508314423,
       "score": 35
     },
     "fearGreed": {
@@ -62,7 +62,7 @@
     "dxy": null
   },
   "btcSpot": {
-    "price": 62527,
-    "change24h": 2.267476872484814
+    "price": 63506,
+    "change24h": 1.539934769270835
   }
 }
