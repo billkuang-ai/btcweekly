@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-06-06T00:00:00Z</updated>
+  <updated>2026-06-13T00:00:00Z</updated>
+  <entry>
+    <title>Week 24 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-24/"/>
+    <id>https://btcweekly.org/2026/week-24/</id>
+    <updated>2026-06-13T00:00:00Z</updated>
+    <summary>Coinbase won CFTC clearance to route US customers into Deribit&#39;s global Bitcoin perpetuals — the first approval of its kind for a US exchange</summary>
+    <content type="html">On June 11, the CFTC issued a no-action clearance to Coinbase Financial Markets, the exchange&#39;s US broker-dealer arm, to intermediate domestic customers into Deribit&#39;s global perpetual futures order book under Futures Commission Merchant (FCM) supervision — the first such approval for a US exchange. Deribit is the offshore derivatives platform Coinbase acquired in May 2025; the clearance extends to any digital commodity perpetual contract currently listed there, covering Bitcoin, Ethereum, Solana, and other tokens with no expiration dates and funding-rate mechanics that previously required offshore access. US traders could previously reach Deribit&#39;s products only through foreign accounts or VPNs, both carrying regulatory and compliance exposure. The FCM approval came two days after Kalshi&#39;s domestically listed BTCPERP contract crossed $1 billion in cumulative trading volume on June 9 — exactly one week after its June 3 launch — a milestone Kalshi&#39;s original prediction-market business required 40 months to reach.</content>
+  </entry>
   <entry>
     <title>Week 23 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-23/"/>
