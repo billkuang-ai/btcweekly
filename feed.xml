@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-06-13T00:00:00Z</updated>
+  <updated>2026-06-20T00:00:00Z</updated>
+  <entry>
+    <title>Week 25 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-25/"/>
+    <id>https://btcweekly.org/2026/week-25/</id>
+    <updated>2026-06-20T00:00:00Z</updated>
+    <summary>CME sued the CFTC to void its Bitcoin perpetual futures approvals — the first federal challenge to the regulator&#39;s authority to bring Bitcoin perps to U.S. exchanges</summary>
+    <content type="html">On June 18, CME Group filed a complaint in U.S. District Court for the District of Columbia to void two CFTC approvals: the May 29 order authorizing Kalshi to list BTCPERP, a Bitcoin perpetual futures contract, and a companion policy statement that permitted Coinbase Financial Markets to route domestic customers into offshore perpetual books under Futures Commission Merchant supervision. CME argues that perpetual futures — contracts with no expiration date that use funding-rate mechanics to track spot prices — qualify as swaps under the 2010 Dodd-Frank Act, which would subject them to separate clearing, reporting, and trading-venue requirements the CFTC did not apply. Kalshi&#39;s BTCPERP accumulated more than $3 billion in volume during beta testing. CEO Terrence Duffy, who said CME had spent eight months building the case, called the approvals &quot;a disaster waiting to happen.&quot; CFTC Chair Michael Selig, who championed both decisions as a way to bring offshore perpetuals under domestic oversight, called the suit &quot;frivolous.&quot;</content>
+  </entry>
   <entry>
     <title>Week 24 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-24/"/>
