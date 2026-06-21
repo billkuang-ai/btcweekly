@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-06-20T04:47:28.974Z",
-  "date": "2026-06-20",
+  "generatedAt": "2026-06-21T05:23:07.334Z",
+  "date": "2026-06-21",
   "composite": 52.5,
   "label": "Mixed",
   "subScores": {
@@ -12,16 +12,16 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 923.0875549615616,
-      "ma30EH": 933.6323364363907,
-      "ma90EH": 960.189981985919,
-      "ratio": 0.9723412594926264,
+      "currentEH": 946.2771238705072,
+      "ma30EH": 937.6731230086542,
+      "ma90EH": 959.1672184503384,
+      "ratio": 0.9775908777653903,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": 4.677935643286335,
+      "estimatedChange": 4.633013674873299,
       "previousChange": -10.091364095062005,
-      "progressPercent": 46.18055555555556,
+      "progressPercent": 53.81944444444444,
       "score": 90
     },
     "strc": {
@@ -33,25 +33,25 @@
       "score": 22
     },
     "mnav": {
-      "value": 0.834356407592785,
+      "value": 0.8261642042266691,
       "mstrPrice": 112.53,
-      "btcPrice": 63534,
+      "btcPrice": 64164,
       "btcHeld": 605000,
       "score": 12
     },
     "mvrv": {
-      "value": 1.186374409712872,
+      "value": 1.2034610271445665,
       "score": 78
     },
     "funding": {
-      "rate8h": -9.56367193e-7,
-      "annualizedPct": -0.1047222076335,
+      "rate8h": -0.0000381198000061,
+      "annualizedPct": -4.1741181006679495,
       "score": 82
     },
     "stablecoins": {
-      "totalUSD": 265549316112.65723,
-      "prevWeekUSD": 265706715207.50665,
-      "delta7dPct": -0.059237906248061384,
+      "totalUSD": 265513319938.6453,
+      "prevWeekUSD": 265651883893.95953,
+      "delta7dPct": -0.05215997465673919,
       "score": 52
     },
     "fearGreed": {
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 63534,
-    "change24h": 1.5568620098385344
+    "price": 64164,
+    "change24h": 0.7992413549835838
   }
 }
