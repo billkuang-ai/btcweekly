@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-06-27T00:00:00Z</updated>
+  <updated>2026-07-04T00:00:00Z</updated>
+  <entry>
+    <title>Week 27 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-27/"/>
+    <id>https://btcweekly.org/2026/week-27/</id>
+    <updated>2026-07-04T00:00:00Z</updated>
+    <summary>California&#39;s Crypto Licensing Mandate Is Now Live — Unlicensed Firms Face Up to $100,000 per Day</summary>
+    <content type="html">California&#39;s Digital Financial Assets Law entered into force on July 1, requiring every cryptocurrency exchange, custodian, stablecoin issuer, and Bitcoin ATM operator serving state residents — wherever the firm is located — to hold a valid license from the California Department of Financial Protection and Innovation, or to have filed a complete application by that date. The statute, signed by Governor Newsom in October 2023 and delayed once from its original July 2025 effective date by AB 1934, extends to any entity engaged in digital financial asset business activity with a California resident regardless of the firm&#39;s home jurisdiction. Minimum tangible net worth starts at $100,000 and surety bond requirements at $500,000, with both subject to upward adjustment based on activity volume and asset mix. Unlicensed operators now face civil penalties of up to $100,000 per calendar day.</content>
+  </entry>
   <entry>
     <title>Week 26 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-26/"/>
