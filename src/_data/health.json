@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-05T04:37:11.930Z",
-  "date": "2026-07-05",
+  "generatedAt": "2026-07-06T04:47:55.939Z",
+  "date": "2026-07-06",
   "composite": 43.4,
   "label": "Strained",
   "subScores": {
@@ -12,16 +12,16 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 924.871292234086,
-      "ma30EH": 935.5722084850105,
-      "ma90EH": 955.5914808670918,
-      "ratio": 0.9790503862969603,
+      "currentEH": 942.0556084205933,
+      "ma30EH": 933.0953739624919,
+      "ma90EH": 955.391982279843,
+      "ratio": 0.9766623451620926,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": -1.2591668545949175,
+      "estimatedChange": -1.2782035070613484,
       "previousChange": 7.153431934627051,
-      "progressPercent": 57.14285714285714,
+      "progressPercent": 64.23611111111111,
       "score": 32
     },
     "strc": {
@@ -33,29 +33,29 @@
       "score": 22
     },
     "mnav": {
-      "value": 0.7552809866073125,
+      "value": 0.7504808513312602,
       "mstrPrice": 100.77,
-      "btcPrice": 62851,
+      "btcPrice": 63253,
       "btcHeld": 605000,
       "score": 12
     },
     "mvrv": {
-      "value": 1.1891572189350943,
+      "value": 1.1990647636450062,
       "score": 78
     },
     "funding": {
-      "rate8h": 0.0000898340792751,
-      "annualizedPct": 9.836831680623451,
+      "rate8h": 0.0000859481129659,
+      "annualizedPct": 9.41131836976605,
       "score": 55
     },
     "stablecoins": {
-      "totalUSD": 261984192088.7129,
-      "prevWeekUSD": 263714565240.26266,
-      "delta7dPct": -0.6561538040089979,
+      "totalUSD": 262007849749.50827,
+      "prevWeekUSD": 263591052741.5608,
+      "delta7dPct": -0.6006285022142919,
       "score": 35
     },
     "fearGreed": {
-      "value": 23,
+      "value": 24,
       "label": "Extreme Fear",
       "score": 70
     },
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 62851,
-    "change24h": 0.3351181563441789
+    "price": 63253,
+    "change24h": 0.7029915444880905
   }
 }
