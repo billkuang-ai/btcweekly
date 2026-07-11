@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-10T04:29:50.271Z",
-  "date": "2026-07-10",
+  "generatedAt": "2026-07-11T03:49:29.944Z",
+  "date": "2026-07-11",
   "composite": 45.7,
   "label": "Strained",
   "subScores": {
@@ -12,51 +12,51 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 903.912629950718,
-      "ma30EH": 934.2926361337029,
-      "ma90EH": 950.6721647168371,
-      "ratio": 0.9827705814990251,
+      "currentEH": 891.9121524917224,
+      "ma30EH": 934.71807197056,
+      "ma90EH": 951.0090176706119,
+      "ratio": 0.9828698304670603,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": -4.343832252821988,
+      "estimatedChange": -4.486330346064382,
       "previousChange": 7.153431934627051,
-      "progressPercent": 89.48412698412699,
+      "progressPercent": 95.98214285714286,
       "score": 18
     },
     "strc": {
-      "price": 85.71,
+      "price": 87.48,
       "high52": 100.418,
       "low52": 71.25,
       "source": "yahoo",
-      "distanceFromPar": -14.290000000000006,
+      "distanceFromPar": -12.519999999999996,
       "score": 22
     },
     "mnav": {
-      "value": 0.6924982942228469,
-      "mstrPrice": 93.89,
-      "btcPrice": 63869,
+      "value": 0.6952867132272262,
+      "mstrPrice": 94.64,
+      "btcPrice": 64121,
       "btcHeld": 605000,
       "score": 12
     },
     "mvrv": {
-      "value": 1.1916595724436172,
+      "value": 1.2097400850398004,
       "score": 78
     },
     "funding": {
-      "rate8h": 0.0000509189404047,
-      "annualizedPct": 5.5756239743146505,
+      "rate8h": 0.0000167556239037,
+      "annualizedPct": 1.83474081745515,
       "score": 72
     },
     "stablecoins": {
-      "totalUSD": 262407284979.11652,
-      "prevWeekUSD": 262269164217.7032,
-      "delta7dPct": 0.05266374406816633,
+      "totalUSD": 262436158802.89218,
+      "prevWeekUSD": 262077534788.7726,
+      "delta7dPct": 0.13683889937709048,
       "score": 52
     },
     "fearGreed": {
-      "value": 23,
-      "label": "Extreme Fear",
+      "value": 26,
+      "label": "Fear",
       "score": 70
     },
     "dxy": {
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 63869,
-    "change24h": 2.9659598740973356
+    "price": 64121,
+    "change24h": 0.2661917498429149
   }
 }
