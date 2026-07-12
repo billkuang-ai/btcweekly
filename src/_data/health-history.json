@@ -636,5 +636,16 @@
       "marketStructure": 62,
       "macroSentiment": 57.2
     }
+  },
+  {
+    "date": "2026-07-12",
+    "composite": 46.8,
+    "subScores": {
+      "networkHealth": 41.6,
+      "demandStack": 16,
+      "holderConviction": 78,
+      "marketStructure": 62,
+      "macroSentiment": 57.2
+    }
   }
 ]
