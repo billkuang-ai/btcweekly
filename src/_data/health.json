@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-07-17T03:44:46.161Z",
-  "date": "2026-07-17",
-  "composite": 49.2,
+  "generatedAt": "2026-07-18T03:39:38.436Z",
+  "date": "2026-07-18",
+  "composite": 47.4,
   "label": "Strained",
   "subScores": {
-    "networkHealth": 50.8,
+    "networkHealth": 41.6,
     "demandStack": 16,
     "holderConviction": 78,
     "marketStructure": 62,
@@ -12,51 +12,51 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 891.2759677176603,
-      "ma30EH": 926.7877635122923,
-      "ma90EH": 943.2556843025948,
-      "ratio": 0.9825414030741005,
+      "currentEH": 880.7937477502887,
+      "ma30EH": 925.8074285511566,
+      "ma90EH": 940.5741325576936,
+      "ratio": 0.9843003294526269,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": -0.7258334893563423,
+      "estimatedChange": -2.4243568753059552,
       "previousChange": -5.004377710216261,
-      "progressPercent": 37.648809523809526,
-      "score": 55
+      "progressPercent": 43.948412698412696,
+      "score": 32
     },
     "strc": {
-      "price": 85.42,
+      "price": 85.29,
       "high52": 100.418,
       "low52": 71.25,
       "source": "yahoo",
-      "distanceFromPar": -14.579999999999998,
+      "distanceFromPar": -14.709999999999994,
       "score": 22
     },
     "mnav": {
-      "value": 0.6967709678308398,
-      "mstrPrice": 94.03,
-      "btcPrice": 63572,
+      "value": 0.6992395142203081,
+      "mstrPrice": 94.85,
+      "btcPrice": 63900,
       "btcHeld": 605000,
       "score": 12
     },
     "mvrv": {
-      "value": 1.2064208959075768,
+      "value": 1.2091270996686685,
       "score": 78
     },
     "funding": {
-      "rate8h": 0.0000336759326546,
-      "annualizedPct": 3.6875146256786997,
+      "rate8h": 0.0000582202559377,
+      "annualizedPct": 6.375118025178149,
       "score": 72
     },
     "stablecoins": {
-      "totalUSD": 262159205559.0613,
-      "prevWeekUSD": 262430635301.8003,
-      "delta7dPct": -0.10342913754212944,
+      "totalUSD": 262296749410.45178,
+      "prevWeekUSD": 262426988414.08386,
+      "delta7dPct": -0.049628662211592275,
       "score": 52
     },
     "fearGreed": {
-      "value": 27,
-      "label": "Fear",
+      "value": 25,
+      "label": "Extreme Fear",
       "score": 70
     },
     "dxy": {
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 63572,
-    "change24h": -1.6243483076461083
+    "price": 63900,
+    "change24h": 0.45465228728227897
   }
 }
