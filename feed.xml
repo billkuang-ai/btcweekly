@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-07-11T00:00:00Z</updated>
+  <updated>2026-07-18T00:00:00Z</updated>
+  <entry>
+    <title>Week 29 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-29/"/>
+    <id>https://btcweekly.org/2026/week-29/</id>
+    <updated>2026-07-18T00:00:00Z</updated>
+    <summary>E*TRADE Opened Spot Bitcoin Trading to Nine Million Clients — With Custody Held Outside Morgan Stanley</summary>
+    <content type="html">Trades carry a 50-basis-point fee and route through a Zero Hash-held account in the client&#39;s own name — entirely outside Morgan Stanley&#39;s broker-dealer entities and without FDIC or SIPC coverage. Morgan Stanley first disclosed the Zero Hash arrangement in September 2025, completing the build-out in under ten months. Bitcoin, Ethereum, and Solana are supported at launch. Transfer functionality to move crypto assets in or out of the Zero Hash account is expected in a later 2026 update; a portfolio integration displays crypto alongside equities in a single interface across E*TRADE&#39;s approximately nine million accounts.</content>
+  </entry>
   <entry>
     <title>Week 28 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-28/"/>
