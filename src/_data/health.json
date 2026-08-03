@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-02T04:02:01.980Z",
-  "date": "2026-08-02",
+  "generatedAt": "2026-08-03T04:03:48.601Z",
+  "date": "2026-08-03",
   "composite": 47.4,
   "label": "Strained",
   "subScores": {
@@ -12,16 +12,16 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 912.1154266680004,
-      "ma30EH": 903.9805631859319,
-      "ma90EH": 936.1576769296755,
-      "ratio": 0.9656285318844201,
+      "currentEH": 930.2749182314566,
+      "ma30EH": 900.7230454517254,
+      "ma90EH": 935.3185548817797,
+      "ratio": 0.9630120569623181,
       "score": 30
     },
     "difficulty": {
-      "estimatedChange": 1.2425956728093324,
+      "estimatedChange": 1.7519247509021785,
       "previousChange": -0.7383735253058887,
-      "progressPercent": 52.13293650793651,
+      "progressPercent": 59.672619047619044,
       "score": 72
     },
     "strc": {
@@ -33,29 +33,29 @@
       "score": 22
     },
     "mnav": {
-      "value": 0.6930558204157246,
+      "value": 0.6993318614415472,
       "mstrPrice": 93.28,
-      "btcPrice": 63403,
+      "btcPrice": 62834,
       "btcHeld": 605000,
       "score": 12
     },
     "mvrv": {
-      "value": 1.1887286460199475,
+      "value": 1.2018952766591153,
       "score": 78
     },
     "funding": {
-      "rate8h": 0.0000387308525478,
-      "annualizedPct": 4.2410283539841,
+      "rate8h": 0.0000617060481635,
+      "annualizedPct": 6.7568122739032495,
       "score": 72
     },
     "stablecoins": {
-      "totalUSD": 260073071472.10983,
-      "prevWeekUSD": 262666839457.47296,
-      "delta7dPct": -0.9874744717378277,
+      "totalUSD": 259880915575.803,
+      "prevWeekUSD": 262175320753.9035,
+      "delta7dPct": -0.8751415547057486,
       "score": 35
     },
     "fearGreed": {
-      "value": 27,
+      "value": 28,
       "label": "Fear",
       "score": 70
     },
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 63403,
-    "change24h": 0.7311087116271607
+    "price": 62834,
+    "change24h": -0.9776706112244775
   }
 }
