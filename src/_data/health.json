@@ -1,27 +1,27 @@
 {
-  "generatedAt": "2026-08-15T01:54:39.670Z",
-  "date": "2026-08-15",
-  "composite": 46.3,
+  "generatedAt": "2026-08-16T02:01:35.531Z",
+  "date": "2026-08-16",
+  "composite": 48,
   "label": "Strained",
   "subScores": {
     "networkHealth": 41.6,
     "demandStack": 16,
     "holderConviction": 78,
-    "marketStructure": 53.5,
+    "marketStructure": 62,
     "macroSentiment": 69.2
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 888.4718440101572,
-      "ma30EH": 899.7807739360367,
-      "ma90EH": 923.8362954413294,
-      "ratio": 0.9739612725501318,
+      "currentEH": 899.1697736665243,
+      "ma30EH": 904.3532712310987,
+      "ma90EH": 923.3698284302704,
+      "ratio": 0.9794052647014686,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": -3.090604002040198,
+      "estimatedChange": -2.0603944975459365,
       "previousChange": 0.9889358055576736,
-      "progressPercent": 43.30357142857143,
+      "progressPercent": 50.79365079365079,
       "score": 32
     },
     "strc": {
@@ -33,25 +33,25 @@
       "score": 22
     },
     "mnav": {
-      "value": 0.6960702653905046,
+      "value": 0.6955069319481808,
       "mstrPrice": 93.04,
-      "btcPrice": 62966,
+      "btcPrice": 63017,
       "btcHeld": 605000,
       "score": 12
     },
     "mvrv": {
-      "value": 1.2034349432766869,
+      "value": 1.1947029600977745,
       "score": 78
     },
     "funding": {
-      "rate8h": 0.0001,
-      "annualizedPct": 10.950000000000001,
-      "score": 55
+      "rate8h": 0.0000700992676432,
+      "annualizedPct": 7.6758698069304,
+      "score": 72
     },
     "stablecoins": {
-      "totalUSD": 259868191976.9607,
-      "prevWeekUSD": 260102781937.1923,
-      "delta7dPct": -0.09019125381298111,
+      "totalUSD": 259825095327.78085,
+      "prevWeekUSD": 260129678594.48282,
+      "delta7dPct": -0.11708901050724835,
       "score": 52
     },
     "fearGreed": {
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 62966,
-    "change24h": -0.827231305535038
+    "price": 63017,
+    "change24h": 0.05093297098436113
   }
 }
