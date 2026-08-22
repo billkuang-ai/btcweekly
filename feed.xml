@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-08-15T00:00:00Z</updated>
+  <updated>2026-08-22T00:00:00Z</updated>
+  <entry>
+    <title>Week 34 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-34/"/>
+    <id>https://btcweekly.org/2026/week-34/</id>
+    <updated>2026-08-22T00:00:00Z</updated>
+    <summary>A Nasdaq-Listed Insurer Closed a Capital Raise Settled Entirely in Bitcoin — No Fiat Involved</summary>
+    <content type="html">On August 17, Zhibao Technology (Nasdaq: ZBAO) — a Shanghai-based digital insurance broker — closed a $154.7 million private placement in which investors delivered 2,380 BTC directly to a company-designated wallet at a $65,000 reference price; the total consideration was paid entirely in Bitcoin under Regulation S, with no fiat conversion at any step. The offering issued 442 million units at $0.35 each, with each unit comprising one Class A ordinary share and a two-year warrant exercisable at $0.35. At closing, the CEO, CFO, and four of the five sitting directors resigned and were replaced by investor appointees — a complete governance reset executed simultaneously with the capital raise. Zhibao enters the corporate Bitcoin holder ranking at 33rd globally, surpassing Core Scientific and Cipher Digital with 2,380 BTC on its balance sheet.</content>
+  </entry>
   <entry>
     <title>Week 33 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-33/"/>
