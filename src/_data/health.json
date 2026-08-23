@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-22T01:55:31.200Z",
-  "date": "2026-08-22",
+  "generatedAt": "2026-08-23T02:06:58.214Z",
+  "date": "2026-08-23",
   "composite": 46.1,
   "label": "Strained",
   "subScores": {
@@ -12,16 +12,16 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 910.1334866022312,
-      "ma30EH": 905.1773942075178,
-      "ma90EH": 917.2946086079717,
-      "ratio": 0.9867902696835401,
+      "currentEH": 909.0320651077486,
+      "ma30EH": 908.8472306522095,
+      "ma90EH": 917.9565077489978,
+      "ratio": 0.9900765700554529,
       "score": 48
     },
     "difficulty": {
-      "estimatedChange": -1.5161761818538677,
-      "previousChange": 0.9889358055576736,
-      "progressPercent": 93.25396825396825,
+      "estimatedChange": -3.7494174601856556,
+      "previousChange": -1.3121909633418625,
+      "progressPercent": 0.5952380952380952,
       "score": 32
     },
     "strc": {
@@ -33,14 +33,14 @@
       "score": 22
     },
     "mnav": {
-      "value": 0.72174552997714,
+      "value": 0.7282577729845696,
       "mstrPrice": 119.25,
-      "btcPrice": 77833,
+      "btcPrice": 77137,
       "btcHeld": 605000,
       "score": 12
     },
     "mvrv": {
-      "value": 1.386071625027333,
+      "value": 1.4837222213757244,
       "score": 78
     },
     "funding": {
@@ -49,13 +49,13 @@
       "score": 55
     },
     "stablecoins": {
-      "totalUSD": 261438008340.38904,
-      "prevWeekUSD": 260002400290.7659,
-      "delta7dPct": 0.552151844758998,
+      "totalUSD": 261584608692.15027,
+      "prevWeekUSD": 259985537893.7479,
+      "delta7dPct": 0.6150614420160132,
       "score": 72
     },
     "fearGreed": {
-      "value": 71,
+      "value": 66,
       "label": "Greed",
       "score": 32
     },
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 77833,
-    "change24h": 3.2265102419195566
+    "price": 77137,
+    "change24h": -1.1059229311368455
   }
 }
