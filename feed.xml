@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-08-22T00:00:00Z</updated>
+  <updated>2026-08-29T00:00:00Z</updated>
+  <entry>
+    <title>Week 35 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-35/"/>
+    <id>https://btcweekly.org/2026/week-35/</id>
+    <updated>2026-08-29T00:00:00Z</updated>
+    <summary>Banking Regulators Formally Defined &#39;Unsafe or Unsound Practice&#39; — Ending the Examiner Latitude That Enabled Crypto Debanking</summary>
+    <content type="html">On August 27, the Office of the Comptroller of the Currency and the Federal Deposit Insurance Corporation jointly published a final rule giving &quot;unsafe or unsound practice&quot; its first statutory definition in U.S. banking law: conduct that deviates from generally accepted prudent operational standards and has either already caused, or could reasonably cause, material financial harm to an institution or significant risk to the Deposit Insurance Fund. Before this rule, the phrase carried no legal definition; examiners used that ambiguity from 2022 onward to classify bank relationships with cryptocurrency firms as categorically problematic — the mechanism the industry called &quot;Operation Chokepoint 2.0.&quot; Under the new framework, examiners may still issue supervisory observations about non-financial weaknesses, but corrective action authority is limited to findings tied to material financial risk or regulatory compliance. The rule takes effect 60 days after Federal Register publication.</content>
+  </entry>
   <entry>
     <title>Week 34 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-34/"/>
