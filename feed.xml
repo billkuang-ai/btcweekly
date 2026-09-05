@@ -6,7 +6,15 @@
   <link href="https://btcweekly.org/feed.xml" rel="self"/>
   <id>https://btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-08-29T00:00:00Z</updated>
+  <updated>2026-09-05T00:00:00Z</updated>
+  <entry>
+    <title>Week 36 (2026) · BTC Weekly</title>
+    <link href="https://btcweekly.org/2026/week-36/"/>
+    <id>https://btcweekly.org/2026/week-36/</id>
+    <updated>2026-09-05T00:00:00Z</updated>
+    <summary>Sberbank activated Bitcoin-backed lending the day Russia&#39;s national digital-asset framework took legal effect — with Ethereum and USDT held pending central bank approval.</summary>
+    <content type="html">President Vladimir Putin signed Russia&#39;s digital-asset law on August 4, 2026, effective September 1; the statute legalizes crypto assets as loan collateral and authorizes financial institutions to build regulated crypto-backed lending programs, while prohibiting digital assets from serving as payment for domestic goods or services. Sberbank — Russia&#39;s largest bank, projecting $46.4 billion in regulated crypto transaction volume in the framework&#39;s first year — announced on August 28, through deputy chairman Anatoly Popov speaking to TASS, that it would begin accepting Bitcoin as collateral on September 1. The bank had piloted the model in December 2025, issuing what it described as Russia&#39;s first crypto-backed corporate loan against Bitcoin held by AO Intelion Data, a mining operator. Ethereum and USDT are planned as additional collateral types, but require a separate Bank of Russia ruling permitting their public circulation — a ruling not issued as of September 1.</content>
+  </entry>
   <entry>
     <title>Week 35 (2026) · BTC Weekly</title>
     <link href="https://btcweekly.org/2026/week-35/"/>
