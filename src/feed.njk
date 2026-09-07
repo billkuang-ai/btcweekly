@@ -6,16 +6,16 @@ eleventyExcludeFromCollections: true
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>BTC Weekly</title>
   <subtitle>Weekly Bitcoin news digest — published every Saturday night.</subtitle>
-  <link href="https://btcweekly.org/" rel="alternate"/>
-  <link href="https://btcweekly.org/feed.xml" rel="self"/>
-  <id>https://btcweekly.org/</id>
+  <link href="{{ site.url }}/" rel="alternate"/>
+  <link href="{{ site.url }}/feed.xml" rel="self"/>
+  <id>{{ site.url }}/</id>
   <author><name>BTC Weekly</name></author>
   <updated>{{ collections.issues | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
   {%- for issue in collections.issues %}
   <entry>
     <title>{{ issue.data.title | escape }}</title>
-    <link href="https://btcweekly.org{{ issue.url }}"/>
-    <id>https://btcweekly.org{{ issue.url }}</id>
+    <link href="{{ site.url }}{{ issue.url }}"/>
+    <id>{{ site.url }}{{ issue.url }}</id>
     <updated>{{ issue.date | dateToRfc3339 }}</updated>
     <summary>{{ issue.data.stories[0].title | escape }}</summary>
     <content type="html">{{ issue.data.stories[0].summary | escape }}</content>

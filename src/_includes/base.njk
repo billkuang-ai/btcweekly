@@ -5,18 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>{{ title }}</title>
 <meta name="description" content="{{ (intro if intro else stories[0].summary) | truncate(160) }}">
-<link rel="canonical" href="https://btcweekly.org{{ page.url }}">
+<link rel="canonical" href="{{ site.url }}{{ page.url }}">
 <link rel="alternate" type="application/rss+xml" title="BTC Weekly" href="/feed.xml">
 <meta property="og:title" content="{{ title }}">
 <meta property="og:description" content="{{ (intro if intro else stories[0].summary) | truncate(200) }}">
-<meta property="og:url" content="https://btcweekly.org{{ page.url }}">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="BTC Weekly">
-<meta property="og:image" content="https://btcweekly.org/og.png">
+<meta property="og:image" content="{{ site.url }}/og.png">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="{{ title }}">
 <meta name="twitter:description" content="{{ (intro if intro else stories[0].summary) | truncate(200) }}">
-<meta name="twitter:image" content="https://btcweekly.org/og.png">
+<meta name="twitter:image" content="{{ site.url }}/og.png">
 <link rel="icon" type="image/png" href="/images/logo.png">
 <script type="application/ld+json">
 {
@@ -25,11 +25,11 @@
   "headline": "{{ title }}",
   "description": "{{ (intro if intro else stories[0].summary) | truncate(160) }}",
   "datePublished": "{{ page.date | dateToRfc3339 }}",
-  "url": "https://btcweekly.org{{ page.url }}",
+  "url": "{{ site.url }}{{ page.url }}",
   "publisher": {
     "@type": "Organization",
     "name": "BTC Weekly",
-    "url": "https://btcweekly.org/"
+    "url": "{{ site.url }}/"
   }
 }
 </script>
