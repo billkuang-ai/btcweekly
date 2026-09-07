@@ -1,148 +1,148 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>https://btcweekly.org/</loc>
+    <loc>https://www.btcweekly.org/</loc>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/archive/</loc>
+    <loc>https://www.btcweekly.org/archive/</loc>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/health/</loc>
+    <loc>https://www.btcweekly.org/health/</loc>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-36/</loc>
+    <loc>https://www.btcweekly.org/2026/week-36/</loc>
     <lastmod>2026-09-05T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-35/</loc>
+    <loc>https://www.btcweekly.org/2026/week-35/</loc>
     <lastmod>2026-08-29T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-34/</loc>
+    <loc>https://www.btcweekly.org/2026/week-34/</loc>
     <lastmod>2026-08-22T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-33/</loc>
+    <loc>https://www.btcweekly.org/2026/week-33/</loc>
     <lastmod>2026-08-15T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-32/</loc>
+    <loc>https://www.btcweekly.org/2026/week-32/</loc>
     <lastmod>2026-08-08T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-31/</loc>
+    <loc>https://www.btcweekly.org/2026/week-31/</loc>
     <lastmod>2026-08-01T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-30/</loc>
+    <loc>https://www.btcweekly.org/2026/week-30/</loc>
     <lastmod>2026-07-25T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-29/</loc>
+    <loc>https://www.btcweekly.org/2026/week-29/</loc>
     <lastmod>2026-07-18T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-28/</loc>
+    <loc>https://www.btcweekly.org/2026/week-28/</loc>
     <lastmod>2026-07-11T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-27/</loc>
+    <loc>https://www.btcweekly.org/2026/week-27/</loc>
     <lastmod>2026-07-04T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-26/</loc>
+    <loc>https://www.btcweekly.org/2026/week-26/</loc>
     <lastmod>2026-06-27T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-25/</loc>
+    <loc>https://www.btcweekly.org/2026/week-25/</loc>
     <lastmod>2026-06-20T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-24/</loc>
+    <loc>https://www.btcweekly.org/2026/week-24/</loc>
     <lastmod>2026-06-13T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-23/</loc>
+    <loc>https://www.btcweekly.org/2026/week-23/</loc>
     <lastmod>2026-06-06T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-22/</loc>
+    <loc>https://www.btcweekly.org/2026/week-22/</loc>
     <lastmod>2026-05-30T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-21/</loc>
+    <loc>https://www.btcweekly.org/2026/week-21/</loc>
     <lastmod>2026-05-23T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-20/</loc>
+    <loc>https://www.btcweekly.org/2026/week-20/</loc>
     <lastmod>2026-05-16T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-19/</loc>
+    <loc>https://www.btcweekly.org/2026/week-19/</loc>
     <lastmod>2026-05-09T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-18/</loc>
+    <loc>https://www.btcweekly.org/2026/week-18/</loc>
     <lastmod>2026-05-02T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-17/</loc>
+    <loc>https://www.btcweekly.org/2026/week-17/</loc>
     <lastmod>2026-04-25T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-16/</loc>
+    <loc>https://www.btcweekly.org/2026/week-16/</loc>
     <lastmod>2026-04-18T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://btcweekly.org/2026/week-15/</loc>
+    <loc>https://www.btcweekly.org/2026/week-15/</loc>
     <lastmod>2026-04-11T00:00:00Z</lastmod>
     <changefreq>never</changefreq>
     <priority>0.7</priority>

@@ -2,183 +2,183 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
   <title>BTC Weekly</title>
   <subtitle>Weekly Bitcoin news digest — published every Saturday night.</subtitle>
-  <link href="https://btcweekly.org/" rel="alternate"/>
-  <link href="https://btcweekly.org/feed.xml" rel="self"/>
-  <id>https://btcweekly.org/</id>
+  <link href="https://www.btcweekly.org/" rel="alternate"/>
+  <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
+  <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
   <updated>2026-09-05T00:00:00Z</updated>
   <entry>
     <title>Week 36 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-36/"/>
-    <id>https://btcweekly.org/2026/week-36/</id>
+    <link href="https://www.btcweekly.org/2026/week-36/"/>
+    <id>https://www.btcweekly.org/2026/week-36/</id>
     <updated>2026-09-05T00:00:00Z</updated>
     <summary>Sberbank activated Bitcoin-backed lending the day Russia&#39;s national digital-asset framework took legal effect — with Ethereum and USDT held pending central bank approval.</summary>
     <content type="html">President Vladimir Putin signed Russia&#39;s digital-asset law on August 4, 2026, effective September 1; the statute legalizes crypto assets as loan collateral and authorizes financial institutions to build regulated crypto-backed lending programs, while prohibiting digital assets from serving as payment for domestic goods or services. Sberbank — Russia&#39;s largest bank, projecting $46.4 billion in regulated crypto transaction volume in the framework&#39;s first year — announced on August 28, through deputy chairman Anatoly Popov speaking to TASS, that it would begin accepting Bitcoin as collateral on September 1. The bank had piloted the model in December 2025, issuing what it described as Russia&#39;s first crypto-backed corporate loan against Bitcoin held by AO Intelion Data, a mining operator. Ethereum and USDT are planned as additional collateral types, but require a separate Bank of Russia ruling permitting their public circulation — a ruling not issued as of September 1.</content>
   </entry>
   <entry>
     <title>Week 35 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-35/"/>
-    <id>https://btcweekly.org/2026/week-35/</id>
+    <link href="https://www.btcweekly.org/2026/week-35/"/>
+    <id>https://www.btcweekly.org/2026/week-35/</id>
     <updated>2026-08-29T00:00:00Z</updated>
     <summary>Banking Regulators Formally Defined &#39;Unsafe or Unsound Practice&#39; — Ending the Examiner Latitude That Enabled Crypto Debanking</summary>
     <content type="html">On August 27, the Office of the Comptroller of the Currency and the Federal Deposit Insurance Corporation jointly published a final rule giving &quot;unsafe or unsound practice&quot; its first statutory definition in U.S. banking law: conduct that deviates from generally accepted prudent operational standards and has either already caused, or could reasonably cause, material financial harm to an institution or significant risk to the Deposit Insurance Fund. Before this rule, the phrase carried no legal definition; examiners used that ambiguity from 2022 onward to classify bank relationships with cryptocurrency firms as categorically problematic — the mechanism the industry called &quot;Operation Chokepoint 2.0.&quot; Under the new framework, examiners may still issue supervisory observations about non-financial weaknesses, but corrective action authority is limited to findings tied to material financial risk or regulatory compliance. The rule takes effect 60 days after Federal Register publication.</content>
   </entry>
   <entry>
     <title>Week 34 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-34/"/>
-    <id>https://btcweekly.org/2026/week-34/</id>
+    <link href="https://www.btcweekly.org/2026/week-34/"/>
+    <id>https://www.btcweekly.org/2026/week-34/</id>
     <updated>2026-08-22T00:00:00Z</updated>
     <summary>A Nasdaq-Listed Insurer Closed a Capital Raise Settled Entirely in Bitcoin — No Fiat Involved</summary>
     <content type="html">On August 17, Zhibao Technology (Nasdaq: ZBAO) — a Shanghai-based digital insurance broker — closed a $154.7 million private placement in which investors delivered 2,380 BTC directly to a company-designated wallet at a $65,000 reference price; the total consideration was paid entirely in Bitcoin under Regulation S, with no fiat conversion at any step. The offering issued 442 million units at $0.35 each, with each unit comprising one Class A ordinary share and a two-year warrant exercisable at $0.35. At closing, the CEO, CFO, and four of the five sitting directors resigned and were replaced by investor appointees — a complete governance reset executed simultaneously with the capital raise. Zhibao enters the corporate Bitcoin holder ranking at 33rd globally, surpassing Core Scientific and Cipher Digital with 2,380 BTC on its balance sheet.</content>
   </entry>
   <entry>
     <title>Week 33 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-33/"/>
-    <id>https://btcweekly.org/2026/week-33/</id>
+    <link href="https://www.btcweekly.org/2026/week-33/"/>
+    <id>https://www.btcweekly.org/2026/week-33/</id>
     <updated>2026-08-15T00:00:00Z</updated>
     <summary>With Congress Stalled, the SEC Built Its Own Crypto Rulemaking</summary>
     <content type="html">On August 14, the SEC&#39;s three-member commission — Chair Paul Atkins, Commissioner Hester Peirce, and Commissioner Mark Uyeda — voted unanimously to advance for public comment a proposed rule titled &quot;Regulation Crypto Assets,&quot; the agency&#39;s first formal rulemaking designed for digital asset offerings. The 400-page document creates a tiered capital-raise exemption: a $5 million startup tier and a $75 million fundraising ceiling, both operating outside the standard securities registration process that currently applies to most token issuances. A safe harbor provision would let projects exit SEC jurisdiction entirely once their networks achieve genuine decentralization — no central team actively managing outcomes — with a defined legal off-ramp rather than an ambiguous one. The comment period expected to run two to three months sets a revised final rule no earlier than 2027. The vote came days after the Senate adjourned without passing the CLARITY Act, with prediction markets pricing the bill&#39;s 2026 passage at 20%.</content>
   </entry>
   <entry>
     <title>Week 32 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-32/"/>
-    <id>https://btcweekly.org/2026/week-32/</id>
+    <link href="https://www.btcweekly.org/2026/week-32/"/>
+    <id>https://www.btcweekly.org/2026/week-32/</id>
     <updated>2026-08-08T00:00:00Z</updated>
     <summary>CME Froze the First SEC-Approved Bitcoin Index Options — and Put the Bitcoin Commodity Question Back Before the Commission</summary>
     <content type="html">The SEC granted CME Group&#39;s petition to review its conditional May 2026 approval of Nasdaq PHLX&#39;s cash-settled Bitcoin index options, publishing the order in the Federal Register on August 3 and setting August 24 as the deadline for public comment; the original approval is automatically stayed, freezing the product&#39;s launch indefinitely. CME argues Bitcoin is a non-security commodity under exclusive CFTC jurisdiction and that allowing a securities exchange to list direct Bitcoin index options would displace the CFTC-regulated Bitcoin derivatives market where CME holds dominant volume through its own Bitcoin futures and micro-futures contracts. Nasdaq&#39;s QBTC tracks the CME CF Bitcoin Real-Time Index — meaning CME&#39;s own index underlies the product CME moved to block. The review will test whether the SEC can clear Bitcoin-linked products at all when a CFTC-regulated exchange holds a jurisdictional counterclaim, a question the CLARITY Act would resolve by statute but that stalled in the Senate before its August recess.</content>
   </entry>
   <entry>
     <title>Week 31 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-31/"/>
-    <id>https://btcweekly.org/2026/week-31/</id>
+    <link href="https://www.btcweekly.org/2026/week-31/"/>
+    <id>https://www.btcweekly.org/2026/week-31/</id>
     <updated>2026-08-01T00:00:00Z</updated>
     <summary>Senate Set the CLARITY Act Aside Before Its August Break — and 2026 Passage Odds Fell to 27%</summary>
     <content type="html">Senate Majority Leader John Thune told reporters on July 23 that the chamber&#39;s pre-recess schedule — consumed by a Russia sanctions package dedicated to the memory of the late Sen. Lindsey Graham and a backlog of federal nominations — left no viable floor window for the CLARITY Act&#39;s required sequence of debate, amendments, and a 60-vote cloture vote before lawmakers scatter on August 7. The bill cleared the House 294–134 in 2025 and the Senate Banking Committee 15–9 in May 2026, but Democrats have continued to condition their seven to nine needed votes on changes to how the bill designates DOJ as the primary enforcement authority — a sticking point distinct from the ethics provisions barring federal officials from issuing digital assets that drew attention during the bill&#39;s July 22 revision. Polymarket prediction markets placed the bill&#39;s 2026 passage odds at 27% on Friday, down from a February peak of 82%; Galaxy Digital analyst Alex Thorn independently estimated the probability at 30%. The Senate returns from recess around September 8.</content>
   </entry>
   <entry>
     <title>Week 30 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-30/"/>
-    <id>https://btcweekly.org/2026/week-30/</id>
+    <link href="https://www.btcweekly.org/2026/week-30/"/>
+    <id>https://www.btcweekly.org/2026/week-30/</id>
     <updated>2026-07-25T00:00:00Z</updated>
     <summary>Senate Republicans Banned Federal Officials from Issuing Crypto to Unlock Democratic Votes on the CLARITY Act</summary>
     <content type="html">Violations would carry daily penalties up to $250,000, enforceable by the Department of Justice, under a revised Digital Asset Market Clarity Act released July 22 by lead sponsor Sen. Cynthia Lummis (R-WY). The prohibition covers the President, Vice President, members of Congress, federal judges, and their immediate family members — barring them from issuing or sponsoring digital assets for pay while in office — with the provision set to expire on January 20, 2029. The revision also added a law enforcement section with investigative funding and stablecoin seizure powers; developer protections, the stablecoin yield compromise, and bankruptcy safeguards for customer assets carried over unchanged from prior drafts. The bill passed the House 294–134 in July 2025 and the Senate Banking Committee 15–9 in May 2026, but must still clear a 60-vote Senate filibuster threshold, requiring seven to nine Democratic votes; Democrats have said the DOJ enforcement designation — not the ethics language itself — is their remaining sticking point. Fewer than three weeks remain before the Senate scatters for its state work period on August 10.</content>
   </entry>
   <entry>
     <title>Week 29 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-29/"/>
-    <id>https://btcweekly.org/2026/week-29/</id>
+    <link href="https://www.btcweekly.org/2026/week-29/"/>
+    <id>https://www.btcweekly.org/2026/week-29/</id>
     <updated>2026-07-18T00:00:00Z</updated>
     <summary>E*TRADE Opened Spot Bitcoin Trading to Nine Million Clients — With Custody Held Outside Morgan Stanley</summary>
     <content type="html">Trades carry a 50-basis-point fee and route through a Zero Hash-held account in the client&#39;s own name — entirely outside Morgan Stanley&#39;s broker-dealer entities and without FDIC or SIPC coverage. Morgan Stanley first disclosed the Zero Hash arrangement in September 2025, completing the build-out in under ten months. Bitcoin, Ethereum, and Solana are supported at launch. Transfer functionality to move crypto assets in or out of the Zero Hash account is expected in a later 2026 update; a portfolio integration displays crypto alongside equities in a single interface across E*TRADE&#39;s approximately nine million accounts.</content>
   </entry>
   <entry>
     <title>Week 28 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-28/"/>
-    <id>https://btcweekly.org/2026/week-28/</id>
+    <link href="https://www.btcweekly.org/2026/week-28/"/>
+    <id>https://www.btcweekly.org/2026/week-28/</id>
     <updated>2026-07-11T00:00:00Z</updated>
     <summary>Circle Crossed Into the Regulated Banking System — Securing a National Trust Bank Charter Under Direct OCC Supervision</summary>
     <content type="html">The Office of the Comptroller of the Currency granted final approval on July 10 to establish First National Digital Currency Bank, N.A., a national trust bank that will operate under the name Circle National Trust. Circle submitted its charter application on June 30, 2025, received conditional OCC approval in December 2025, and completed the full licensing process in just over twelve months. The bank will initially provide fiduciary digital asset custody services for Circle and its affiliates; the OCC-approved business plan provides for future expansion into institutional custody for a limited class of customers — including banks and regulated derivatives organizations — with USDC reserve management listed as a planned future capability. Circle shares rose 11 percent in premarket trading on the announcement.</content>
   </entry>
   <entry>
     <title>Week 27 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-27/"/>
-    <id>https://btcweekly.org/2026/week-27/</id>
+    <link href="https://www.btcweekly.org/2026/week-27/"/>
+    <id>https://www.btcweekly.org/2026/week-27/</id>
     <updated>2026-07-04T00:00:00Z</updated>
     <summary>California&#39;s Crypto Licensing Mandate Is Now Live — Unlicensed Firms Face Up to $100,000 per Day</summary>
     <content type="html">California&#39;s Digital Financial Assets Law entered into force on July 1, requiring every cryptocurrency exchange, custodian, stablecoin issuer, and Bitcoin ATM operator serving state residents — wherever the firm is located — to hold a valid license from the California Department of Financial Protection and Innovation, or to have filed a complete application by that date. The statute, signed by Governor Newsom in October 2023 and delayed once from its original July 2025 effective date by AB 1934, extends to any entity engaged in digital financial asset business activity with a California resident regardless of the firm&#39;s home jurisdiction. Minimum tangible net worth starts at $100,000 and surety bond requirements at $500,000, with both subject to upward adjustment based on activity volume and asset mix. Unlicensed operators now face civil penalties of up to $100,000 per calendar day.</content>
   </entry>
   <entry>
     <title>Week 26 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-26/"/>
-    <id>https://btcweekly.org/2026/week-26/</id>
+    <link href="https://www.btcweekly.org/2026/week-26/"/>
+    <id>https://www.btcweekly.org/2026/week-26/</id>
     <updated>2026-06-27T00:00:00Z</updated>
     <summary>Congress passed a four-year ban on a Federal Reserve digital dollar, clearing both chambers with veto-proof margins — then the White House canceled the signing ceremony.</summary>
     <content type="html">The 21st Century ROAD to Housing Act passed the Senate 85–5 on June 22 and the House 358–32 on June 24, embedding a provision that bars the Federal Reserve from issuing a retail central bank digital currency, directly or through any intermediary, through December 31, 2030. Both margins are veto-proof. The Federal Reserve had already withdrawn its CBDC supervisory guidance in April 2025 and carries no active retail CBDC program, meaning the legislation codifies an existing policy absence rather than reversing a planned launch. President Trump canceled the White House signing ceremony roughly an hour before its scheduled start, posting on Truth Social that he would not sign until Congress separately passes the SAVE America Act — a voter-ID bill the Senate has already rejected twice. Under the Constitution, a bill presented to the president becomes law automatically after 10 days if he neither signs nor vetoes it, provided Congress remains in session; with August recess still weeks away, the CBDC ban appears headed for enactment without a ceremony.</content>
   </entry>
   <entry>
     <title>Week 25 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-25/"/>
-    <id>https://btcweekly.org/2026/week-25/</id>
+    <link href="https://www.btcweekly.org/2026/week-25/"/>
+    <id>https://www.btcweekly.org/2026/week-25/</id>
     <updated>2026-06-20T00:00:00Z</updated>
     <summary>CME sued the CFTC to void its Bitcoin perpetual futures approvals — the first federal challenge to the regulator&#39;s authority to bring Bitcoin perps to U.S. exchanges</summary>
     <content type="html">On June 18, CME Group filed a complaint in U.S. District Court for the District of Columbia to void two CFTC approvals: the May 29 order authorizing Kalshi to list BTCPERP, a Bitcoin perpetual futures contract, and a companion policy statement that permitted Coinbase Financial Markets to route domestic customers into offshore perpetual books under Futures Commission Merchant supervision. CME argues that perpetual futures — contracts with no expiration date that use funding-rate mechanics to track spot prices — qualify as swaps under the 2010 Dodd-Frank Act, which would subject them to separate clearing, reporting, and trading-venue requirements the CFTC did not apply. Kalshi&#39;s BTCPERP accumulated more than $3 billion in volume during beta testing. CEO Terrence Duffy, who said CME had spent eight months building the case, called the approvals &quot;a disaster waiting to happen.&quot; CFTC Chair Michael Selig, who championed both decisions as a way to bring offshore perpetuals under domestic oversight, called the suit &quot;frivolous.&quot;</content>
   </entry>
   <entry>
     <title>Week 24 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-24/"/>
-    <id>https://btcweekly.org/2026/week-24/</id>
+    <link href="https://www.btcweekly.org/2026/week-24/"/>
+    <id>https://www.btcweekly.org/2026/week-24/</id>
     <updated>2026-06-13T00:00:00Z</updated>
     <summary>Coinbase won CFTC clearance to route US customers into Deribit&#39;s global Bitcoin perpetuals — the first approval of its kind for a US exchange</summary>
     <content type="html">On June 11, the CFTC issued a no-action clearance to Coinbase Financial Markets, the exchange&#39;s US broker-dealer arm, to intermediate domestic customers into Deribit&#39;s global perpetual futures order book under Futures Commission Merchant (FCM) supervision — the first such approval for a US exchange. Deribit is the offshore derivatives platform Coinbase acquired in May 2025; the clearance extends to any digital commodity perpetual contract currently listed there, covering Bitcoin, Ethereum, Solana, and other tokens with no expiration dates and funding-rate mechanics that previously required offshore access. US traders could previously reach Deribit&#39;s products only through foreign accounts or VPNs, both carrying regulatory and compliance exposure. The FCM approval came two days after Kalshi&#39;s domestically listed BTCPERP contract crossed $1 billion in cumulative trading volume on June 9 — exactly one week after its June 3 launch — a milestone Kalshi&#39;s original prediction-market business required 40 months to reach.</content>
   </entry>
   <entry>
     <title>Week 23 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-23/"/>
-    <id>https://btcweekly.org/2026/week-23/</id>
+    <link href="https://www.btcweekly.org/2026/week-23/"/>
+    <id>https://www.btcweekly.org/2026/week-23/</id>
     <updated>2026-06-06T00:00:00Z</updated>
     <summary>Three Federal Banking Regulators Scrubbed &#39;Reputation Risk&#39; From 27 Years of Interagency Guidance — Eliminating the Last Supervisory Hook for Crypto Debanking</summary>
     <content type="html">On June 2, the Federal Reserve, OCC, and FDIC jointly reissued 15 interagency guidance documents — spanning a 1997 statement on loan participations through 2024 elder financial exploitation guidance — with all references to &quot;reputation risk&quot; removed. The action followed a joint FDIC-OCC final rule, adopted in April and formally effective June 6, that prohibits either agency from making examination findings based on reputation risk. The agencies stated the concept &quot;could be misused as a basis to restrict individuals&#39; and legal businesses&#39; access to financial services due to their constitutionally protected political or religious beliefs, speech, or conduct or lawful business activities.&quot; An OCC report published earlier this year found the nine largest U.S. banks used reputation risk to close at least 30 crypto-firm accounts between 2020 and 2023. With the final rule in force and all legacy interagency guidance now reissued, bank examiners have no remaining supervisory text supporting crypto account restrictions on reputational grounds — decisions must rest on documented credit, market, liquidity, or BSA/AML risk.</content>
   </entry>
   <entry>
     <title>Week 22 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-22/"/>
-    <id>https://btcweekly.org/2026/week-22/</id>
+    <link href="https://www.btcweekly.org/2026/week-22/"/>
+    <id>https://www.btcweekly.org/2026/week-22/</id>
     <updated>2026-05-30T00:00:00Z</updated>
     <summary>Perpetual Bitcoin Futures Are Now Legal on a Regulated U.S. Exchange — a Derivative That Has Only Existed Offshore</summary>
     <content type="html">On May 29, the CFTC approved KalshiEX&#39;s BTCPERP contract under Section 5c(c)(4) of the Commodity Exchange Act, making KalshiEX the first designated contract market in the United States to list a perpetual futures product referencing Bitcoin&#39;s spot price. The contract trades in units of one ten-thousandth of a bitcoin, settles in cash, runs 24 hours a day seven days a week, and carries no expiration date — the structural feature that distinguishes perpetuals from quarterly futures and has made them the dominant derivative instrument on offshore venues. The Commission determined BTCPERP complies with all applicable Core Principles for designated contract markets; CFTC Chairman Mike Selig called the approval a &quot;major step forward&quot; for U.S. crypto policy. Perpetual futures have accounted for the majority of Bitcoin&#39;s global trading volume for years but operated exclusively on offshore, largely unregulated exchanges — leaving U.S. participants without regulated domestic access. Kalshi stated its intention to expand crypto perpetuals to more than a dozen digital currencies, subject to further regulatory review.</content>
   </entry>
   <entry>
     <title>Week 21 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-21/"/>
-    <id>https://btcweekly.org/2026/week-21/</id>
+    <link href="https://www.btcweekly.org/2026/week-21/"/>
+    <id>https://www.btcweekly.org/2026/week-21/</id>
     <updated>2026-05-23T00:00:00Z</updated>
     <summary>Trump Orders the Fed to Evaluate Whether Crypto Firms Can Access U.S. Payment Rails Directly</summary>
     <content type="html">The order, signed May 19 and titled &quot;Integrating Financial Technology Innovation into Regulatory Frameworks,&quot; gives the Federal Reserve 120 days to assess whether non-bank fintechs — stablecoin issuers, crypto exchanges, and blockchain payment processors — qualify for direct access to Federal Reserve payment accounts and services. Six additional federal financial regulators, including the SEC and CFTC, face a parallel 180-day mandate to identify rules that unfairly restrict non-bank entities from accessing the banking system. The Fed must publish application procedures for payment account access and, where existing authority permits, deliver decisions within 90 days of an application. Following the review periods, agencies have six months to take concrete implementation steps. The order explicitly frames restrictive access standards as advantages that protect incumbent banks at the expense of innovation.</content>
   </entry>
   <entry>
     <title>Week 20 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-20/"/>
-    <id>https://btcweekly.org/2026/week-20/</id>
+    <link href="https://www.btcweekly.org/2026/week-20/"/>
+    <id>https://www.btcweekly.org/2026/week-20/</id>
     <updated>2026-05-16T00:00:00Z</updated>
     <summary>Senate Banking Committee Advanced the CLARITY Act on a 15–9 Vote — the First Comprehensive Crypto Market Structure Bill to Clear a Major Committee</summary>
     <content type="html">The Digital Asset Market Clarity Act of 2025 assigns the CFTC as primary regulator for most digital commodities while preserving SEC jurisdiction over digital securities — the first statutory framework to draw that boundary in U.S. law. Two Democrats — Ruben Gallego of Arizona and Angela Alsobrooks of Maryland — joined all Republicans on the panel in voting for the bill. The legislation now moves to a floor merge with a parallel version approved by the Senate Agriculture Committee before a full Senate vote; no floor date has been scheduled. More than 100 amendments are pending — including over 40 filed by Senator Elizabeth Warren — with debates centering on stablecoin yield restrictions and ethics language governing elected officials&#39; crypto holdings.</content>
   </entry>
   <entry>
     <title>Week 19 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-19/"/>
-    <id>https://btcweekly.org/2026/week-19/</id>
+    <link href="https://www.btcweekly.org/2026/week-19/"/>
+    <id>https://www.btcweekly.org/2026/week-19/</id>
     <updated>2026-05-09T00:00:00Z</updated>
     <summary>Strategy said it could sell Bitcoin when advantageous — Saylor&#39;s follow-up set the floor at &#39;never a net seller&#39;</summary>
     <content type="html">The May 5 earnings call put a new lever on the table: Bitcoin sales are an option when accretive to Bitcoin per share, framed as a capital allocation tool rather than a policy reversal. Strategy posted a $12.54 billion first-quarter net loss. The company held 818,334 BTC at an average cost of $75,537 per coin, against roughly $1.5 billion in annual preferred stock obligations. In a subsequent interview, Saylor clarified that any sales would represent a small fraction of ongoing purchases — enough to remain a net accumulator every month — and that selling high-basis coins could unlock billions of dollars in embedded tax credits before proceeds are redeployed into new Bitcoin. The floor, he said, is that Strategy will &quot;never be a net seller of Bitcoin,&quot; with purchases expected to outpace sales by a wide margin in every period going forward.</content>
   </entry>
   <entry>
     <title>Week 18 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-18/"/>
-    <id>https://btcweekly.org/2026/week-18/</id>
+    <link href="https://www.btcweekly.org/2026/week-18/"/>
+    <id>https://www.btcweekly.org/2026/week-18/</id>
     <updated>2026-05-02T00:00:00Z</updated>
     <summary>Senators Tillis and Alsobrooks struck a stablecoin yield deal on May 1 — clearing the Clarity Act&#39;s last obstacle and scheduling a Senate Banking markup for the week of May 11.</summary>
     <content type="html">After months of impasse, Senators Thom Tillis and Angela Alsobrooks released compromise language on May 1 resolving the stablecoin yield dispute that had stalled the Clarity Act since its missed April markup deadline. The deal bans yield equivalent to bank deposit interest — the provision the banking lobby required — while explicitly permitting activity-based rewards tied to actual platform usage, the floor the crypto industry demanded. By May 2, Coinbase, Circle, and the Crypto Council for Innovation had all publicly endorsed the compromise, and the Senate Banking Committee announced a markup target for the week of May 11 — the last available slot before the Memorial Day recess closes the chamber on May 21. For Bitcoin specifically, the bill&#39;s defining provision classifies BTC as a CFTC-regulated digital commodity, providing the permanent legislative certainty that has kept some institutional custodians cautious about offering direct Bitcoin exposure. Four steps remain between the markup and a presidential signature: a 60-vote Senate floor threshold, reconciliation between Senate Agriculture and Banking Committee versions, reconciliation with the House-passed text from July 2025, and the president&#39;s signature.</content>
   </entry>
   <entry>
     <title>Week 17 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-17/"/>
-    <id>https://btcweekly.org/2026/week-17/</id>
+    <link href="https://www.btcweekly.org/2026/week-17/"/>
+    <id>https://www.btcweekly.org/2026/week-17/</id>
     <updated>2026-04-25T00:00:00Z</updated>
     <summary>Strategy bought 34,164 BTC for $2.54 billion — making it the largest institutional Bitcoin holder on earth.</summary>
     <content type="html">On April 20, Strategy disclosed the purchase of 34,164 BTC at an average of $74,395 per coin, totaling $2.54 billion — the firm&#39;s largest single acquisition since its November 2024 buying spree. The purchase pushed Strategy&#39;s total holdings to 815,061 BTC, surpassing BlackRock&#39;s iShares Bitcoin Trust, which held 806,700 BTC as of April 23, and making Strategy the single largest institutional holder of Bitcoin on earth. Executive Chairman Michael Saylor signaled the buy a day earlier with his customary on-chain chart post on X, which markets have long treated as a reliable accumulation signal — and which proved correct. The acquisition was funded through Strategy&#39;s STRC preferred stock program, which continues to provide the firm capital access without requiring asset sales. At 815,061 BTC, Strategy now holds approximately 3.9% of the 21 million coin hard cap, and analysts tracking the firm&#39;s acquisition pace project it will cross one million BTC by November 2026 if the current run rate holds.</content>
   </entry>
   <entry>
     <title>Week 16 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-16/"/>
-    <id>https://btcweekly.org/2026/week-16/</id>
+    <link href="https://www.btcweekly.org/2026/week-16/"/>
+    <id>https://www.btcweekly.org/2026/week-16/</id>
     <updated>2026-04-18T00:00:00Z</updated>
     <summary>MSBT cleared $100 million in assets in its first week — making it Morgan Stanley&#39;s strongest ETF launch on record.</summary>
     <content type="html">MSBT crossed $100 million in assets under management by April 16 — day six of trading — a first-week milestone that Bloomberg ETF analysts rank among the top-tier performances in ETF history regardless of asset class. Morgan Stanley Investment Management rang the NYSE closing bell that afternoon, with the exchange citing the moment as the first spot Bitcoin ETF from a major U.S. bank to clear that threshold in under a week. Week-one capital flows broke down as roughly $19.3 million in mid-week sessions after the $34 million first-day spike moderated as initial positioning demand settled. What the headline figure obscures is the distribution story still in early stages: most of the $6.2 trillion overseen by Morgan Stanley&#39;s 16,000 financial advisors involves clients who require advisor-initiated conversations before allocating — a process that typically takes weeks to convert to orders.</content>
   </entry>
   <entry>
     <title>Week 15 (2026) · BTC Weekly</title>
-    <link href="https://btcweekly.org/2026/week-15/"/>
-    <id>https://btcweekly.org/2026/week-15/</id>
+    <link href="https://www.btcweekly.org/2026/week-15/"/>
+    <id>https://www.btcweekly.org/2026/week-15/</id>
     <updated>2026-04-11T00:00:00Z</updated>
     <summary>Morgan Stanley launched the first spot Bitcoin ETF issued directly by a major U.S. bank — undercutting every existing product on price.</summary>
     <content type="html">MSBT launched April 8 at a 0.14% sponsor fee — undercutting BlackRock&#39;s iShares Bitcoin Trust (IBIT) at 0.25%, the market&#39;s dominant product, marking the first direct fee-based competition from a bank-issued instrument since spot ETFs launched in January 2024. Coinbase and BNY provide custody, with BNY also serving as administrator and transfer agent. First-day trading cleared $34 million in volume, which Bloomberg Senior ETF Analyst Eric Balchunas placed in the top 1% of all ETF launches on record. The distribution advantage is structural: Morgan Stanley&#39;s 16,000 financial advisors oversee $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle.</content>
