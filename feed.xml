@@ -6,7 +6,15 @@
   <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
   <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-09-05T00:00:00Z</updated>
+  <updated>2026-09-12T00:00:00Z</updated>
+  <entry>
+    <title>Week 37 (2026) · BTC Weekly</title>
+    <link href="https://www.btcweekly.org/2026/week-37/"/>
+    <id>https://www.btcweekly.org/2026/week-37/</id>
+    <updated>2026-09-12T00:00:00Z</updated>
+    <summary>Block filed for an OCC national trust bank charter — putting Cash App&#39;s Bitcoin custody infrastructure in line for a single federal supervisor to replace its patchwork of state licenses.</summary>
+    <content type="html">Builders Bank &amp; Trust, N.A., disclosed September 8, would operate as an uninsured national trust bank: no deposits, no loans, custody and fiduciary services only for Bitcoin, stablecoins, and related digital assets. Cash App processed $10.7 billion in Bitcoin volume in 2025 and served two million active crypto users per month through the second quarter of 2026; the OCC application would fold more than 50 state custody licenses into one federal charter. The OCC received 40 new-bank applications in the 18 months preceding August 2026, of which 23 involved digital-asset activities — parallel applications from Ripple, Circle, and BitGo are already in queue. A former Northern Trust and BNY Mellon executive was named Builders Bank&#39;s first president and CEO.</content>
+  </entry>
   <entry>
     <title>Week 36 (2026) · BTC Weekly</title>
     <link href="https://www.btcweekly.org/2026/week-36/"/>
