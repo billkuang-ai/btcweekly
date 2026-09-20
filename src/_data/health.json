@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-09-19T04:48:05.965Z",
-  "date": "2026-09-19",
-  "composite": 53.4,
+  "generatedAt": "2026-09-20T05:05:25.266Z",
+  "date": "2026-09-20",
+  "composite": 51,
   "label": "Mixed",
   "subScores": {
-    "networkHealth": 69.6,
+    "networkHealth": 48,
     "demandStack": 39,
     "holderConviction": 62,
-    "marketStructure": 53.5,
+    "marketStructure": 63.5,
     "macroSentiment": 46.4
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 939.5164182151711,
-      "ma30EH": 923.2716878337568,
-      "ma90EH": 918.114789676915,
-      "ratio": 1.005616833771577,
+      "currentEH": 926.3181665786198,
+      "ma30EH": 923.7164407997462,
+      "ma90EH": 918.1073783731714,
+      "ratio": 1.0061093751762606,
       "score": 68
     },
     "difficulty": {
-      "estimatedChange": 3.979821600185973,
-      "previousChange": 1.3065347465004749,
-      "progressPercent": 99.05753968253968,
-      "score": 72
+      "estimatedChange": -5.706732563305483,
+      "previousChange": 4.163398081310405,
+      "progressPercent": 5.704365079365079,
+      "score": 18
     },
     "strc": {
       "price": 98.51,
@@ -33,14 +33,14 @@
       "score": 60
     },
     "mnav": {
-      "value": 0.8957548068470501,
+      "value": 0.901725762903138,
       "mstrPrice": 153.92,
-      "btcPrice": 80946,
+      "btcPrice": 80410,
       "btcHeld": 605000,
       "score": 25
     },
     "mvrv": {
-      "value": 1.5201481085097208,
+      "value": 1.5256646293015779,
       "score": 62
     },
     "funding": {
@@ -49,10 +49,10 @@
       "score": 55
     },
     "stablecoins": {
-      "totalUSD": 262516883218.80276,
-      "prevWeekUSD": 262653778516.92038,
-      "delta7dPct": -0.05212005663523925,
-      "score": 52
+      "totalUSD": 263458176355.49884,
+      "prevWeekUSD": 262640266290.62817,
+      "delta7dPct": 0.31141838089883633,
+      "score": 72
     },
     "fearGreed": {
       "value": 71,
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 80946,
-    "change24h": 4.65334476233163
+    "price": 80410,
+    "change24h": -0.7698511924880188
   }
 }
