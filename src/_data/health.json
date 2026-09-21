@@ -1,28 +1,28 @@
 {
-  "generatedAt": "2026-09-20T05:05:25.266Z",
-  "date": "2026-09-20",
-  "composite": 51,
+  "generatedAt": "2026-09-21T05:10:22.250Z",
+  "date": "2026-09-21",
+  "composite": 50.2,
   "label": "Mixed",
   "subScores": {
-    "networkHealth": 48,
+    "networkHealth": 53.6,
     "demandStack": 39,
     "holderConviction": 62,
-    "marketStructure": 63.5,
+    "marketStructure": 53.5,
     "macroSentiment": 46.4
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 926.3181665786198,
-      "ma30EH": 923.7164407997462,
-      "ma90EH": 918.1073783731714,
-      "ratio": 1.0061093751762606,
+      "currentEH": 938.6011947483597,
+      "ma30EH": 928.7980060715971,
+      "ma90EH": 918.6144195567229,
+      "ratio": 1.0110858117378436,
       "score": 68
     },
     "difficulty": {
-      "estimatedChange": -5.706732563305483,
+      "estimatedChange": -2.5330464507197004,
       "previousChange": 4.163398081310405,
-      "progressPercent": 5.704365079365079,
-      "score": 18
+      "progressPercent": 13.045634920634921,
+      "score": 32
     },
     "strc": {
       "price": 98.51,
@@ -33,14 +33,14 @@
       "score": 60
     },
     "mnav": {
-      "value": 0.901725762903138,
+      "value": 0.8917338194714285,
       "mstrPrice": 153.92,
-      "btcPrice": 80410,
+      "btcPrice": 81311,
       "btcHeld": 605000,
       "score": 25
     },
     "mvrv": {
-      "value": 1.5256646293015779,
+      "value": 1.5241896654514715,
       "score": 62
     },
     "funding": {
@@ -49,13 +49,13 @@
       "score": 55
     },
     "stablecoins": {
-      "totalUSD": 263458176355.49884,
-      "prevWeekUSD": 262640266290.62817,
-      "delta7dPct": 0.31141838089883633,
-      "score": 72
+      "totalUSD": 262544939344.38715,
+      "prevWeekUSD": 262457440282.00937,
+      "delta7dPct": 0.033338381370998565,
+      "score": 52
     },
     "fearGreed": {
-      "value": 71,
+      "value": 70,
       "label": "Greed",
       "score": 32
     },
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 80410,
-    "change24h": -0.7698511924880188
+    "price": 81311,
+    "change24h": 1.0350904202310376
   }
 }
