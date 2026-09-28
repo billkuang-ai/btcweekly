@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-27T05:28:57.902Z",
-  "date": "2026-09-27",
+  "generatedAt": "2026-09-28T05:37:49.724Z",
+  "date": "2026-09-28",
   "composite": 54.1,
   "label": "Mixed",
   "subScores": {
@@ -12,16 +12,16 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 929.5170249260469,
-      "ma30EH": 934.3286044372389,
-      "ma90EH": 913.8014354770417,
-      "ratio": 1.0224634895101485,
+      "currentEH": 947.0679708093874,
+      "ma30EH": 938.4861752700922,
+      "ma90EH": 915.0358447062706,
+      "ratio": 1.0256277726162184,
       "score": 80
     },
     "difficulty": {
-      "estimatedChange": -3.3260847356207823,
+      "estimatedChange": -1.3111883583465822,
       "previousChange": 4.163398081310405,
-      "progressPercent": 54.712301587301596,
+      "progressPercent": 62.94642857142857,
       "score": 32
     },
     "strc": {
@@ -33,29 +33,29 @@
       "score": 60
     },
     "mnav": {
-      "value": 0.885483615051156,
+      "value": 0.9010528863029901,
       "mstrPrice": 158.61,
-      "btcPrice": 84380,
+      "btcPrice": 82922,
       "btcHeld": 605000,
       "score": 25
     },
     "mvrv": {
-      "value": 1.5762645647355817,
+      "value": 1.5761995497530066,
       "score": 62
     },
     "funding": {
-      "rate8h": 0.0000022963493143,
-      "annualizedPct": 0.25145024991584997,
+      "rate8h": 0.0000072905083999,
+      "annualizedPct": 0.7983106697890501,
       "score": 72
     },
     "stablecoins": {
-      "totalUSD": 263934980307.87857,
-      "prevWeekUSD": 262460085145.33054,
-      "delta7dPct": 0.5619502720695032,
+      "totalUSD": 263883597378.54544,
+      "prevWeekUSD": 262542294129.4776,
+      "delta7dPct": 0.510890351406144,
       "score": 72
     },
     "fearGreed": {
-      "value": 70,
+      "value": 74,
       "label": "Greed",
       "score": 32
     },
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 84380,
-    "change24h": 0.5241955563653541
+    "price": 82922,
+    "change24h": -1.9407545418503949
   }
 }
