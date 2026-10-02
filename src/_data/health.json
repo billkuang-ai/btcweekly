@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-01T06:13:27.071Z",
-  "date": "2026-10-01",
+  "generatedAt": "2026-10-02T05:55:44.528Z",
+  "date": "2026-10-02",
   "composite": 54.4,
   "label": "Mixed",
   "subScores": {
@@ -12,50 +12,50 @@
   },
   "inputs": {
     "hashrate": {
-      "currentEH": 990.3431947521924,
-      "ma30EH": 944.6229638388795,
-      "ma90EH": 917.9661274580695,
-      "ratio": 1.0290390196146182,
+      "currentEH": 971.4485881733657,
+      "ma30EH": 944.9275443992278,
+      "ma90EH": 916.9400308987241,
+      "ratio": 1.0305227305574958,
       "score": 80
     },
     "difficulty": {
-      "estimatedChange": 0.0914408464809835,
+      "estimatedChange": -0.089292178487832,
       "previousChange": 4.163398081310405,
-      "progressPercent": 85.46626984126983,
+      "progressPercent": 92.36111111111111,
       "score": 55
     },
     "strc": {
-      "price": 99.35,
+      "price": 99.5,
       "high52": 100.418,
       "low52": 71.25,
       "source": "yahoo",
-      "distanceFromPar": -0.6500000000000057,
+      "distanceFromPar": -0.5,
       "score": 78
     },
     "mnav": {
-      "value": 0.8558838934192278,
-      "mstrPrice": 153.09,
-      "btcPrice": 84260,
+      "value": 0.8790438201686869,
+      "mstrPrice": 160.5,
+      "btcPrice": 86011,
       "btcHeld": 605000,
       "score": 25
     },
     "mvrv": {
-      "value": 1.5589841836602303,
+      "value": 1.580581704523888,
       "score": 62
     },
     "funding": {
-      "rate8h": 0.0000436089155649,
-      "annualizedPct": 4.77517625435655,
+      "rate8h": 0.0000195801549336,
+      "annualizedPct": 2.1440269652292,
       "score": 72
     },
     "stablecoins": {
-      "totalUSD": 262714664202.8273,
-      "prevWeekUSD": 263637798660.7412,
-      "delta7dPct": -0.3501525436046571,
+      "totalUSD": 263056616544.1362,
+      "prevWeekUSD": 264926636324.42,
+      "delta7dPct": -0.7058632556651842,
       "score": 35
     },
     "fearGreed": {
-      "value": 74,
+      "value": 72,
       "label": "Greed",
       "score": 32
     },
@@ -67,7 +67,7 @@
     }
   },
   "btcSpot": {
-    "price": 84260,
-    "change24h": 1.2364712346056113
+    "price": 86011,
+    "change24h": 2.017508738009088
   }
 }
