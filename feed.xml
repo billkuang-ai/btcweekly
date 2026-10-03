@@ -6,7 +6,15 @@
   <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
   <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-09-26T00:00:00Z</updated>
+  <updated>2026-10-03T00:00:00Z</updated>
+  <entry>
+    <title>Week 40 (2026) · BTC Weekly</title>
+    <link href="https://www.btcweekly.org/2026/week-40/"/>
+    <id>https://www.btcweekly.org/2026/week-40/</id>
+    <updated>2026-10-03T00:00:00Z</updated>
+    <summary>The SEC proposed the first compliant pathway for investment advisers and registered funds to custody Bitcoin — and opened self-custody as an option of last resort.</summary>
+    <content type="html">The Securities and Exchange Commission on October 1 formally proposed a custody framework for registered investment advisers and regulated funds, designating state-chartered trust companies as qualified custodians for crypto assets — a custodian category that does not exist under current rules — and permitting conditional self-custody when no qualified custodian is available. An adviser seeking to self-custody would be required to document a determination that no permitted custodian is accessible, then review that determination on a quarterly basis. Chair Paul Atkins stated that existing custody rules largely predate the internet and leave advisers without a compliant route for an asset class clients increasingly demand. The proposal covers all digital assets, including Bitcoin, held at SEC-registered entities; it does not address broker-dealer custody, which remains under separate rules. A 60-day public comment period begins upon Federal Register publication; the framework is not yet final.</content>
+  </entry>
   <entry>
     <title>Week 39 (2026) · BTC Weekly</title>
     <link href="https://www.btcweekly.org/2026/week-39/"/>
