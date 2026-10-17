@@ -6,7 +6,15 @@
   <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
   <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-10-03T00:00:00Z</updated>
+  <updated>2026-10-17T00:00:00Z</updated>
+  <entry>
+    <title>Week 42 (2026) · BTC Weekly</title>
+    <link href="https://www.btcweekly.org/2026/week-42/"/>
+    <id>https://www.btcweekly.org/2026/week-42/</id>
+    <updated>2026-10-17T00:00:00Z</updated>
+    <summary>The CFTC began what its chairman calls the first round of crypto market regulations — a route taken after Congress&#39;s market-structure bill stalled.</summary>
+    <content type="html">The advance notice, released October 5 and published in the Federal Register on October 13, previews two rules: Regulation CTX, which would set out when crypto transactions fall under section 2(c)(2)(D) of the Commodity Exchange Act, and Regulation CAM, which would create a tailored category of designated contract market registration. The statute covers retail commodity transactions offered on a leveraged, margined or financed basis, so the notice does not reach ordinary spot purchases of bitcoin or ether. It proposes no rule text, and a 60-day public comment period follows publication. The Senate failed to advance the CLARITY Act (H.R. 3633) on a 49–50 vote on September 15.</content>
+  </entry>
   <entry>
     <title>Week 40 (2026) · BTC Weekly</title>
     <link href="https://www.btcweekly.org/2026/week-40/"/>
