@@ -3,28 +3,28 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Week 42 (2026) · BTC Weekly</title>
-<meta name="description" content="Two institutional gateways advanced this week without new legislation: the CFTC&#39;s crypto rulemaking entered its public comment period, and Deutsche Bank said...">
+<title>Week 43 (2026) · BTC Weekly</title>
+<meta name="description" content="Two infrastructure developments marked a quiet week: Bitcoin Core 32.0 was tagged with a second fee estimator, and network hashrate returned above one zettahash...">
 <link rel="canonical" href="https://www.btcweekly.org/">
 <link rel="alternate" type="application/rss+xml" title="BTC Weekly" href="/feed.xml">
-<meta property="og:title" content="Week 42 (2026) · BTC Weekly">
-<meta property="og:description" content="Two institutional gateways advanced this week without new legislation: the CFTC&#39;s crypto rulemaking entered its public comment period, and Deutsche Bank said its Bitcoin custody service is weeks from...">
+<meta property="og:title" content="Week 43 (2026) · BTC Weekly">
+<meta property="og:description" content="Two infrastructure developments marked a quiet week: Bitcoin Core 32.0 was tagged with a second fee estimator, and network hashrate returned above one zettahash per second for the first time since...">
 <meta property="og:url" content="https://www.btcweekly.org/">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="BTC Weekly">
 <meta property="og:image" content="https://www.btcweekly.org/og.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Week 42 (2026) · BTC Weekly">
-<meta name="twitter:description" content="Two institutional gateways advanced this week without new legislation: the CFTC&#39;s crypto rulemaking entered its public comment period, and Deutsche Bank said its Bitcoin custody service is weeks from...">
+<meta name="twitter:title" content="Week 43 (2026) · BTC Weekly">
+<meta name="twitter:description" content="Two infrastructure developments marked a quiet week: Bitcoin Core 32.0 was tagged with a second fee estimator, and network hashrate returned above one zettahash per second for the first time since...">
 <meta name="twitter:image" content="https://www.btcweekly.org/og.png">
 <link rel="icon" type="image/png" href="/images/logo.png">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "NewsArticle",
-  "headline": "Week 42 (2026) · BTC Weekly",
-  "description": "Two institutional gateways advanced this week without new legislation: the CFTC&#39;s crypto rulemaking entered its public comment period, and Deutsche Bank said...",
-  "datePublished": "2026-10-24T08:03:53Z",
+  "headline": "Week 43 (2026) · BTC Weekly",
+  "description": "Two infrastructure developments marked a quiet week: Bitcoin Core 32.0 was tagged with a second fee estimator, and network hashrate returned above one zettahash...",
+  "datePublished": "2026-10-24T13:13:36Z",
   "url": "https://www.btcweekly.org/",
   "publisher": {
     "@type": "Organization",
@@ -371,10 +371,14 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
       <div class="meta-row">
         <div class="issue-pill-wrap">
           <button class="issue-pill" id="issue-btn" aria-haspopup="listbox" aria-expanded="false">
-            Week 42 · October 11–17, 2026
+            Week 43 · October 18–24, 2026
             <svg class="pill-chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
           </button>
           <div class="issue-dropdown" id="issue-dropdown" hidden>
+            
+            <a href="/2026/week-43/" class="issue-dropdown-item">
+              Week 43 · October 18–24, 2026
+            </a>
             
             <a href="/2026/week-42/" class="issue-dropdown-item">
               Week 42 · October 11–17, 2026
@@ -492,21 +496,21 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <div class="sponsor"><!-- sponsor placeholder --></div>
 
-  <div class="issue-intro">Two institutional gateways advanced this week without new legislation: the CFTC&#39;s crypto rulemaking entered its public comment period, and Deutsche Bank said its Bitcoin custody service is weeks from launch.</div>
+  <div class="issue-intro">Two infrastructure developments marked a quiet week: Bitcoin Core 32.0 was tagged with a second fee estimator, and network hashrate returned above one zettahash per second for the first time since March.</div>
 
   
   <div class="story s1">
     <div class="story-meta">
       <span class="s-n">1</span>
       <span class="s-meta-sep">·</span>
-      <span class="s-cat">Regulation</span>
+      <span class="s-cat">Research</span>
     </div>
     <div class="story-body">
-      <div class="s-title">The CFTC began what its chairman calls the first round of crypto market regulations — a route taken after Congress&#39;s market-structure bill stalled.</div>
-      <div class="s-summary">The advance notice, released October 5 and published in the Federal Register on October 13, previews two rules: Regulation CTX, which would set out when crypto transactions fall under section 2(c)(2)(D) of the Commodity Exchange Act, and Regulation CAM, which would create a tailored category of designated contract market registration. The statute covers retail commodity transactions offered on a leveraged, margined or financed basis, so the notice does not reach ordinary spot purchases of bitcoin or ether. It proposes no rule text, and a 60-day public comment period follows publication. The Senate failed to advance the CLARITY Act (H.R. 3633) on a 49–50 vote on September 15.</div>
-      <div class="s-consequence">Any rule that follows would reach retail leveraged crypto trading and a new exchange category through the CFTC rather than through legislation.</div>
+      <div class="s-title">Bitcoin&#39;s reference software changed how it estimates fees — without touching a single consensus rule.</div>
+      <div class="s-summary">The v32.0 tag was created on October 21, and the release notes list no consensus changes. The estimatesmartfee RPC now runs the existing block-based estimator alongside a new mempool-based one and returns the lower of the two, so the mempool estimate can only reduce a fee recommendation. Block validation can also prefetch input data from disk in parallel, defaulting to 8 threads with a maximum of 16, though the notes give no measured speedup. The release fixes a command-execution flaw in -walletnotify on non-Windows systems, replaces the Libevent-based RPC server with a custom HTTP server, and raises the default connection limit from 125 to 200.</div>
+      <div class="s-consequence">Fee recommendations from the reference client now draw on live mempool data as well as past blocks, and operators running 29.x or earlier are on versions the notes list as end of life.</div>
       <div class="s-source">
-        (<a href="https://cftc.gov/PressRoom/PressReleases/9307-26">CFTC</a>, <a href="https://www.klgates.com/thought-leadership/Lack-of-Clarity-Leads-to-CFTC-Rulemaking-Efforts-10-14-2026">K&amp;L Gates</a>)
+        (<a href="https://github.com/bitcoin/bitcoin/releases/tag/v32.0">Bitcoin Core (GitHub)</a>)
       </div>
     </div>
   </div>
@@ -515,14 +519,14 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div class="story-meta">
       <span class="s-n">2</span>
       <span class="s-meta-sep">·</span>
-      <span class="s-cat">Banking</span>
+      <span class="s-cat">Mining</span>
     </div>
     <div class="story-body">
-      <div class="s-title">Deutsche Bank says its institutional Bitcoin custody service is weeks from launch — pending supervisory sign-off.</div>
-      <div class="s-summary">Gerald Podobnik, co-head of the bank&#39;s corporate bank, said the launch depends on completion of the supervisory procedure and technology sign-off; no date or first client has been named. Germany is the first market, with Asian expansion reportedly targeted for 2027. The bank disclosed the plan on September 16, with bitcoin and ether supported at launch alongside the stablecoins USDC, EURC and EURAU. Citi announced in August that it plans native bitcoin custody for institutions before year-end.</div>
-      <div class="s-consequence">If both timelines hold, Deutsche Bank and Citi would each be offering institutional Bitcoin custody by year-end.</div>
+      <div class="s-title">Network hashrate climbed back above one zettahash per second, even as public miners redirect capacity to AI.</div>
+      <div class="s-summary">BlocksBridge Consulting&#39;s seven-day average passed 1,000 exahashes per second as of October 22, the highest reading since March 3. CryptoQuant data put total hashrate roughly 45% above its July 2026 low near 726 EH/s, and mining difficulty rose 5.92% at the October 16 adjustment. Public miners had cut realized hashrate by 23% in pursuit of AI and high-performance computing revenue. Reports say the source of the replacement capacity is unclear, with smaller operators and used-hardware buyers cited as possible contributors. Readings differ by data provider and averaging window; some trackers report single-day peaks above the seven-day figure.</div>
+      <div class="s-consequence">The shift of public-miner capacity toward AI workloads has so far not lowered network-wide mining competition.</div>
       <div class="s-source">
-        (<a href="https://theblock.co/news/business/2026-09-16-deutsche-bank-plans-bitcoin-ether-custody-for-institutional-clients-in-europe-415251">The Block</a>, <a href="https://unchainedcrypto.com/deutsche-bank-confirms-bitcoin-and-ether-custody-launch-still-subject-to-regulators/">Unchained</a>, <a href="https://en.cryptonomist.ch/2026/10/16/deutsche-bank-crypto-custody-2/">Cryptonomist</a>)
+        (<a href="https://www.tradingview.com/news/cointelegraph:cad5a4eb9094b:0-bitcoin-hashrate-hits-seven-month-high-as-ai-shift-fails-to-ease-mining-competition/">Cointelegraph (via TradingView)</a>, <a href="https://forklog.com/en/bitcoin-hash-rate-surpasses-1-zh-s-for-first-time-since-march/">Forklog</a>)
       </div>
     </div>
   </div>

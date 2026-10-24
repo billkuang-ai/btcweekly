@@ -6,7 +6,15 @@
   <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
   <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-10-17T00:00:00Z</updated>
+  <updated>2026-10-24T00:00:00Z</updated>
+  <entry>
+    <title>Week 43 (2026) · BTC Weekly</title>
+    <link href="https://www.btcweekly.org/2026/week-43/"/>
+    <id>https://www.btcweekly.org/2026/week-43/</id>
+    <updated>2026-10-24T00:00:00Z</updated>
+    <summary>Bitcoin&#39;s reference software changed how it estimates fees — without touching a single consensus rule.</summary>
+    <content type="html">The v32.0 tag was created on October 21, and the release notes list no consensus changes. The estimatesmartfee RPC now runs the existing block-based estimator alongside a new mempool-based one and returns the lower of the two, so the mempool estimate can only reduce a fee recommendation. Block validation can also prefetch input data from disk in parallel, defaulting to 8 threads with a maximum of 16, though the notes give no measured speedup. The release fixes a command-execution flaw in -walletnotify on non-Windows systems, replaces the Libevent-based RPC server with a custom HTTP server, and raises the default connection limit from 125 to 200.</content>
+  </entry>
   <entry>
     <title>Week 42 (2026) · BTC Weekly</title>
     <link href="https://www.btcweekly.org/2026/week-42/"/>
