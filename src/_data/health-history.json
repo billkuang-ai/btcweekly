@@ -1816,13 +1816,13 @@
   },
   {
     "date": "2026-10-27",
-    "composite": 56.8,
+    "composite": 61.6,
     "subScores": {
       "networkHealth": 91.2,
-      "demandStack": 31.2,
-      "holderConviction": 78,
-      "marketStructure": 45,
-      "macroSentiment": 46.4
+      "demandStack": 50.6,
+      "holderConviction": 71,
+      "marketStructure": 45.5,
+      "macroSentiment": 48.8
     }
   }
 ]
