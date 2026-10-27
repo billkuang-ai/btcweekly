@@ -239,9 +239,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   {% if h.inputs.mnav %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">MSTR mNAV Premium{{ info("Strategy's market cap divided by the value of the BTC it owns. Above 1.0 means the market is paying a premium, so Strategy can issue more stock and buy more BTC. Below 1.0 the flywheel breaks.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.mnav.score) }}">{{ h.inputs.mnav.score }}</div></div>
-    <div class="hm-input-val">{{ h.inputs.mnav.value | round(2) }}× · MSTR ${{ h.inputs.mnav.mstrPrice | round(2) }} · {{ h.inputs.mnav.btcHeld }} BTC held</div>
-    <div class="hm-input-note">Derived — premium &gt; 1 enables equity-funded BTC accumulation flywheel</div>
+    <div class="hm-input-row"><div class="hm-input-name">MSTR mNAV Premium{{ info("Strategy's enterprise value (market cap plus debt and preferred stock) divided by the value of the BTC it owns, as published by Strategy. Above 1.0 means the market is paying a premium, so Strategy can issue more stock and buy more BTC. Below 1.0 the flywheel breaks.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.mnav.score) }}">{{ h.inputs.mnav.score }}</div></div>
+    <div class="hm-input-val">{{ h.inputs.mnav.value | round(2) }}×{% if h.inputs.mnav.mstrPrice %} · MSTR ${{ h.inputs.mnav.mstrPrice | round(2) }}{% endif %} · {{ h.inputs.mnav.btcHeld.toLocaleString("en-US") }} BTC held</div>
+    <div class="hm-input-note">{% if h.inputs.mnav.basis == "derived" %}Derived from Strategy data (equity basis){% else %}Strategy (strategy.com){% endif %} — premium &gt; 1 enables equity-funded BTC accumulation flywheel</div>
   </div>
   {% endif %}
 
@@ -263,9 +263,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   {% if h.inputs.stablecoins %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">Stablecoin Cap (7d Δ){{ info("Total dollars parked in USDT, USDC, and DAI — think of it as dry powder waiting to deploy. Growing = buying capacity building. Shrinking = money leaving crypto entirely.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.stablecoins.score) }}">{{ h.inputs.stablecoins.score }}</div></div>
+    <div class="hm-input-row"><div class="hm-input-name">Stablecoin Cap (7d Δ){{ info("Total dollars parked in all USD stablecoins — think of it as dry powder waiting to deploy. Growing = buying capacity building. Shrinking = money leaving crypto entirely.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.stablecoins.score) }}">{{ h.inputs.stablecoins.score }}</div></div>
     <div class="hm-input-val">${{ (h.inputs.stablecoins.totalUSD / 1000000000) | round(1) }}B · {% if h.inputs.stablecoins.delta7dPct >= 0 %}+{% endif %}{{ h.inputs.stablecoins.delta7dPct | round(2) }}%</div>
-    <div class="hm-input-note">DefiLlama (USDT + USDC + DAI) — growth = dry powder building</div>
+    <div class="hm-input-note">DefiLlama (all USD stablecoins) — growth = dry powder building</div>
   </div>
   {% endif %}
 
@@ -286,7 +286,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   {% endif %}
 
   <div class="hm-methodology">
-    <strong>Methodology.</strong> Nine inputs roll up into five sub-scores. Each input is mapped to a 0–100 health score using fixed thresholds documented in <code>scripts/fetch-health-meter.js</code>. Refreshed daily at 00:30 UTC. All sources are free and public.
+    <strong>Methodology.</strong> Nine inputs roll up into five sub-scores. Each input is mapped to a 0–100 health score by interpolating between fixed anchor points documented in <code>scripts/fetch-health-meter.js</code>. Refreshed daily at 00:30 UTC. All sources are free and public.
     <br><br>
     <strong>Why these weights.</strong> Demand Stack carries the most weight (30%) because in the ETF and corporate-treasury era, who's buying the float is the load-bearing story. Network Health (20%), Holder Conviction (20%), and Market Structure (20%) each get an equal slice as the underlying structural signals — what miners are doing, what long-term holders are doing, and how derivatives positioning is leaning. Macro &amp; Sentiment is capped at 10% because it's the noisiest input and tends to echo what the other categories already capture.
     <br><br>

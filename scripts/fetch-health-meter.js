@@ -2,15 +2,9 @@
 // Bitcoin Health Meter — daily fetcher.
 // Pulls 9 free, keyless inputs; scores each 0–100; composites into 5 sub-scores.
 // Writes src/_data/health.json and appends src/_data/health-history.json.
-//
-// To update Strategy's BTC holdings (used for MSTR mNAV), edit STRATEGY_BTC_HOLDINGS
-// below after each weekly purchase announcement at https://www.strategy.com/purchases.
 
 const fs = require("fs");
 const path = require("path");
-
-const STRATEGY_BTC_HOLDINGS = 605000; // updated 2026-05-13 — refresh weekly from strategy.com/purchases
-const STRATEGY_SHARES_OUT = 285_000_000; // approx diluted; update quarterly from 10-Q
 
 const OUT_DIR = path.join(__dirname, "..", "src", "_data");
 const SNAPSHOT_PATH = path.join(OUT_DIR, "health.json");
@@ -97,6 +91,19 @@ async function fetchBTCSpot() {
   return { price: j.bitcoin.usd, change24h: j.bitcoin.usd_24h_change };
 }
 
+async function fetchStrategyKPIs() {
+  // Strategy's own dashboard feed (strategy.com). mNav is enterprise value / BTC NAV.
+  const j = await getJSON("https://api.strategy.com/btc/bitcoinKpis");
+  const r = j.results;
+  const btcHeld = Number(String(r.btcHoldings).replace(/,/g, ""));
+  if (!isFinite(btcHeld) || btcHeld <= 0) throw new Error("strategy: bad btcHoldings");
+  return {
+    btcHeld,
+    mNav: isFinite(Number(r.mNav)) ? Number(r.mNav) : null,
+    satsPerShare: Number(r.satsPerShare),
+  };
+}
+
 async function fetchMVRV() {
   const j = await getJSON(
     "https://community-api.coinmetrics.io/v4/timeseries/asset-metrics?assets=btc&metrics=CapMVRVCur&frequency=1d&page_size=1"
@@ -114,16 +121,13 @@ async function fetchFunding() {
 }
 
 async function fetchStablecoinCap() {
-  // DefiLlama. Sum USDT + USDC + DAI circulating; compute 7d delta vs prevWeek.
-  const j = await getJSON("https://stablecoins.llama.fi/stablecoins");
-  const wanted = new Set(["USDT", "USDC", "DAI"]);
-  let cur = 0, prev = 0;
-  for (const a of j.peggedAssets) {
-    if (!wanted.has(a.symbol)) continue;
-    cur += a.circulating?.peggedUSD || 0;
-    prev += a.circulatingPrevWeek?.peggedUSD || 0;
-  }
-  return { totalUSD: cur, prevWeekUSD: prev, delta7dPct: prev ? ((cur - prev) / prev) * 100 : 0 };
+  // DefiLlama total stablecoin supply (all USD-pegged coins), daily series. 7d delta.
+  const j = await getJSON("https://stablecoins.llama.fi/stablecoincharts/all");
+  const usd = d => Number(d.totalCirculatingUSD?.peggedUSD);
+  const cur = usd(j.at(-1));
+  const prev = usd(j.at(-8));
+  if (!isFinite(cur) || !isFinite(prev) || !prev) throw new Error("defillama: bad payload");
+  return { totalUSD: cur, prevWeekUSD: prev, delta7dPct: ((cur - prev) / prev) * 100 };
 }
 
 async function fetchFearGreed() {
@@ -147,83 +151,55 @@ async function fetchDXY() {
 
 // ── scoring ───────────────────────────────────────────────────────────────────
 // Each fn maps its input to a 0–100 health score (higher = healthier for BTC).
+// Scores interpolate linearly between anchor points [input, score] and clamp at the ends,
+// so small input moves produce small score moves.
+
+function interp(x, anchors) {
+  if (x <= anchors[0][0]) return anchors[0][1];
+  for (let i = 1; i < anchors.length; i++) {
+    const [x1, y1] = anchors[i];
+    if (x <= x1) {
+      const [x0, y0] = anchors[i - 1];
+      return Math.round(y0 + ((x - x0) / (x1 - x0)) * (y1 - y0));
+    }
+  }
+  return anchors.at(-1)[1];
+}
 
 function scoreHashrate(r) {
-  // 30d/90d ratio. >1.05 expanding strongly; <0.95 contracting.
-  const x = r.ratio;
-  if (x >= 1.05) return 92;
-  if (x >= 1.02) return 80;
-  if (x >= 1.00) return 68;
-  if (x >= 0.97) return 48;
-  if (x >= 0.94) return 30;
-  return 15;
+  // 30d/90d ratio. >1.05 expanding strongly; <0.94 contracting.
+  return interp(r.ratio, [[0.94, 15], [0.955, 30], [0.985, 48], [1.01, 68], [1.035, 80], [1.05, 92]]);
 }
 function scoreDifficulty(r) {
-  const x = r.estimatedChange;
-  if (x >= 4) return 90;
-  if (x >= 1) return 72;
-  if (x >= -1) return 55;
-  if (x >= -4) return 32;
-  return 18;
+  return interp(r.estimatedChange, [[-4, 18], [-2.5, 32], [0, 55], [2.5, 72], [4, 90]]);
 }
 function scoreSTRC(strcPrice) {
   // Healthy when held tight to $100 par. Below par = constant corporate BTC bid in play.
   // Far below par = struggling to defend. Above par = over-collateralized, less efficient.
-  const dist = strcPrice - 100;
-  if (dist >= -0.25 && dist <= 0.25) return 92;
-  if (dist >= -0.75 && dist <= 0.75) return 78;
-  if (dist >= -1.5 && dist <= 1.5) return 60;
-  if (dist >= -3 && dist <= 3) return 40;
-  return 22;
+  const dist = Math.abs(strcPrice - 100);
+  return interp(dist, [[0.25, 92], [0.5, 78], [1.125, 60], [2.25, 40], [3, 22]]);
 }
 function scoreMNAV(mnav) {
-  if (mnav >= 2.5) return 92;
-  if (mnav >= 1.8) return 78;
-  if (mnav >= 1.3) return 60;
-  if (mnav >= 1.0) return 40;
-  if (mnav >= 0.85) return 25;
-  return 12;
+  return interp(mnav, [[0.85, 12], [0.925, 25], [1.15, 40], [1.55, 60], [2.15, 78], [2.5, 92]]);
 }
 function scoreMVRV(mvrv) {
-  if (mvrv < 1.0) return 92;
-  if (mvrv < 1.5) return 78;
-  if (mvrv < 2.0) return 62;
-  if (mvrv < 2.7) return 48;
-  if (mvrv < 3.5) return 30;
-  return 15;
+  return interp(mvrv, [[1.0, 92], [1.25, 78], [1.75, 62], [2.35, 48], [3.1, 30], [3.5, 15]]);
 }
 function scoreFunding(annPct) {
   // Mild positive funding is normal; extreme positive = leveraged longs = top risk.
   // Negative funding is healthy for forward returns.
-  if (annPct < 0) return 82;
-  if (annPct < 8) return 72;
-  if (annPct < 18) return 55;
-  if (annPct < 35) return 35;
-  if (annPct < 60) return 22;
-  return 12;
+  return interp(annPct, [[0, 82], [4, 72], [13, 55], [26.5, 35], [47.5, 22], [60, 12]]);
 }
 function scoreStablecoins(delta7dPct) {
-  if (delta7dPct >= 1.0) return 88;
-  if (delta7dPct >= 0.3) return 72;
-  if (delta7dPct >= -0.3) return 52;
-  if (delta7dPct >= -1.0) return 35;
-  return 18;
+  return interp(delta7dPct, [[-1, 18], [-0.65, 35], [0, 52], [0.65, 72], [1, 88]]);
 }
 function scoreFearGreed(value) {
   // Contrarian: extreme fear is bullish for forward returns.
-  if (value <= 20) return 85;
-  if (value <= 40) return 70;
-  if (value <= 60) return 52;
-  if (value <= 80) return 32;
-  return 15;
+  return interp(value, [[20, 85], [30, 70], [50, 52], [70, 32], [80, 15]]);
 }
 function scoreDXY(change30dPct) {
-  // BTC inversely correlated with DXY at extremes.
-  if (change30dPct <= -2) return 82;
-  if (change30dPct <= -0.5) return 68;
-  if (change30dPct <= 0.5) return 52;
-  if (change30dPct <= 2) return 38;
-  return 22;
+  // BTC inversely correlated with the dollar at extremes.
+  return interp(change30dPct, [[-2, 82], [-1.25, 68], [0, 52], [1.25, 38], [2, 22]]);
 }
 
 // ── orchestrate ──────────────────────────────────────────────────────────────
@@ -243,7 +219,7 @@ function weighted(parts) {
 
 async function main() {
   const [
-    hashrate, difficulty, btc, mstr, strc,
+    hashrate, difficulty, btc, mstr, strc, strategy,
     mvrv, funding, stables, fng, dxy,
   ] = await Promise.all([
     safe("hashrate", fetchHashrate),
@@ -251,6 +227,7 @@ async function main() {
     safe("btc spot", fetchBTCSpot),
     safe("MSTR quote", () => fetchQuote("MSTR")),
     safe("STRC quote", () => fetchQuote("STRC")),
+    safe("Strategy KPIs", fetchStrategyKPIs),
     safe("MVRV", fetchMVRV),
     safe("funding", fetchFunding),
     safe("stablecoins", fetchStablecoinCap),
@@ -258,19 +235,22 @@ async function main() {
     safe("DXY", fetchDXY),
   ]);
 
-  // Derived: MSTR mNAV = market cap / (BTC held × spot)
-  let mnav = null;
-  if (mstr.ok && btc.ok) {
-    const mcap = mstr.value.price * STRATEGY_SHARES_OUT;
-    const navBTC = STRATEGY_BTC_HOLDINGS * btc.value.price;
-    mnav = mcap / navBTC;
+  // MSTR mNAV: Strategy's published figure (enterprise value / BTC NAV). Fallback derives
+  // equity mNAV = MSTR price / BTC per share, from live holdings and sats per share.
+  let mnav = null, mnavBasis = null;
+  if (strategy.ok && strategy.value.mNav != null) {
+    mnav = strategy.value.mNav;
+    mnavBasis = "strategy";
+  } else if (strategy.ok && mstr.ok && btc.ok && strategy.value.satsPerShare > 0) {
+    mnav = mstr.value.price / ((strategy.value.satsPerShare / 1e8) * btc.value.price);
+    mnavBasis = "derived";
   }
 
   const inputs = {
     hashrate:   hashrate.ok   ? { ...hashrate.value, score: scoreHashrate(hashrate.value) } : null,
     difficulty: difficulty.ok ? { ...difficulty.value, score: scoreDifficulty(difficulty.value) } : null,
     strc:       strc.ok       ? { ...strc.value, distanceFromPar: strc.value.price - 100, score: scoreSTRC(strc.value.price) } : null,
-    mnav:       mnav != null  ? { value: mnav, mstrPrice: mstr.value.price, btcPrice: btc.value.price, btcHeld: STRATEGY_BTC_HOLDINGS, score: scoreMNAV(mnav) } : null,
+    mnav:       mnav != null  ? { value: mnav, basis: mnavBasis, mstrPrice: mstr.ok ? mstr.value.price : null, btcPrice: btc.ok ? btc.value.price : null, btcHeld: strategy.value.btcHeld, score: scoreMNAV(mnav) } : null,
     mvrv:       mvrv.ok       ? { value: mvrv.value, score: scoreMVRV(mvrv.value) } : null,
     funding:    funding.ok    ? { ...funding.value, score: scoreFunding(funding.value.annualizedPct) } : null,
     stablecoins:stables.ok    ? { ...stables.value, score: scoreStablecoins(stables.value.delta7dPct) } : null,
