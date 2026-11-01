@@ -6,7 +6,15 @@
   <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
   <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-10-24T00:00:00Z</updated>
+  <updated>2026-10-31T00:00:00Z</updated>
+  <entry>
+    <title>Week 44 (2026) · BTC Weekly</title>
+    <link href="https://www.btcweekly.org/2026/week-44/"/>
+    <id>https://www.btcweekly.org/2026/week-44/</id>
+    <updated>2026-10-31T00:00:00Z</updated>
+    <summary>The largest crypto theft on record hit Binance&#39;s hot wallets — and the exchange says customers will be made whole.</summary>
+    <content type="html">Binance estimated total impact at about $6.3 billion after suspicious outflows began on October 29, while TRM Labs put the figure at $6.36 billion and attributed the theft to North Korea&#39;s TraderTraitor group, citing a compromise of the exchange&#39;s hot-wallet signing infrastructure. Binance suspended deposits and withdrawals, which halted the outflows, and said it found no evidence of a private-key leak. By October 31 it said it had replaced about 90% of the affected assets using its Secure Asset Fund for Users (SAFU), part of its Futures insurance fund and corporate treasury, and that Bitcoin and Ether customer balances were fully backed. Reports differ on how much was frozen, with Binance citing $2.54 billion and other outlets about $3 billion, and the 90% figure measures replacement by Binance, not recovery from the attacker. The FBI said it is coordinating with partners, and no government had confirmed the North Korea attribution as of October 30. Binance has targeted November 1 to resume withdrawals, subject to security checks.</content>
+  </entry>
   <entry>
     <title>Week 43 (2026) · BTC Weekly</title>
     <link href="https://www.btcweekly.org/2026/week-43/"/>
