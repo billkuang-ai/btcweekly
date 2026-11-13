@@ -5,6 +5,7 @@ module.exports = {
   eleventyComputed: {
     title: data => data.collections?.issues?.[0]?.data?.title ?? "BTC Weekly",
     week: data => data.collections?.issues?.[0]?.data?.week ?? "",
+    year: data => data.collections?.issues?.[0]?.data?.year ?? "",
     dateRange: data => data.collections?.issues?.[0]?.data?.dateRange ?? "",
     intro: data => data.collections?.issues?.[0]?.data?.intro ?? "",
     stories: data => data.collections?.issues?.[0]?.data?.stories ?? [],
