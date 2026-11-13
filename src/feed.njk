@@ -17,8 +17,14 @@ eleventyExcludeFromCollections: true
     <link href="{{ site.url }}{{ issue.url }}"/>
     <id>{{ site.url }}{{ issue.url }}</id>
     <updated>{{ issue.date | dateToRfc3339 }}</updated>
+    {%- if issue.data.top_stories %}
+    {%- set _c %}<p>{{ issue.data.intro }}</p><ol>{% for st in issue.data.top_stories %}<li>{{ st.title }}</li>{% endfor %}</ol>{% endset %}
+    <summary>{{ issue.data.headline | escape }}</summary>
+    <content type="html">{{ _c | escape }}</content>
+    {%- else %}
     <summary>{{ issue.data.stories[0].title | escape }}</summary>
     <content type="html">{{ issue.data.stories[0].summary | escape }}</content>
+    {%- endif %}
   </entry>
   {%- endfor %}
 </feed>

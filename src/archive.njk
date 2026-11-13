@@ -165,7 +165,9 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div class="arc-body">
       <div class="arc-date">{{ issue.data.dateRange }}</div>
       <div class="arc-title">{{ issue.data.title }}</div>
-      {% if issue.data.stories[0] %}
+      {% if issue.data.headline %}
+      <div class="arc-lead">{{ issue.data.headline }}</div>
+      {% elif issue.data.stories[0] %}
       <div class="arc-lead">{{ issue.data.stories[0].title }}</div>
       {% endif %}
     </div>

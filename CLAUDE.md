@@ -11,10 +11,10 @@ Each Saturday, follow these steps in order **without stopping for approval**:
 1. **News input** — Query the Brave News API for the past week (see "News Input"). Fall back to web search only if Brave fails.
 2. **Research** — Fill gaps with targeted web searches across all category priorities. Filter by source quality. Exclude anything outside the current week's date range.
 3. **Verify** — Open (WebFetch) the main article for every story you keep and confirm the facts and publish date; find the primary source where one exists.
-4. **Shortlist** — Present 5 candidates with 🟢 / 🟡 / 🔴 ratings. Do not stop here — immediately continue to Draft and Publish in the same response.
-5. **Draft** — Write the 🟢 stories following all item format and editorial standards below.
+4. **Rank** — Rank every candidate and print the shortlist: 🟢 top story / 🟡 brief line / 🔴 cut. Do not stop here — immediately continue to Draft and Publish in the same response.
+5. **Draft** — Write the issue in format 2 (headline, intro, top stories, brief, quiet) following all item format and editorial standards below.
 6. **Publish** — Save the issue file to `src/issues/`, run `npm run build`, commit, and push to main. Do not wait for approval at any step.
-7. **Report** — Always send a one-line push notification: `BTC Weekly Week XX: N stories (news: brave|web)`. If any step failed or was skipped, name the step and why. A run never finishes quietly with steps undone.
+7. **Report** — Always send a one-line push notification: `BTC Weekly Week XX: <headline> (N top stories, M briefs, news: brave|web)`. If any step failed or was skipped, name the step and why. A run never finishes quietly with steps undone.
 
 ---
 
@@ -46,7 +46,7 @@ Queries (edit freely):
 
 - **Brave's terms forbid storing results.** Keep them in memory or under /tmp only. Never commit them, save them in the repo (btcweekly is public), paste them anywhere, or quote their descriptions.
 - If `BRAVE_API_KEY` is missing or Brave returns errors (401/403/429/5xx) after a retry, use the web searches below instead and report news source "web" with the error.
-- Brave results are a lead list, not a source. Every story still gets its article opened and its facts confirmed before it runs. If articles can't be opened (blocked, 403), say so in the notification rather than silently dropping stories.
+- Brave results are a lead list, not a source. Every top story and every brief line still gets its article opened and its facts confirmed before it runs. If articles can't be opened (blocked, 403), say so in the notification rather than silently dropping stories.
 - Every link in the issue must be a real URL you saw in a search result or a fetched page. Never construct a URL.
 
 ---
@@ -104,15 +104,15 @@ Price-only stories, altcoin news (unless directly BTC-related), exchange drama, 
 
 ---
 
-## Shortlist
+## Rank
 
-Present exactly 5 candidates — the strongest stories after applying all tier and exclusion rules. For each:
+Rank every candidate that passes the tier and exclusion rules by structural significance. Print the shortlist in the run log, one line each:
 
-- 🟢 Recommend Include / 🟡 Your Call / 🔴 Recommend Cut
+- 🟢 Top story / 🟡 Brief line / 🔴 Cut
 - Source name and tier
-- One-line "why it made the list" note
+- One-line "why" note
 
-A week with 1 exceptional story runs as 1. Do not stop after presenting the shortlist — proceed immediately to Draft and Publish in the same response. No approval needed at any step.
+The top 3 become `top_stories`. Up to 3 — never pad: a week with 1 exceptional story runs 1 top story. Every other story that passes becomes one `brief` line. Categories with nothing worth reporting go in `quiet`. Do not stop after printing the shortlist — proceed immediately to Draft and Publish in the same response. No approval needed at any step.
 
 ---
 
@@ -120,33 +120,44 @@ A week with 1 exceptional story runs as 1. Do not stop after presenting the shor
 
 Stories run in descending order of significance — most impactful first.
 
-**Weekly intro:** Every issue opens with a 1–2 sentence factual frame above the stories. Name the 2–3 biggest developments of the week and the arc that connects them — no opinion, no editorializing. This goes in the `intro` field of the YAML frontmatter.
+**Headline and intro:** Every issue opens with a short `headline` naming the week's main theme and a one-sentence `intro` — a factual frame above the stories. Name the 2–3 biggest developments of the week and the arc that connects them — no opinion, no editorializing.
 
 - ✅ "Two milestones landed this week at opposite ends of Bitcoin's maturity curve."
 - ✅ "Three regulatory actions this week narrowed the gap between Bitcoin and the traditional banking system."
 - ❌ "It was a big week for Bitcoin." (vague, no information)
 
-**Headline:** One declarative line. Lead with the hook — the most compelling angle — then let the body carry the specifics. Do not front-load every number and name into the headline; reserve details for the body so the headline reads as a draw, not a summary.
+**Story headline (`title`):** One declarative line. Lead with the hook — the most compelling angle — then let the body carry the specifics. Do not front-load every number and name into the headline; reserve details for the body so the headline reads as a draw, not a summary.
 
 - ✅ "Morgan Stanley launched the first spot Bitcoin ETF issued directly by a major U.S. bank — undercutting every existing product on price."
 - ❌ "Morgan Stanley became the first major U.S. bank to issue its own spot Bitcoin ETF, launching MSBT on April 8 at a 0.14% sponsor fee — the lowest of any Bitcoin ETP currently trading." (headline does the body's job)
 
-**Body:** Starts where the headline leaves off. Do NOT restate the headline in the opening sentence. Write 4–5 sentences as the standard. Lead with the most specific verifiable fact — exact date, dollar amount, BTC count, vote tally, or named actor. Then add: transaction or legislative mechanics (how it was funded, structured, or passed), scale and position context (% of supply, ranking among holders, comparison to prior periods).
+**What happened (`what`):** Starts where the headline leaves off. Do NOT restate the headline in the opening sentence. Write 4–5 sentences as the standard. Lead with the most specific verifiable fact — exact date, dollar amount, BTC count, vote tally, or named actor. Then add: transaction or legislative mechanics (how it was funded, structured, or passed), scale and position context (% of supply, ranking among holders, comparison to prior periods), and material counterweights.
 
 Vary sentence length deliberately. After a run of long, dense sentences, one short declarative sentence — standing alone — restores rhythm and emphasis.
 
 - ✅ "The distribution advantage is structural: Morgan Stanley's 16,000 financial advisors oversee $6.2 trillion in client assets — capital that previously had no in-house Bitcoin vehicle. That network is now a direct distribution channel for Bitcoin exposure at the lowest fee of any U.S.-listed ETP."
 - ❌ A body where every sentence is the same length and structure.
 
-Close each story with one sentence stating the structural consequence or forward implication — grounded in sourced fact, not opinion. This is the "so what" that gives the reader a reason to remember the story.
+**Why it matters (`why`):** One sentence stating the structural consequence or forward implication for Bitcoin — adoption, regulation, banking access, the network — grounded in sourced fact, never price and never opinion. No "could" or "may" unless a source says it. This is the "so what" that gives the reader a reason to remember the story.
 
 - ✅ "That network is now a direct distribution channel for Bitcoin exposure at the lowest fee of any U.S.-listed ETP."
 - ✅ "It establishes that a quantum emergency response exists within Bitcoin's current ruleset, requiring no one's permission to deploy."
 - ❌ "This is a watershed moment for Bitcoin adoption." (editorial, unsourced)
 
-**Citation:** Inline hyperlinked sources at end of body paragraph — on the same line, not a separate line. Format: `([Source](URL))` or `([Source 1](URL), [Source 2](URL))`. Use the highest-tier source available; add a second only if it contributes materially different detail.
+**What to watch (`watch`):** Optional. One line naming a concrete next event that a source dates or schedules (e.g. "Senate floor vote expected Dec 4"). Leave it out when there is none — never a prediction.
 
-**Separation:** A blank line between each item. No horizontal rules (`---`) between items.
+**Sources:** 1–3 per top story, rendered as links after "What happened". Use the highest-tier source available; add another only if it contributes materially different detail.
+
+### Brief lines
+
+- One sentence, under ~25 words, in your own words, with one link to the highest-tier source.
+- Only stories whose fact stands on its own. If a story needs a counterweight to be fair, it is either a top story or it is cut — a brief line never omits a material "but".
+- All tier, category and exclusion rules still apply. Don't pad a line out of a minor story.
+- Order by significance; each line carries its category.
+
+### Quiet
+
+List the categories with nothing worth reporting this week (e.g. `[Mining, Payments]`). Omit the field if every category had something.
 
 ---
 
@@ -162,7 +173,7 @@ Factual, third-person, declarative. Significance is shown through structural fac
 
 No price predictions or trading commentary. No closing summary paragraph.
 
-**Own words.** Write every sentence yourself. No quotes over ~10 words, never copy or lightly reword a search snippet or article sentence, and don't follow an article's structure. Every claim must be traceable to its linked source.
+**Own words.** Write every sentence yourself. No quotes over ~10 words, never copy or lightly reword a search snippet or article sentence, and don't follow an article's structure. Every claim must be traceable to its linked source, and every link must be a real URL you saw.
 
 ### Balanced
 
@@ -190,10 +201,10 @@ Trusted means every claim can be traced to a named, verifiable source.
 Concise means no sentence is present unless it earns its place.
 
 - **Every sentence carries at least one new piece of information.** No sentence restates what another already established.
-- **The body starts where the headline ends.** The first sentence must add the next most important fact — never restate the headline in different words, and never echo its key nouns or phrases. Treat the headline as sentence zero: the body begins at sentence one. If the headline already names the company, the ticker, and the key fact, the body must not open by naming the same company, ticker, or fact again. The reader's eye moves straight from headline to body — any overlap is wasted words.
+- **`what` starts where the headline ends.** The first sentence must add the next most important fact — never restate the headline in different words, and never echo its key nouns or phrases. Treat the headline as sentence zero: the body begins at sentence one. If the headline already names the company, the ticker, and the key fact, the body must not open by naming the same company, ticker, or fact again. The reader's eye moves straight from headline to body — any overlap is wasted words.
 - **Background context only if load-bearing.** Corporate history, biographical detail, and prior-week recap are cut unless the reader cannot understand the story without them.
 - **Vary sentence length deliberately.** Long, dense sentences carry data. Short sentences carry emphasis. Mix them. A single short sentence after a run of complex ones resets the reader's attention and signals importance.
-- **Close with consequence, not summary.** The last sentence states the structural implication of the facts — what this means for Bitcoin's position, the regulatory landscape, or the network — grounded in what was reported. It is not a restatement of the headline, and it is not an editorial conclusion.
+- **`why` is consequence, not summary.** It states the structural implication of the facts — what this means for Bitcoin's position, the regulatory landscape, or the network — grounded in what was reported. It is not a restatement of the headline, and it is not an editorial conclusion.
 
 ---
 
@@ -201,8 +212,7 @@ Concise means no sentence is present unless it earns its place.
 
 ### Title & Date
 
-- Title: `# Week X (Year) · BTC Weekly`
-- Subtitle: `### Key Events from [Start Date]–[End Date], [Year]`
+- Title: `Week X (Year) · BTC Weekly`
 - Date range is Sunday to Saturday
 - Week numbering is sequential: Week 1 = the week containing January 1. Count forward from there.
 - Derive the current week number and date range from the `currentDate` context variable injected at runtime.
@@ -212,38 +222,40 @@ Concise means no sentence is present unless it earns its place.
 
 Save each issue to `src/issues/YYYY-week-XX.md` in the repo root (locally that's `/Users/Bill/Documents/dev/btcweekly/src/issues/`; in a cloud run it's the clone).
 
-The file has no markdown body — all content lives in the YAML frontmatter:
+The file has no markdown body — all content lives in the YAML frontmatter (format 2). Older issues use the previous `stories` schema; never edit or convert them — the template renders both.
 
 ```yaml
 ---
 layout: base.njk
+format: 2
 title: "Week X (Year) · BTC Weekly"
 week: [number]
 year: [number]
 dateRange: "Month DD–DD, YYYY"
 date: YYYY-MM-DD
 permalink: /YYYY/week-XX/
+headline: "Short plain line naming the week's main theme."
 intro: >-
-  1–2 sentence factual frame for the week. Name the biggest developments
-  and the arc connecting them. No opinion.
-stories:
-  - category: [Banking | Regulation | Institutional | ETF | Mining | Research | Payments]
+  ONE sentence naming the 2–3 biggest developments and the arc connecting them. No opinion.
+top_stories:            # up to 3, most significant first
+  - category: [Banking | Regulation | Institutional | ETF | Mining | Research | Payments | Sovereign]
     title: "Hook-first headline — draw the reader in, leave specifics for the body."
-    summary: >-
-      Body text. 4–5 sentences. Lead with the most specific verifiable fact.
-      Vary sentence length — mix long data-dense sentences with short emphatic
-      ones. Do NOT include the consequence sentence here — it goes in its own field.
-      No inline citations — sources go in the sources array.
-    consequence: >-
-      One sentence stating the structural consequence or forward implication,
-      grounded in reported fact. Rendered visually distinct from the body.
+    what: >-
+      What happened. 4–5 sentences. Starts where the headline ends; leads with the
+      most specific verifiable fact; mechanics, scale and material counterweights.
+    why: >-
+      One sentence: the structural consequence for Bitcoin, grounded in reported fact.
+    watch: "Optional: a dated or scheduled next event from a source."
     sources:
       - label: "Source Name"
         url: "https://..."
-      - label: "Source Name 2"
-        url: "https://..."
+brief:                  # every other story that passes the rules, most significant first
+  - category: Research
+    text: "One sentence, under ~25 words, own words."
+    url: "https://..."
+    source: "Source Name"
+quiet: [Mining, Payments]   # optional
 ---
 ```
 
-After saving: run `npm run build`, commit the new issue file, and push to main. Do not wait for confirmation at any of these steps. The homepage, archive, and RSS feed all update automatically. The site footer handles navigation and the "News search powered by Brave" credit — do not add a sign-off line to story content.
-
+After saving: run `npm run build`, confirm the new page shows every section, commit the new issue file, and push to main. Do not wait for confirmation at any of these steps. The homepage, archive, and RSS feed all update automatically. The site footer handles navigation and the Brave/AI credit — do not add a sign-off line to story content.
