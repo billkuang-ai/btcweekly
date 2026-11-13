@@ -141,6 +141,65 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 @media(max-width:480px){
   .archive-item { flex-direction:column; gap:8px; }
 }
+
+/* ── DESIGN v2 (shared with issue pages) ── */
+.wrapper { max-width:760px; }
+.page-ribbon {
+  position:relative; overflow:hidden; display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  margin-top:34px; padding:18px 22px;
+  background:linear-gradient(120deg, #F7931A, #FFAA3A); border-radius:16px;
+  box-shadow:0 10px 26px rgba(247,147,26,0.30);
+}
+.page-ribbon::before {
+  content:"₿"; position:absolute; right:24px; top:-30px; font-size:130px; font-weight:800;
+  color:rgba(255,255,255,0.12); pointer-events:none;
+}
+.pr-title {
+  position:relative; font-family:'Black Han Sans',sans-serif; font-weight:400;
+  font-size:clamp(32px, 6vw, 50px); line-height:1; color:#fff; text-shadow:2px 2px 0 #C96F00; white-space:nowrap;
+}
+.pr-meta { position:relative; display:flex; flex-direction:column; }
+.pr-meta b { font-size:20px; font-weight:800; color:#1C1208; line-height:1.1; }
+.pr-meta span { margin-top:4px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(28,18,8,0.75); }
+[data-cat] { --c:var(--orange); --cb:var(--orange-faint); }
+[data-cat="Regulation"]    { --c:#2F5D8A; --cb:#E6EEF7; }
+[data-cat="Banking"]       { --c:#2E6B45; --cb:#E3F2E8; }
+[data-cat="Institutional"] { --c:#6343A0; --cb:#EEE7F8; }
+[data-cat="Mining"]        { --c:#8A5200; --cb:#FCEBD2; }
+[data-cat="Research"]      { --c:#1C6E6E; --cb:#DFF2F1; }
+[data-cat="Payments"]      { --c:#A8355A; --cb:#FBE6EC; }
+[data-cat="Sovereign"]     { --c:#24406E; --cb:#E3E8F2; }
+[data-cat="ETF"]           { --c:#7E4410; --cb:#F6E6D6; }
+
+.arc-month {
+  margin:30px 0 4px; font-family:'Black Han Sans',sans-serif; font-weight:400;
+  font-size:22px; letter-spacing:0.04em; text-transform:uppercase; color:#1C1208;
+  display:flex; align-items:center; gap:12px;
+}
+.arc-month::after { content:""; flex:1; height:2px; background:var(--orange-pale); border-radius:2px; }
+.archive-item {
+  display:flex; align-items:stretch; gap:0; padding:0; overflow:hidden;
+  background:var(--white); border:none; border-radius:14px; margin-top:12px;
+  box-shadow:0 6px 18px rgba(28,18,8,0.07); transition:transform 150ms, box-shadow 150ms;
+}
+.archive-item:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(28,18,8,0.12); text-decoration:none; }
+.arc-tile {
+  flex:0 0 140px; min-width:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:14px 8px; background:linear-gradient(140deg, #F7931A, #FFAA3A); color:#fff; text-align:center;
+}
+.arc-tile-date { white-space:nowrap; font-family:'Black Han Sans',sans-serif; font-size:17px; line-height:1.1; text-shadow:1px 1px 0 #C96F00; }
+.arc-tile-week { margin-top:6px; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(28,18,8,0.75); }
+.arc-body { flex:1; min-width:0; padding:16px 20px; }
+.arc-head { font-size:var(--text-title); font-weight:700; color:var(--text); line-height:1.3; }
+.arc-lead { font-size:var(--text-meta); color:var(--muted); margin-top:4px; line-height:1.45; }
+.arc-cats { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.arc-cat { font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:3px 9px; border-radius:999px; color:var(--c); background:var(--cb); }
+@media(max-width:480px){
+  .archive-item { flex-direction:row; }
+  .arc-tile { flex-basis:104px; padding:12px 6px; }
+  .arc-tile-date { font-size:13px; }
+  .arc-body { padding:14px 14px; }
+}
 </style>
 </head>
 <body>
@@ -157,21 +216,33 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
   </header>
 
-  <h2 class="archive-heading">All Issues</h2>
+  <div class="page-ribbon">
+    <div class="pr-title">All issues</div>
+    <div class="pr-meta"><b>{{ collections.issues | length }} issues</b><span>Every Saturday · newest first</span></div>
+  </div>
 
-  {% for issue in collections.issues %}
+  {% for group in collections.issues | groupByMonth %}
+  <h2 class="arc-month">{{ group.label }}</h2>
+  {% for issue in group.items %}
+  {% set _rib = issue.data.dateRange | weekRibbon %}
   <a href="{{ issue.url }}" class="archive-item">
-    <div class="arc-pill">Week {{ issue.data.week }}</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">{{ _rib.dates }}</div>
+      <div class="arc-tile-week">Week {{ issue.data.week }}</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">{{ issue.data.dateRange }}</div>
-      <div class="arc-title">{{ issue.data.title }}</div>
       {% if issue.data.headline %}
-      <div class="arc-lead">{{ issue.data.headline }}</div>
-      {% elif issue.data.stories[0] %}
-      <div class="arc-lead">{{ issue.data.stories[0].title }}</div>
+      <div class="arc-head">{{ issue.data.headline }}</div>
+      {% if issue.data.top_stories and issue.data.top_stories[0] %}<div class="arc-lead">{{ issue.data.top_stories[0].title }}</div>{% endif %}
+      {% elif issue.data.stories and issue.data.stories[0] %}
+      <div class="arc-head">{{ issue.data.stories[0].title }}</div>
+      {% else %}
+      <div class="arc-head">{{ issue.data.title }}</div>
       {% endif %}
+      <div class="arc-cats">{% for c in issue.data | issueCategories %}<span class="arc-cat" data-cat="{{ c }}">{{ c }}</span>{% endfor %}</div>
     </div>
   </a>
+  {% endfor %}
   {% endfor %}
 
   <footer class="footer">

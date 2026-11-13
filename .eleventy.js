@@ -28,6 +28,23 @@ module.exports = function(eleventyConfig) {
     return { prev: all[i + 1] || null, next: all[i - 1] || null };
   });
 
+  // Archive: group issues (newest first) by the month of their issue date
+  eleventyConfig.addFilter("groupByMonth", function(issues) {
+    const groups = [];
+    for (const it of issues || []) {
+      const label = new Date(it.date).toLocaleDateString("en-US", { month: "long", year: "numeric", timeZone: "UTC" });
+      const last = groups[groups.length - 1];
+      if (last && last.label === label) last.items.push(it); else groups.push({ label, items: [it] });
+    }
+    return groups;
+  });
+
+  // Unique story categories of an issue, in story order (either schema)
+  eleventyConfig.addFilter("issueCategories", function(data) {
+    const list = (data && (data.top_stories || data.stories)) || [];
+    return [...new Set(list.map(s => s.category).filter(Boolean))];
+  });
+
   // Self-hosted fonts from @fontsource packages
   eleventyConfig.addPassthroughCopy({
     "node_modules/@fontsource/inter/files": "fonts/inter",
