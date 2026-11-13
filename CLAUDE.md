@@ -43,6 +43,11 @@ Queries (edit freely):
 - `bitcoin protocol research quantum security`
 - `bitcoin executive appointed hires`
 - `bitcoin record milestone exchange`
+- `bitcoin treasury company index MSCI S&P`
+- `Strategy MSTR bitcoin`
+- `bitcoin accounting tax rule`
+
+**Big-story check.** Group the Brave results by event. Any event reported by 5 or more different outlets must appear on the shortlist — 🟢, 🟡 or 🔴 with a reason — so a widely covered story is never dropped silently.
 
 - **Brave's terms forbid storing results.** Keep them in memory or under /tmp only. Never commit them, save them in the repo (btcweekly is public), paste them anywhere, or quote their descriptions.
 - If `BRAVE_API_KEY` is missing or Brave returns errors (401/403/429/5xx) after a retry, use the web searches below instead and report news source "web" with the error.
@@ -68,7 +73,7 @@ Use web search to fill categories Brave covers thinly and to find primary source
 
 ### Noise Filter
 
-Skip before ranking: price-only and day-mover recaps with no cause, "should you buy" / "better buy" pieces, price targets and predictions, listicles, sponsored posts and press-release reposts on aggregator sites, and routine weekly ETF flow recaps. Rank what's left by structural impact (law, regulation, banking access, first-time entrants, named records), never by price moves.
+Skip before ranking: price-only and day-mover recaps with no cause, "should you buy" / "better buy" pieces, price targets and predictions, listicles, sponsored posts and press-release reposts on aggregator sites, and routine weekly ETF flow recaps. Rank what's left by structural impact (law, regulation, banking access, market access, first-time entrants, named records), never by price moves. Price-framed headlines can hide a structural cause ("shares fall 6% after index removal"): judge the cause, not the framing.
 
 ### Source Tiers
 
@@ -77,7 +82,7 @@ Skip before ranking: price-only and day-mover recaps with no cause, "should you 
 - **Acceptable:** Official .gov sites, corporate press releases, first-party announcements
 - **Avoid:** No-name blogs, price speculation sites, aggregators without original reporting
 
-A Brave result from an Avoid-tier site can still lead you to a story; cite a Preferred/Strong/primary source for it or drop it.
+A Brave result from an Avoid-tier or unlisted site can still lead you to a story. Before cutting a story for its source, run one targeted search (Brave and web) for the same event at a Preferred/Strong outlet or the primary source (e.g. the company, agency or index provider). Cut it only if that search comes up empty, and say so on the shortlist ("🔴 no strong source after search").
 
 ### Category Priorities
 
@@ -85,6 +90,7 @@ A Brave result from an Avoid-tier site can still lead you to a story; cite a Pre
 - Corporate BTC accumulation by a company making its **first-ever** purchase — new entrants only
 - Government/regulatory moves (legislation, executive orders, agency guidance from SEC/FDIC/OCC/Fed, state reserve bills)
 - Banking integration (banks offering crypto custody, ETF products, payment rails, Fed access, partnerships)
+- Market access (index inclusion or removal by MSCI, S&P, FTSE or Nasdaq; accounting and tax rule changes from FASB, IRS and peers; exchange or listing decisions affecting Bitcoin treasury companies or Bitcoin ETFs)
 
 **Tier 2:**
 - Routine BTC purchases by repeat buyers (Strategy, Metaplanet, Tether, etc.) — only if the size sets a named record (largest single purchase, largest quarter on record, etc.)
