@@ -6,7 +6,7 @@ title: "Bitcoin Health Meter"
 {% set h = health %}
 {% set composite = h.composite %}
 {% macro color(s) -%}
-{% if s == null %}#A08060{% elif s >= 80 %}#1f9e4a{% elif s >= 65 %}#5cb85c{% elif s >= 50 %}#FFAA3A{% elif s >= 35 %}#F7931A{% else %}#c9302c{% endif %}
+{% if s == null %}#A08060{% elif s >= 80 %}#1f9e4a{% elif s >= 60 %}#5cb85c{% elif s >= 40 %}#FFAA3A{% elif s >= 20 %}#F7931A{% else %}#c9302c{% endif %}
 {%- endmacro %}
 {% macro info(text) -%}
 <span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">{{ text }}</span></span>
@@ -17,11 +17,11 @@ title: "Bitcoin Health Meter"
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Bitcoin Health Meter · BTC Weekly</title>
-<meta name="description" content="A proprietary composite of nine free, public data streams gauging Bitcoin's structural health. Updated daily.">
+<meta name="description" content="Whether Bitcoin's network security, demand, holder base and liquidity are strengthening or weakening. Seven free data streams, updated daily.">
 <link rel="canonical" href="{{ site.url }}/health/">
 <link rel="alternate" type="application/rss+xml" title="BTC Weekly" href="/feed.xml">
 <meta property="og:title" content="Bitcoin Health Meter · BTC Weekly">
-<meta property="og:description" content="A proprietary composite of nine free, public data streams gauging Bitcoin's structural health. Updated daily.">
+<meta property="og:description" content="Whether Bitcoin's network security, demand, holder base and liquidity are strengthening or weakening. Seven free data streams, updated daily.">
 <meta property="og:url" content="{{ site.url }}/health/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="BTC Weekly">
@@ -175,36 +175,35 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
       </div>
       <div class="therm-scale">
         <div class="therm-scale-row{% if composite >= 80 %} active{% endif %}"><div class="tick"></div>Robust</div>
-        <div class="therm-scale-row{% if composite >= 65 and composite < 80 %} active{% endif %}"><div class="tick"></div>Healthy</div>
-        <div class="therm-scale-row{% if composite >= 50 and composite < 65 %} active{% endif %}"><div class="tick"></div>Mixed</div>
-        <div class="therm-scale-row{% if composite >= 35 and composite < 50 %} active{% endif %}"><div class="tick"></div>Strained</div>
-        <div class="therm-scale-row{% if composite < 35 %} active{% endif %}"><div class="tick"></div>Fragile</div>
+        <div class="therm-scale-row{% if composite >= 60 and composite < 80 %} active{% endif %}"><div class="tick"></div>Healthy</div>
+        <div class="therm-scale-row{% if composite >= 40 and composite < 60 %} active{% endif %}"><div class="tick"></div>Mixed</div>
+        <div class="therm-scale-row{% if composite >= 20 and composite < 40 %} active{% endif %}"><div class="tick"></div>Strained</div>
+        <div class="therm-scale-row{% if composite < 20 %} active{% endif %}"><div class="tick"></div>Fragile</div>
       </div>
     </div>
-    <div class="hm-hero-num" style="color:{{ color(composite) }}">{{ composite }}</div>
+    <div class="hm-hero-num" style="color:{{ color(composite) }}">{{ composite | round }}</div>
     <div class="hm-hero-status" style="color:{{ color(composite) }}">{{ h.label }}</div>
-    <div class="hm-hero-meta">As of {{ h.date }} · 0 fragile · 100 robust</div>
-    <div class="hm-hero-explain"><strong>Robust</strong> = network expanding, corporate bid active, holders patient, leverage clean. <strong>Fragile</strong> = the opposite.</div>
-    {% if h.btcSpot %}<div class="hm-spot">BTC ${{ h.btcSpot.price | round }} ({% if h.btcSpot.change24h >= 0 %}+{% endif %}{{ h.btcSpot.change24h | round(2) }}% 24h)</div>{% endif %}
+    <div class="hm-hero-meta">As of {{ h.date }} · 50 = a typical day of the last two years</div>
+    <div class="hm-hero-explain"><strong>Robust</strong> = miners adding capacity, companies and US buyers accumulating, coins leaving exchanges, new dollars arriving, leverage calm. <strong>Fragile</strong> = the opposite. Not a price signal.</div>
   </div>
 
   <div class="hm-intro">
-    A proprietary composite of nine free, public data streams — network security, the corporate BTC bid, holder behavior, market structure, and macro. Higher is healthier. Refreshes daily.
+    Tracks whether Bitcoin's network security, demand, holder base and liquidity are strengthening or weakening. Seven free, public data streams, measured in Bitcoin's own units where possible. Refreshes daily.
   </div>
 
   <div class="hm-section-label">Sub-scores</div>
   <div class="hm-sub-grid">
     {% set subs = [
-      ["Network Health", h.subScores.networkHealth, "Hashrate trend · difficulty"],
-      ["Demand Stack", h.subScores.demandStack, "STRC par · MSTR mNAV"],
-      ["Holder Conviction", h.subScores.holderConviction, "MVRV"],
-      ["Market Structure", h.subScores.marketStructure, "Funding · stablecoin liquidity"],
-      ["Macro & Sentiment", h.subScores.macroSentiment, "Fear & Greed · DXY"]
+      ["Network", h.subScores.network, "Hashrate trend · fee share"],
+      ["Demand", h.subScores.demand, "Corporate BTC added · Coinbase premium"],
+      ["Holders", h.subScores.holders, "Exchange balances"],
+      ["Liquidity", h.subScores.liquidity, "Stablecoin supply"],
+      ["Leverage", h.subScores.leverage, "Perp funding"]
     ] %}
     {% for s in subs %}
     <div class="hm-sub">
       <div class="hm-sub-name">{{ s[0] }}</div>
-      <div class="hm-sub-num" style="color:{{ color(s[1]) }}">{{ s[1] if s[1] != null else "—" }}</div>
+      <div class="hm-sub-num" style="color:{{ color(s[1]) }}">{{ s[1] | round if s[1] != null else "—" }}</div>
       <div class="hm-sub-bar"><div class="hm-sub-bar-fill" style="width:{{ s[1] if s[1] != null else 0 }}%; background:{{ color(s[1]) }}"></div></div>
       <div class="hm-sub-note">{{ s[2] }}</div>
     </div>
@@ -212,87 +211,82 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   </div>
 
   <div class="hm-section-label">Inputs</div>
+  {% set i = h.inputs %}
+  {% macro sign(n) %}{% if n >= 0 %}+{% endif %}{% endmacro %}
+  {% macro stale(x) %}{% if x.stale %} · <em>carried forward from {{ x.asOf }}</em>{% endif %}{% endmacro %}
 
-  {% if h.inputs.hashrate %}
+  {% if i.hashTrend.score != null %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">Hashrate (30d vs 90d){{ info("Compares the network's mining power over the last 30 days vs the last 90. Rising = miners adding machines (bullish). Falling = miners unplugging.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.hashrate.score) }}">{{ h.inputs.hashrate.score }}</div></div>
-    <div class="hm-input-val">30d {{ h.inputs.hashrate.ma30EH | round }} EH/s · 90d {{ h.inputs.hashrate.ma90EH | round }} EH/s · ratio {{ h.inputs.hashrate.ratio | round(3) }}</div>
-    <div class="hm-input-note">mempool.space — ratio &gt; 1 = expanding, &lt; 1 = contracting</div>
+    <div class="hm-input-row"><div class="hm-input-name">Hashrate Trend (30d vs 90d){{ info("Average mining power over the last 30 days divided by the last 90. Above 1 means miners are plugging in more machines.") }}</div><div class="hm-input-score" style="color:{{ color(i.hashTrend.score) }}">{{ i.hashTrend.score | round }}</div></div>
+    <div class="hm-input-val">Ratio {{ i.hashTrend.raw | round(3) }}{% if i.hashTrend.ma30EH %} · 30d avg {{ i.hashTrend.ma30EH | round }} EH/s{% endif %}{{ stale(i.hashTrend) }}</div>
+    <div class="hm-input-note">{{ i.hashTrend.source }} — ranked against the last two years</div>
   </div>
   {% endif %}
 
-  {% if h.inputs.difficulty %}
+  {% if i.feeShare.score != null %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">Next Difficulty Adjustment{{ info("Every two weeks Bitcoin auto-adjusts mining difficulty. A positive next adjustment means miners are crowding in faster than expected (confident). Negative means they're leaving.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.difficulty.score) }}">{{ h.inputs.difficulty.score }}</div></div>
-    <div class="hm-input-val">{% if h.inputs.difficulty.estimatedChange >= 0 %}+{% endif %}{{ h.inputs.difficulty.estimatedChange | round(2) }}% est · {{ h.inputs.difficulty.progressPercent | round }}% through epoch</div>
-    <div class="hm-input-note">mempool.space — positive = miner confidence growing</div>
+    <div class="hm-input-row"><div class="hm-input-name">Fee Share of Miner Revenue (30d){{ info("Transaction fees as a share of what miners earn; the rest is new issuance, which halves every four years. Higher means more demand for block space and a security budget less dependent on the subsidy.") }}</div><div class="hm-input-score" style="color:{{ color(i.feeShare.score) }}">{{ i.feeShare.score | round }}</div></div>
+    <div class="hm-input-val">{{ i.feeShare.raw | round(2) }}% of miner revenue{{ stale(i.feeShare) }}</div>
+    <div class="hm-input-note">{{ i.feeShare.source }} — ranked against the last two years</div>
   </div>
   {% endif %}
 
-  {% if h.inputs.strc %}
+  {% if i.corp30.score != null %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">$STRC vs $100 Par{{ info("STRC is Strategy's preferred stock, designed to trade at $100. When it stays tight to par, Strategy can keep issuing it and using the cash to buy Bitcoin — a constant corporate bid.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.strc.score) }}">{{ h.inputs.strc.score }}</div></div>
-    <div class="hm-input-val">${{ h.inputs.strc.price | round(2) }} · {% if h.inputs.strc.distanceFromPar >= 0 %}+{% endif %}${{ h.inputs.strc.distanceFromPar | round(2) }} from par</div>
-    <div class="hm-input-note">Yahoo Finance — tight to par means active corporate BTC bid intact</div>
+    <div class="hm-input-row"><div class="hm-input-name">Corporate BTC Added (30d){{ info("Net bitcoin added over 30 days by the largest public-company treasuries, counted in BTC rather than dollars, so it reflects buying, not price.") }}</div><div class="hm-input-score" style="color:{{ color(i.corp30.score) }}">{{ i.corp30.score | round }}</div></div>
+    <div class="hm-input-val">{{ sign(i.corp30.raw) }}{{ (i.corp30.raw | round).toLocaleString("en-US") }} BTC{% if i.corp30.trackedCompanies %} · {{ i.corp30.trackedCompanies }} companies tracked{% endif %}{{ stale(i.corp30) }}</div>
+    <div class="hm-input-note">{{ i.corp30.source }} public treasuries</div>
   </div>
   {% endif %}
 
-  {% if h.inputs.mnav %}
+  {% if i.premium7.score != null %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">MSTR mNAV Premium{{ info("Strategy's enterprise value (market cap plus debt and preferred stock) divided by the value of the BTC it owns, as published by Strategy. Above 1.0 means the market is paying a premium, so Strategy can issue more stock and buy more BTC. Below 1.0 the flywheel breaks.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.mnav.score) }}">{{ h.inputs.mnav.score }}</div></div>
-    <div class="hm-input-val">{{ h.inputs.mnav.value | round(2) }}×{% if h.inputs.mnav.mstrPrice %} · MSTR ${{ h.inputs.mnav.mstrPrice | round(2) }}{% endif %} · {{ h.inputs.mnav.btcHeld.toLocaleString("en-US") }} BTC held</div>
-    <div class="hm-input-note">{% if h.inputs.mnav.basis == "derived" %}Derived from Strategy data (equity basis){% else %}Strategy (strategy.com){% endif %} — premium &gt; 1 enables equity-funded BTC accumulation flywheel</div>
+    <div class="hm-input-row"><div class="hm-input-name">Coinbase Premium (7d){{ info("Coinbase's BTC-USD price versus OKX's BTC-USDT price. A positive gap means US buyers, including the custody flows behind spot ETFs, are bidding harder than the offshore market.") }}</div><div class="hm-input-score" style="color:{{ color(i.premium7.score) }}">{{ i.premium7.score | round }}</div></div>
+    <div class="hm-input-val">{{ sign(i.premium7.raw) }}{{ i.premium7.raw | round(3) }}%{{ stale(i.premium7) }}</div>
+    <div class="hm-input-note">{{ i.premium7.source }} daily closes — ranked against the last two years</div>
   </div>
   {% endif %}
 
-  {% if h.inputs.mvrv %}
+  {% if i.exchFlow.score != null %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">MVRV Ratio{{ info("The current price of all Bitcoin in circulation divided by what it was last bought for on average. Below 1 = most holders underwater (historic buy zone). Above 3.5 = holders deep in profit and likely to sell.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.mvrv.score) }}">{{ h.inputs.mvrv.score }}</div></div>
-    <div class="hm-input-val">{{ h.inputs.mvrv.value | round(2) }}</div>
-    <div class="hm-input-note">CoinMetrics — &lt; 1 generational value · &gt; 3.5 distribution risk</div>
+    <div class="hm-input-row"><div class="hm-input-name">Exchange Balances (30d Δ){{ info("Bitcoin held in exchange wallets, change over 30 days. Coins leaving exchanges are usually being held; coins arriving are usually there to be sold. Falling balances score higher.") }}</div><div class="hm-input-score" style="color:{{ color(i.exchFlow.score) }}">{{ i.exchFlow.score | round }}</div></div>
+    <div class="hm-input-val">{{ sign(i.exchFlow.raw) }}{{ i.exchFlow.raw | round(2) }}%{% if i.exchFlow.exchangeBTC %} · {{ (i.exchFlow.exchangeBTC | round).toLocaleString("en-US") }} BTC on exchanges{% endif %}{{ stale(i.exchFlow) }}</div>
+    <div class="hm-input-note">{{ i.exchFlow.source }} — exchange wallets are estimated by address labelling</div>
   </div>
   {% endif %}
 
-  {% if h.inputs.funding %}
+  {% if i.stable30.score != null %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">Perp Funding (annualized){{ info("On perpetual futures, leveraged long positions pay shorts a fee when positioning is crowded long. Extreme positive funding = euphoric leverage (usually right before a flush). Low or negative = clean positioning.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.funding.score) }}">{{ h.inputs.funding.score }}</div></div>
-    <div class="hm-input-val">{% if h.inputs.funding.annualizedPct >= 0 %}+{% endif %}{{ h.inputs.funding.annualizedPct | round(2) }}%</div>
-    <div class="hm-input-note">OKX BTC-USDT swap — extreme positive = crowded longs</div>
+    <div class="hm-input-row"><div class="hm-input-name">Stablecoin Supply (30d Δ){{ info("Total supply of all USD stablecoins, change over 30 days. New stablecoins are new dollars entering crypto; shrinking supply means dollars leaving.") }}</div><div class="hm-input-score" style="color:{{ color(i.stable30.score) }}">{{ i.stable30.score | round }}</div></div>
+    <div class="hm-input-val">{% if i.stable30.totalUSD %}${{ (i.stable30.totalUSD / 1000000000) | round(1) }}B · {% endif %}{{ sign(i.stable30.raw) }}{{ i.stable30.raw | round(2) }}%{{ stale(i.stable30) }}</div>
+    <div class="hm-input-note">{{ i.stable30.source }} (all USD stablecoins) — ranked against the last two years</div>
   </div>
   {% endif %}
 
-  {% if h.inputs.stablecoins %}
+  {% if i.funding7.score != null %}
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">Stablecoin Cap (7d Δ){{ info("Total dollars parked in all USD stablecoins — think of it as dry powder waiting to deploy. Growing = buying capacity building. Shrinking = money leaving crypto entirely.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.stablecoins.score) }}">{{ h.inputs.stablecoins.score }}</div></div>
-    <div class="hm-input-val">${{ (h.inputs.stablecoins.totalUSD / 1000000000) | round(1) }}B · {% if h.inputs.stablecoins.delta7dPct >= 0 %}+{% endif %}{{ h.inputs.stablecoins.delta7dPct | round(2) }}%</div>
-    <div class="hm-input-note">DefiLlama (all USD stablecoins) — growth = dry powder building</div>
+    <div class="hm-input-row"><div class="hm-input-name">Perp Funding (7d, annualized){{ info("What leveraged traders pay to hold perpetual futures. Near zero to mildly positive is calm. Very positive means crowded longs; very negative means forced unwinding. Both extremes score low.") }}</div><div class="hm-input-score" style="color:{{ color(i.funding7.score) }}">{{ i.funding7.score | round }}</div></div>
+    <div class="hm-input-val">{{ sign(i.funding7.raw) }}{{ i.funding7.raw | round(2) }}%{{ stale(i.funding7) }}</div>
+    <div class="hm-input-note">{{ i.funding7.source }} BTC perpetual — fixed scale, best between 0% and 8%</div>
   </div>
   {% endif %}
 
-  {% if h.inputs.fearGreed %}
+  {% if h.context and (h.context.strategyBtc or h.context.strcPrice) %}
+  <div class="hm-section-label">Context (not scored)</div>
   <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">Crypto Fear &amp; Greed (contrarian){{ info("The popular sentiment index, inverted. Extreme fear has historically preceded the best forward returns; euphoria has preceded tops.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.fearGreed.score) }}">{{ h.inputs.fearGreed.score }}</div></div>
-    <div class="hm-input-val">{{ h.inputs.fearGreed.value }} · {{ h.inputs.fearGreed.label }}</div>
-    <div class="hm-input-note">alternative.me — extreme fear has historically preceded forward returns</div>
-  </div>
-  {% endif %}
-
-  {% if h.inputs.dxy %}
-  <div class="hm-input">
-    <div class="hm-input-row"><div class="hm-input-name">Dollar Index (30d){{ info("How strong the U.S. dollar is vs a basket of other currencies, change over the last month. A weaker dollar typically eases global financial conditions and supports Bitcoin.") }}</div><div class="hm-input-score" style="color:{{ color(h.inputs.dxy.score) }}">{{ h.inputs.dxy.score }}</div></div>
-    <div class="hm-input-val">{{ h.inputs.dxy.latest | round(2) }} · {% if h.inputs.dxy.change30dPct >= 0 %}+{% endif %}{{ h.inputs.dxy.change30dPct | round(2) }}% 30d</div>
-    <div class="hm-input-note">FRED DTWEXBGS — weaker dollar typically supportive for BTC</div>
+    <div class="hm-input-val">{% if h.context.strategyBtc %}Strategy holds {{ h.context.strategyBtc.toLocaleString("en-US") }} BTC{% endif %}{% if h.context.mNav %} · mNAV {{ h.context.mNav | round(2) }}×{% endif %}{% if h.context.strcPrice %} · STRC ${{ h.context.strcPrice | round(2) }} vs $100 par{% endif %}</div>
+    <div class="hm-input-note">Shown for reference. Share-price ratios move with BTC, so they are not part of the score; Strategy's actual purchases count through Corporate BTC Added.</div>
   </div>
   {% endif %}
 
   <div class="hm-methodology">
-    <strong>Methodology.</strong> Nine inputs roll up into five sub-scores. Each input is mapped to a 0–100 health score by interpolating between fixed anchor points documented in <code>scripts/fetch-health-meter.js</code>. Refreshed daily at 00:30 UTC. All sources are free and public.
+    <strong>Methodology.</strong> Seven inputs roll up into five sub-scores: Network 25%, Demand 30%, Holders 20%, Liquidity 15%, Leverage 10%. Each input is ranked against its own last two years, so 50 means a typical day and 90 means stronger than 90% of them. Funding is the exception: it uses a fixed scale where calm positioning scores highest. The weighted total is smoothed over about a week and ranked against its own two-year history, so each label covers roughly a fifth of days. Code: <code>scripts/fetch-health-meter.js</code>.
     <br><br>
-    <strong>Why these weights.</strong> Demand Stack carries the most weight (30%) because in the ETF and corporate-treasury era, who's buying the float is the load-bearing story. Network Health (20%), Holder Conviction (20%), and Market Structure (20%) each get an equal slice as the underlying structural signals — what miners are doing, what long-term holders are doing, and how derivatives positioning is leaning. Macro &amp; Sentiment is capped at 10% because it's the noisiest input and tends to echo what the other categories already capture.
+    <strong>Not a price signal.</strong> Inputs count actions — machines plugged in, bitcoin bought, coins withdrawn, stablecoins minted — in Bitcoin's own units where possible. Sentiment and valuation measures are excluded. Some link to price is unavoidable, so every run checks how closely the meter's weekly change tracks BTC's weekly return{% if h.priceCheck %}: currently {{ h.priceCheck.weekly }} over the last {{ h.priceCheck.days }} days{% endif %}.
     <br><br>
-    <strong>Not a buy or sell signal.</strong> The meter measures structural health, not momentum. It is intentionally somewhat contrarian: it tends to peak in early-bull or post-capitulation phases when conviction is high and leverage is clean, and to fall during late-bull euphoria when funding is hot and holders are deep in profit. Price can keep rising while the meter declines — that's the point.
+    <strong>Limits.</strong> Corporate holdings cover the 25 largest public companies, with one year of history. Spot ETF flows are not included because no free source is reliable enough. Exchange balances rely on address labelling and are estimates.
     <br><br>
-    <strong>Sources.</strong> mempool.space · Yahoo Finance · CoinMetrics community · OKX · DefiLlama · alternative.me · FRED · CoinGecko.
+    <strong>Sources.</strong> CoinMetrics community · mempool.space · CoinGecko · Coinbase · OKX · Deribit · DefiLlama.
   </div>
 
 <script>

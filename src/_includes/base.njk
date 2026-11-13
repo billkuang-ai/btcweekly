@@ -592,7 +592,7 @@ p.s-part { margin-bottom:0; }
 
   {% if health %}
   {% macro _hcol(s) -%}
-  {% if s == null %}#A08060{% elif s >= 80 %}#1f9e4a{% elif s >= 65 %}#5cb85c{% elif s >= 50 %}#FFAA3A{% elif s >= 35 %}#F7931A{% else %}#c9302c{% endif %}
+  {% if s == null %}#A08060{% elif s >= 80 %}#1f9e4a{% elif s >= 60 %}#5cb85c{% elif s >= 40 %}#FFAA3A{% elif s >= 20 %}#F7931A{% else %}#c9302c{% endif %}
   {%- endmacro %}
   {% set _hc = health.composite %}
   <a href="/health/" class="hm-mini">
@@ -605,11 +605,11 @@ p.s-part { margin-bottom:0; }
       <div class="hm-mini-comp-bar"><div class="hm-mini-comp-fill" style="width:{{ _hc }}%; background:{{ _hcol(_hc) }}"></div></div>
     </div>
     {% set _subs = [
-      ["Network", health.subScores.networkHealth],
-      ["Demand", health.subScores.demandStack],
-      ["Holder", health.subScores.holderConviction],
-      ["Market", health.subScores.marketStructure],
-      ["Macro", health.subScores.macroSentiment]
+      ["Network", health.subScores.network],
+      ["Demand", health.subScores.demand],
+      ["Holders", health.subScores.holders],
+      ["Liquidity", health.subScores.liquidity],
+      ["Leverage", health.subScores.leverage]
     ] %}
     <div class="hm-mini-subs">
       {% for s in _subs %}
