@@ -433,7 +433,6 @@ p.s-part { margin-bottom:0; }
       <p class="s-part"><span class="s-label">What happened:</span> {{ story.what }}
         <span class="s-links">{% for src in story.sources %}<a href="{{ src.url }}">{{ src.label }}&nbsp;↗</a>{% if not loop.last %} · {% endif %}{% endfor %}</span></p>
       {% if story.why %}<div class="s-consequence"><span class="s-label">Why it matters:</span> {{ story.why }}</div>{% endif %}
-      {% if story.watch %}<p class="s-part"><span class="s-label">What to watch:</span> {{ story.watch }}</p>{% endif %}
     </div>
   </article>
   {% endfor %}

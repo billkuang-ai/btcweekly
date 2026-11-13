@@ -144,8 +144,6 @@ Vary sentence length deliberately. After a run of long, dense sentences, one sho
 - ✅ "It establishes that a quantum emergency response exists within Bitcoin's current ruleset, requiring no one's permission to deploy."
 - ❌ "This is a watershed moment for Bitcoin adoption." (editorial, unsourced)
 
-**What to watch (`watch`):** Optional. One line naming a concrete next event that a source dates or schedules (e.g. "Senate floor vote expected Dec 4"). Leave it out when there is none — never a prediction.
-
 **Sources:** 1–3 per top story, rendered as links after "What happened". Use the highest-tier source available; add another only if it contributes materially different detail.
 
 ### Brief lines
@@ -245,7 +243,6 @@ top_stories:            # up to 3, most significant first
       most specific verifiable fact; mechanics, scale and material counterweights.
     why: >-
       One sentence: the structural consequence for Bitcoin, grounded in reported fact.
-    watch: "Optional: a dated or scheduled next event from a source."
     sources:
       - label: "Source Name"
         url: "https://..."
