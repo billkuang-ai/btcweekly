@@ -387,6 +387,67 @@ p.s-part { margin-bottom:0; }
   .hm-mini-sub-val { font-size:16px; }
 }
 
+
+/* ── DESIGN v2: dark feature hero, category colors, card grid ── */
+[data-cat] { --c:var(--orange); --cb:var(--orange-faint); }
+[data-cat="Regulation"]    { --c:#2F5D8A; --cb:#E6EEF7; }
+[data-cat="Banking"]       { --c:#2E6B45; --cb:#E3F2E8; }
+[data-cat="Institutional"] { --c:#6343A0; --cb:#EEE7F8; }
+[data-cat="Mining"]        { --c:#8A5200; --cb:#FCEBD2; }
+[data-cat="Research"]      { --c:#1C6E6E; --cb:#DFF2F1; }
+[data-cat="Payments"]      { --c:#A8355A; --cb:#FBE6EC; }
+[data-cat="Sovereign"]     { --c:#24406E; --cb:#E3E8F2; }
+[data-cat="ETF"]           { --c:#7E4410; --cb:#F6E6D6; }
+
+.wrapper { max-width:760px; }
+
+.issue-hero {
+  position:relative; overflow:hidden;
+  background:#1C1208; border:none; border-radius:16px;
+  padding:34px 34px 32px; box-shadow:0 18px 40px rgba(28,18,8,0.25);
+}
+.issue-hero::after {
+  content:""; position:absolute; right:-80px; top:-80px; width:260px; height:260px; border-radius:50%;
+  background:radial-gradient(circle, var(--orange) 0%, rgba(247,147,26,0) 70%); opacity:0.45; pointer-events:none;
+}
+.issue-headline { position:relative; color:#FFF6EC; font-size:clamp(28px, 4.6vw, 40px); line-height:1.12; }
+.issue-lead { position:relative; color:rgba(255,246,236,0.86); font-size:clamp(16px, 2.3vw, 19px); margin-top:12px; }
+
+.story {
+  border:none; border-top:6px solid var(--c); border-radius:14px;
+  margin-top:22px; box-shadow:0 6px 20px rgba(28,18,8,0.07);
+}
+.story.s1 { border-top:6px solid var(--c); box-shadow:0 10px 28px rgba(28,18,8,0.10); }
+.story-meta, .story.s1 .story-meta { background:none; border-bottom:none; padding:18px 24px 0; }
+.story .s-n { font-size:34px; color:var(--c); }
+.story .s-meta-sep { display:none; }
+.story .s-cat { display:inline-block; padding:3px 10px; border-radius:999px; color:var(--c); background:var(--cb); letter-spacing:0.1em; }
+.story-body { padding:10px 24px 24px; }
+.s-title { font-size:clamp(19px, 2.8vw, 23px); }
+.story.s1 .s-title { font-size:clamp(22px, 3.4vw, 28px); }
+.story .s-consequence { background:var(--cb); border-left:4px solid var(--c); color:var(--text); }
+
+.brief { background:none; border:none; box-shadow:none; border-radius:0; margin-top:34px; overflow:visible; }
+.brief-head { background:none; border:none; padding:0 0 10px; color:var(--text); font-size:15px; }
+.brief-list { display:grid; grid-template-columns:1fr 1fr; gap:14px; }
+.brief-item, .brief-item:last-child {
+  background:var(--white); border:none; border-top:4px solid var(--c); border-radius:12px;
+  box-shadow:0 4px 14px rgba(28,18,8,0.06); padding:16px 18px;
+}
+.brief-cat { display:table; padding:3px 10px; border-radius:999px; color:var(--c); background:var(--cb); letter-spacing:0.1em; margin-bottom:8px; }
+.quiet { margin-top:14px; border:none; border-radius:10px; }
+
+.hm-mini { background:#1C1208; border:none; border-radius:16px; margin-top:34px; }
+.hm-mini-label, .hm-mini-sub-name { color:rgba(255,246,236,0.62); }
+.hm-mini-subs, .hm-mini-cta { border-top-color:rgba(255,246,236,0.12); }
+.hm-mini-comp-bar, .hm-mini-sub-bar { background:rgba(255,246,236,0.12); box-shadow:none; }
+
+@media(max-width:600px) {
+  .brief-list { grid-template-columns:1fr; }
+  .issue-hero { padding:26px 22px; }
+  .story-meta, .story.s1 .story-meta { padding:16px 18px 0; }
+  .story-body { padding:10px 18px 20px; }
+}
 </style>
 </head>
 <body>
@@ -540,7 +601,7 @@ p.s-part { margin-bottom:0; }
   <div class="issue-intro">Circle received final OCC approval on July 10 to establish a national trust bank — placing USDC custody operations under direct federal banking supervision — while Strategy disclosed its largest Bitcoin sale since 2022, liquidating 3,588 BTC below cost to service preferred dividend obligations for the first time in the company&#39;s history.</div>
 
   
-  <div class="story s1">
+  <div class="story s1" data-cat="Banking">
     <div class="story-meta">
       <span class="s-n">1</span>
       <span class="s-meta-sep">·</span>
@@ -556,7 +617,7 @@ p.s-part { margin-bottom:0; }
     </div>
   </div>
   
-  <div class="story">
+  <div class="story" data-cat="Institutional">
     <div class="story-meta">
       <span class="s-n">2</span>
       <span class="s-meta-sep">·</span>
@@ -572,7 +633,7 @@ p.s-part { margin-bottom:0; }
     </div>
   </div>
   
-  <div class="story">
+  <div class="story" data-cat="Mining">
     <div class="story-meta">
       <span class="s-n">3</span>
       <span class="s-meta-sep">·</span>
