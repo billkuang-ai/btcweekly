@@ -254,6 +254,33 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 }
 .s-source a { color:var(--orange); font-weight:500; }
 
+/* ── FORMAT 2: hero, labeled story parts, in brief ── */
+.issue-hero { margin-top:20px; padding:4px 0 0; }
+h1.issue-headline, h2.s-title, h2.brief-head { margin:0; }
+p.s-part { margin-bottom:0; }
+.issue-headline { font-size:var(--text-lead); font-weight:700; color:var(--text); line-height:1.3; }
+.issue-hero .issue-intro { margin-top:10px; }
+.s-part { font-size:var(--text-body); color:var(--muted); line-height:1.62; margin-top:9px; }
+.s-label { font-weight:700; color:var(--text); }
+.s-part .s-links a { color:var(--orange); font-weight:500; white-space:nowrap; display:inline-block; padding:11px 2px; margin:-11px -2px; }
+.brief {
+  margin-top:22px; background:var(--white); border:1px solid var(--border);
+  border-radius:10px; box-shadow:var(--shadow-sm); overflow:hidden;
+}
+.brief-head {
+  padding:9px 16px; background:var(--surface-soft); border-bottom:1px solid var(--border-soft);
+  font-size:var(--text-label); font-weight:700; letter-spacing:0.14em; text-transform:uppercase; color:var(--orange);
+}
+.brief-list { list-style:none; margin:0; padding:0; }
+.brief-item { padding:12px 18px; border-bottom:1px solid var(--border-soft); font-size:var(--text-body); color:var(--muted); line-height:1.55; }
+.brief-item:last-child { border-bottom:none; }
+.brief-cat {
+  display:block; font-size:var(--text-label); font-weight:700; letter-spacing:0.12em;
+  text-transform:uppercase; color:var(--orange); margin-bottom:2px;
+}
+.brief-item a { color:var(--orange); font-weight:500; white-space:nowrap; display:inline-block; padding:11px 2px; margin:-11px -2px; }
+.quiet { padding:10px 18px; font-size:var(--text-meta); color:var(--faint); border-top:1px solid var(--border-soft); background:var(--surface-soft); }
+
 /* ── WEEKLY INTRO ── */
 .issue-intro {
   margin-top:20px; padding:14px 18px;
@@ -504,6 +531,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
   <div class="sponsor"><!-- sponsor placeholder --></div>
 
+  
   <div class="issue-intro">Two institutional gateways advanced this week without new legislation: the CFTC&#39;s crypto rulemaking entered its public comment period, and Deutsche Bank said its Bitcoin custody service is weeks from launch.</div>
 
   
@@ -539,6 +567,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
   </div>
   
+  
 
   
   
@@ -547,10 +576,10 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     <div class="hm-mini-label">Bitcoin Health Meter</div>
     <div class="hm-mini-composite">
       <div class="hm-mini-comp-row">
-        <span class="hm-mini-score" style="color:#FFAA3A">59</span>
+        <span class="hm-mini-score" style="color:#FFAA3A">62</span>
         <span class="hm-mini-status" style="color:#FFAA3A">Mixed</span>
       </div>
-      <div class="hm-mini-comp-bar"><div class="hm-mini-comp-fill" style="width:58.5%; background:#FFAA3A"></div></div>
+      <div class="hm-mini-comp-bar"><div class="hm-mini-comp-fill" style="width:62%; background:#FFAA3A"></div></div>
     </div>
     
     <div class="hm-mini-subs">
@@ -574,25 +603,25 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
       <div class="hm-mini-sub">
         <div class="hm-mini-sub-top">
           <span class="hm-mini-sub-name">Holder</span>
-          <span class="hm-mini-sub-val" style="color:#5cb85c">74</span>
+          <span class="hm-mini-sub-val" style="color:#5cb85c">76</span>
         </div>
-        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:74%; background:#5cb85c"></div></div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:76%; background:#5cb85c"></div></div>
       </div>
       
       <div class="hm-mini-sub">
         <div class="hm-mini-sub-top">
           <span class="hm-mini-sub-name">Market</span>
-          <span class="hm-mini-sub-val" style="color:#F7931A">39</span>
+          <span class="hm-mini-sub-val" style="color:#FFAA3A">50</span>
         </div>
-        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:38.5%; background:#F7931A"></div></div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:50%; background:#FFAA3A"></div></div>
       </div>
       
       <div class="hm-mini-sub">
         <div class="hm-mini-sub-top">
           <span class="hm-mini-sub-name">Macro</span>
-          <span class="hm-mini-sub-val" style="color:#FFAA3A">62</span>
+          <span class="hm-mini-sub-val" style="color:#5cb85c">69</span>
         </div>
-        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:62.2%; background:#FFAA3A"></div></div>
+        <div class="hm-mini-sub-bar"><div class="hm-mini-sub-fill" style="width:69.4%; background:#5cb85c"></div></div>
       </div>
       
     </div>
