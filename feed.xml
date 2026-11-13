@@ -6,7 +6,15 @@
   <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
   <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-10-31T00:00:00Z</updated>
+  <updated>2026-11-07T00:00:00Z</updated>
+  <entry>
+    <title>Week 45 (2026) · BTC Weekly</title>
+    <link href="https://www.btcweekly.org/2026/week-45/"/>
+    <id>https://www.btcweekly.org/2026/week-45/</id>
+    <updated>2026-11-07T00:00:00Z</updated>
+    <summary>Treasury shelved a plan that would have cut the crypto travel-rule threshold by more than 90%.</summary>
+    <content type="html">FinCEN and the Federal Reserve Board jointly withdrew the 2020 proposal on November 6, filing the notice with the Federal Register. The rule would have lowered the point at which institutions must collect and pass along customer data on cross-border transfers from $3,000 to $250, and would have written convertible virtual currencies explicitly into the Recordkeeping and Travel Rule. FinCEN cited the five-plus years since publication and changes in the crypto industry as reasons to seek fresh public input. When it proposed the rule, the agency argued that illicit actors were splitting funds into smaller transfers; Coin Center countered that a $250 line would expose ordinary payments to warrantless surveillance. The move follows Treasury&#39;s October withdrawal of separate proposals covering unhosted wallets and crypto mixing.</content>
+  </entry>
   <entry>
     <title>Week 44 (2026) · BTC Weekly</title>
     <link href="https://www.btcweekly.org/2026/week-44/"/>
