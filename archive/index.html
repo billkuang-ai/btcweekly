@@ -136,6 +136,65 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 @media(max-width:480px){
   .archive-item { flex-direction:column; gap:8px; }
 }
+
+/* ── DESIGN v2 (shared with issue pages) ── */
+.wrapper { max-width:760px; }
+.page-ribbon {
+  position:relative; overflow:hidden; display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  margin-top:34px; padding:18px 22px;
+  background:linear-gradient(120deg, #F7931A, #FFAA3A); border-radius:16px;
+  box-shadow:0 10px 26px rgba(247,147,26,0.30);
+}
+.page-ribbon::before {
+  content:"₿"; position:absolute; right:24px; top:-30px; font-size:130px; font-weight:800;
+  color:rgba(255,255,255,0.12); pointer-events:none;
+}
+.pr-title {
+  position:relative; font-family:'Black Han Sans',sans-serif; font-weight:400;
+  font-size:clamp(32px, 6vw, 50px); line-height:1; color:#fff; text-shadow:2px 2px 0 #C96F00; white-space:nowrap;
+}
+.pr-meta { position:relative; display:flex; flex-direction:column; }
+.pr-meta b { font-size:20px; font-weight:800; color:#1C1208; line-height:1.1; }
+.pr-meta span { margin-top:4px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(28,18,8,0.75); }
+[data-cat] { --c:var(--orange); --cb:var(--orange-faint); }
+[data-cat="Regulation"]    { --c:#2F5D8A; --cb:#E6EEF7; }
+[data-cat="Banking"]       { --c:#2E6B45; --cb:#E3F2E8; }
+[data-cat="Institutional"] { --c:#6343A0; --cb:#EEE7F8; }
+[data-cat="Mining"]        { --c:#8A5200; --cb:#FCEBD2; }
+[data-cat="Research"]      { --c:#1C6E6E; --cb:#DFF2F1; }
+[data-cat="Payments"]      { --c:#A8355A; --cb:#FBE6EC; }
+[data-cat="Sovereign"]     { --c:#24406E; --cb:#E3E8F2; }
+[data-cat="ETF"]           { --c:#7E4410; --cb:#F6E6D6; }
+
+.arc-month {
+  margin:30px 0 4px; font-family:'Black Han Sans',sans-serif; font-weight:400;
+  font-size:22px; letter-spacing:0.04em; text-transform:uppercase; color:#1C1208;
+  display:flex; align-items:center; gap:12px;
+}
+.arc-month::after { content:""; flex:1; height:2px; background:var(--orange-pale); border-radius:2px; }
+.archive-item {
+  display:flex; align-items:stretch; gap:0; padding:0; overflow:hidden;
+  background:var(--white); border:none; border-radius:14px; margin-top:12px;
+  box-shadow:0 6px 18px rgba(28,18,8,0.07); transition:transform 150ms, box-shadow 150ms;
+}
+.archive-item:hover { transform:translateY(-2px); box-shadow:0 10px 26px rgba(28,18,8,0.12); text-decoration:none; }
+.arc-tile {
+  flex:0 0 140px; min-width:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
+  padding:14px 8px; background:linear-gradient(140deg, #F7931A, #FFAA3A); color:#fff; text-align:center;
+}
+.arc-tile-date { white-space:nowrap; font-family:'Black Han Sans',sans-serif; font-size:17px; line-height:1.1; text-shadow:1px 1px 0 #C96F00; }
+.arc-tile-week { margin-top:6px; font-size:11px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(28,18,8,0.75); }
+.arc-body { flex:1; min-width:0; padding:16px 20px; }
+.arc-head { font-size:var(--text-title); font-weight:700; color:var(--text); line-height:1.3; }
+.arc-lead { font-size:var(--text-meta); color:var(--muted); margin-top:4px; line-height:1.45; }
+.arc-cats { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.arc-cat { font-size:11px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; padding:3px 9px; border-radius:999px; color:var(--c); background:var(--cb); }
+@media(max-width:480px){
+  .archive-item { flex-direction:row; }
+  .arc-tile { flex-basis:104px; padding:12px 6px; }
+  .arc-tile-date { font-size:13px; }
+  .arc-body { padding:14px 14px; }
+}
 </style>
 </head>
 <body>
@@ -152,338 +211,455 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
   </header>
 
-  <h2 class="archive-heading">All Issues</h2>
+  <div class="page-ribbon">
+    <div class="pr-title">All issues</div>
+    <div class="pr-meta"><b>30 issues</b><span>Every Saturday · newest first</span></div>
+  </div>
 
   
+  <h2 class="arc-month">November 2026</h2>
+  
+  
   <a href="/2026/week-45/" class="archive-item">
-    <div class="arc-pill">Week 45</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Nov 1–7</div>
+      <div class="arc-tile-week">Week 45</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">November 1–7, 2026</div>
-      <div class="arc-title">Week 45 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Treasury shelved a plan that would have cut the crypto travel-rule threshold by more than 90%.</div>
+      <div class="arc-head">Treasury shelved a plan that would have cut the crypto travel-rule threshold by more than 90%.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="Research">Research</span></div>
     </div>
   </a>
+  
+  
+  <h2 class="arc-month">October 2026</h2>
+  
   
   <a href="/2026/week-44/" class="archive-item">
-    <div class="arc-pill">Week 44</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Oct 25–31</div>
+      <div class="arc-tile-week">Week 44</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">October 25–31, 2026</div>
-      <div class="arc-title">Week 44 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">The largest crypto theft on record hit Binance&#39;s hot wallets — and the exchange says customers will be made whole.</div>
+      <div class="arc-head">The largest crypto theft on record hit Binance&#39;s hot wallets — and the exchange says customers will be made whole.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Institutional">Institutional</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-43/" class="archive-item">
-    <div class="arc-pill">Week 43</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Oct 18–24</div>
+      <div class="arc-tile-week">Week 43</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">October 18–24, 2026</div>
-      <div class="arc-title">Week 43 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Bitcoin&#39;s reference software changed how it estimates fees — without touching a single consensus rule.</div>
+      <div class="arc-head">Bitcoin&#39;s reference software changed how it estimates fees — without touching a single consensus rule.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Research">Research</span><span class="arc-cat" data-cat="Mining">Mining</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-42/" class="archive-item">
-    <div class="arc-pill">Week 42</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Oct 11–17</div>
+      <div class="arc-tile-week">Week 42</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">October 11–17, 2026</div>
-      <div class="arc-title">Week 42 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">The CFTC began what its chairman calls the first round of crypto market regulations — a route taken after Congress&#39;s market-structure bill stalled.</div>
+      <div class="arc-head">The CFTC began what its chairman calls the first round of crypto market regulations — a route taken after Congress&#39;s market-structure bill stalled.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Banking">Banking</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-40/" class="archive-item">
-    <div class="arc-pill">Week 40</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Sep 27–Oct 3</div>
+      <div class="arc-tile-week">Week 40</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">September 27–October 3, 2026</div>
-      <div class="arc-title">Week 40 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">The SEC proposed the first compliant pathway for investment advisers and registered funds to custody Bitcoin — and opened self-custody as an option of last resort.</div>
+      <div class="arc-head">The SEC proposed the first compliant pathway for investment advisers and registered funds to custody Bitcoin — and opened self-custody as an option of last resort.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Banking">Banking</span></div>
     </div>
   </a>
+  
+  
+  <h2 class="arc-month">September 2026</h2>
+  
   
   <a href="/2026/week-39/" class="archive-item">
-    <div class="arc-pill">Week 39</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Sep 20–26</div>
+      <div class="arc-tile-week">Week 39</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">September 20–26, 2026</div>
-      <div class="arc-title">Week 39 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Bitcoin ETFs drew $2.39 billion in a single week — their largest of 2026 — and flipped the year&#39;s cumulative flows positive for the first time since April.</div>
+      <div class="arc-head">Bitcoin ETFs drew $2.39 billion in a single week — their largest of 2026 — and flipped the year&#39;s cumulative flows positive for the first time since April.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="ETF">ETF</span><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Research">Research</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-38/" class="archive-item">
-    <div class="arc-pill">Week 38</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Sep 13–19</div>
+      <div class="arc-tile-week">Week 38</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">September 13–19, 2026</div>
-      <div class="arc-title">Week 38 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">The CLARITY Act failed its first cloture vote — blocked not on Bitcoin&#39;s CFTC framework but on an ethics provision that Democrats said left the president&#39;s digital-asset holdings unrestricted.</div>
+      <div class="arc-head">The CLARITY Act failed its first cloture vote — blocked not on Bitcoin&#39;s CFTC framework but on an ethics provision that Democrats said left the president&#39;s digital-asset holdings unrestricted.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Banking">Banking</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-37/" class="archive-item">
-    <div class="arc-pill">Week 37</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Sep 6–12</div>
+      <div class="arc-tile-week">Week 37</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">September 6–12, 2026</div>
-      <div class="arc-title">Week 37 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Block filed for an OCC national trust bank charter — putting Cash App&#39;s Bitcoin custody infrastructure in line for a single federal supervisor to replace its patchwork of state licenses.</div>
+      <div class="arc-head">Block filed for an OCC national trust bank charter — putting Cash App&#39;s Bitcoin custody infrastructure in line for a single federal supervisor to replace its patchwork of state licenses.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="Regulation">Regulation</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-36/" class="archive-item">
-    <div class="arc-pill">Week 36</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Aug 30–Sep 5</div>
+      <div class="arc-tile-week">Week 36</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">August 30–September 5, 2026</div>
-      <div class="arc-title">Week 36 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Sberbank activated Bitcoin-backed lending the day Russia&#39;s national digital-asset framework took legal effect — with Ethereum and USDT held pending central bank approval.</div>
+      <div class="arc-head">Sberbank activated Bitcoin-backed lending the day Russia&#39;s national digital-asset framework took legal effect — with Ethereum and USDT held pending central bank approval.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="ETF">ETF</span></div>
     </div>
   </a>
+  
+  
+  <h2 class="arc-month">August 2026</h2>
+  
   
   <a href="/2026/week-35/" class="archive-item">
-    <div class="arc-pill">Week 35</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Aug 23–29</div>
+      <div class="arc-tile-week">Week 35</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">August 23–29, 2026</div>
-      <div class="arc-title">Week 35 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Banking Regulators Formally Defined &#39;Unsafe or Unsound Practice&#39; — Ending the Examiner Latitude That Enabled Crypto Debanking</div>
+      <div class="arc-head">Banking Regulators Formally Defined &#39;Unsafe or Unsound Practice&#39; — Ending the Examiner Latitude That Enabled Crypto Debanking</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="ETF">ETF</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-34/" class="archive-item">
-    <div class="arc-pill">Week 34</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Aug 16–22</div>
+      <div class="arc-tile-week">Week 34</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">August 16–22, 2026</div>
-      <div class="arc-title">Week 34 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">A Nasdaq-Listed Insurer Closed a Capital Raise Settled Entirely in Bitcoin — No Fiat Involved</div>
+      <div class="arc-head">A Nasdaq-Listed Insurer Closed a Capital Raise Settled Entirely in Bitcoin — No Fiat Involved</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Institutional">Institutional</span><span class="arc-cat" data-cat="ETF">ETF</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-33/" class="archive-item">
-    <div class="arc-pill">Week 33</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Aug 9–15</div>
+      <div class="arc-tile-week">Week 33</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">August 9–15, 2026</div>
-      <div class="arc-title">Week 33 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">With Congress Stalled, the SEC Built Its Own Crypto Rulemaking</div>
+      <div class="arc-head">With Congress Stalled, the SEC Built Its Own Crypto Rulemaking</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="ETF">ETF</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-32/" class="archive-item">
-    <div class="arc-pill">Week 32</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Aug 2–8</div>
+      <div class="arc-tile-week">Week 32</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">August 2–8, 2026</div>
-      <div class="arc-title">Week 32 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">CME Froze the First SEC-Approved Bitcoin Index Options — and Put the Bitcoin Commodity Question Back Before the Commission</div>
+      <div class="arc-head">CME Froze the First SEC-Approved Bitcoin Index Options — and Put the Bitcoin Commodity Question Back Before the Commission</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Research">Research</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-31/" class="archive-item">
-    <div class="arc-pill">Week 31</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jul 26–Aug 1</div>
+      <div class="arc-tile-week">Week 31</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">July 26–August 1, 2026</div>
-      <div class="arc-title">Week 31 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Senate Set the CLARITY Act Aside Before Its August Break — and 2026 Passage Odds Fell to 27%</div>
+      <div class="arc-head">Senate Set the CLARITY Act Aside Before Its August Break — and 2026 Passage Odds Fell to 27%</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Research">Research</span></div>
     </div>
   </a>
+  
+  
+  <h2 class="arc-month">July 2026</h2>
+  
   
   <a href="/2026/week-30/" class="archive-item">
-    <div class="arc-pill">Week 30</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jul 19–25</div>
+      <div class="arc-tile-week">Week 30</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">July 19–25, 2026</div>
-      <div class="arc-title">Week 30 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Senate Republicans Banned Federal Officials from Issuing Crypto to Unlock Democratic Votes on the CLARITY Act</div>
+      <div class="arc-head">Senate Republicans Banned Federal Officials from Issuing Crypto to Unlock Democratic Votes on the CLARITY Act</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-29/" class="archive-item">
-    <div class="arc-pill">Week 29</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jul 12–18</div>
+      <div class="arc-tile-week">Week 29</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">July 12–18, 2026</div>
-      <div class="arc-title">Week 29 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">E*TRADE Opened Spot Bitcoin Trading to Nine Million Clients — With Custody Held Outside Morgan Stanley</div>
+      <div class="arc-head">E*TRADE Opened Spot Bitcoin Trading to Nine Million Clients — With Custody Held Outside Morgan Stanley</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="Regulation">Regulation</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-28/" class="archive-item">
-    <div class="arc-pill">Week 28</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jul 5–11</div>
+      <div class="arc-tile-week">Week 28</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">July 5–11, 2026</div>
-      <div class="arc-title">Week 28 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Circle Crossed Into the Regulated Banking System — Securing a National Trust Bank Charter Under Direct OCC Supervision</div>
+      <div class="arc-head">Circle Crossed Into the Regulated Banking System — Securing a National Trust Bank Charter Under Direct OCC Supervision</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="Institutional">Institutional</span><span class="arc-cat" data-cat="Mining">Mining</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-27/" class="archive-item">
-    <div class="arc-pill">Week 27</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jun 28–Jul 4</div>
+      <div class="arc-tile-week">Week 27</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">June 28–July 4, 2026</div>
-      <div class="arc-title">Week 27 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">California&#39;s Crypto Licensing Mandate Is Now Live — Unlicensed Firms Face Up to $100,000 per Day</div>
+      <div class="arc-head">California&#39;s Crypto Licensing Mandate Is Now Live — Unlicensed Firms Face Up to $100,000 per Day</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Institutional">Institutional</span></div>
     </div>
   </a>
+  
+  
+  <h2 class="arc-month">June 2026</h2>
+  
   
   <a href="/2026/week-26/" class="archive-item">
-    <div class="arc-pill">Week 26</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jun 21–27</div>
+      <div class="arc-tile-week">Week 26</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">June 21–27, 2026</div>
-      <div class="arc-title">Week 26 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Congress passed a four-year ban on a Federal Reserve digital dollar, clearing both chambers with veto-proof margins — then the White House canceled the signing ceremony.</div>
+      <div class="arc-head">Congress passed a four-year ban on a Federal Reserve digital dollar, clearing both chambers with veto-proof margins — then the White House canceled the signing ceremony.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-25/" class="archive-item">
-    <div class="arc-pill">Week 25</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jun 14–20</div>
+      <div class="arc-tile-week">Week 25</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">June 14–20, 2026</div>
-      <div class="arc-title">Week 25 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">CME sued the CFTC to void its Bitcoin perpetual futures approvals — the first federal challenge to the regulator&#39;s authority to bring Bitcoin perps to U.S. exchanges</div>
+      <div class="arc-head">CME sued the CFTC to void its Bitcoin perpetual futures approvals — the first federal challenge to the regulator&#39;s authority to bring Bitcoin perps to U.S. exchanges</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="ETF">ETF</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-24/" class="archive-item">
-    <div class="arc-pill">Week 24</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Jun 7–13</div>
+      <div class="arc-tile-week">Week 24</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">June 7–13, 2026</div>
-      <div class="arc-title">Week 24 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Coinbase won CFTC clearance to route US customers into Deribit&#39;s global Bitcoin perpetuals — the first approval of its kind for a US exchange</div>
+      <div class="arc-head">Coinbase won CFTC clearance to route US customers into Deribit&#39;s global Bitcoin perpetuals — the first approval of its kind for a US exchange</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Mining">Mining</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-23/" class="archive-item">
-    <div class="arc-pill">Week 23</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">May 31–Jun 6</div>
+      <div class="arc-tile-week">Week 23</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">May 31–June 6, 2026</div>
-      <div class="arc-title">Week 23 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Three Federal Banking Regulators Scrubbed &#39;Reputation Risk&#39; From 27 Years of Interagency Guidance — Eliminating the Last Supervisory Hook for Crypto Debanking</div>
+      <div class="arc-head">Three Federal Banking Regulators Scrubbed &#39;Reputation Risk&#39; From 27 Years of Interagency Guidance — Eliminating the Last Supervisory Hook for Crypto Debanking</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="ETF">ETF</span></div>
     </div>
   </a>
+  
+  
+  <h2 class="arc-month">May 2026</h2>
+  
   
   <a href="/2026/week-22/" class="archive-item">
-    <div class="arc-pill">Week 22</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">May 24–30</div>
+      <div class="arc-tile-week">Week 22</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">May 24–30, 2026</div>
-      <div class="arc-title">Week 22 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Perpetual Bitcoin Futures Are Now Legal on a Regulated U.S. Exchange — a Derivative That Has Only Existed Offshore</div>
+      <div class="arc-head">Perpetual Bitcoin Futures Are Now Legal on a Regulated U.S. Exchange — a Derivative That Has Only Existed Offshore</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Banking">Banking</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-21/" class="archive-item">
-    <div class="arc-pill">Week 21</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">May 17–23</div>
+      <div class="arc-tile-week">Week 21</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">May 17–23, 2026</div>
-      <div class="arc-title">Week 21 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Trump Orders the Fed to Evaluate Whether Crypto Firms Can Access U.S. Payment Rails Directly</div>
+      <div class="arc-head">Trump Orders the Fed to Evaluate Whether Crypto Firms Can Access U.S. Payment Rails Directly</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Institutional">Institutional</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-20/" class="archive-item">
-    <div class="arc-pill">Week 20</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">May 10–16</div>
+      <div class="arc-tile-week">Week 20</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">May 10–16, 2026</div>
-      <div class="arc-title">Week 20 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Senate Banking Committee Advanced the CLARITY Act on a 15–9 Vote — the First Comprehensive Crypto Market Structure Bill to Clear a Major Committee</div>
+      <div class="arc-head">Senate Banking Committee Advanced the CLARITY Act on a 15–9 Vote — the First Comprehensive Crypto Market Structure Bill to Clear a Major Committee</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Regulation">Regulation</span><span class="arc-cat" data-cat="Institutional">Institutional</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-19/" class="archive-item">
-    <div class="arc-pill">Week 19</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">May 3–9</div>
+      <div class="arc-tile-week">Week 19</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">May 3–9, 2026</div>
-      <div class="arc-title">Week 19 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Strategy said it could sell Bitcoin when advantageous — Saylor&#39;s follow-up set the floor at &#39;never a net seller&#39;</div>
+      <div class="arc-head">Strategy said it could sell Bitcoin when advantageous — Saylor&#39;s follow-up set the floor at &#39;never a net seller&#39;</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Institutional">Institutional</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-18/" class="archive-item">
-    <div class="arc-pill">Week 18</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Apr 26 – May 2</div>
+      <div class="arc-tile-week">Week 18</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">April 26 – May 2, 2026</div>
-      <div class="arc-title">Week 18 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Senators Tillis and Alsobrooks struck a stablecoin yield deal on May 1 — clearing the Clarity Act&#39;s last obstacle and scheduling a Senate Banking markup for the week of May 11.</div>
+      <div class="arc-head">Senators Tillis and Alsobrooks struck a stablecoin yield deal on May 1 — clearing the Clarity Act&#39;s last obstacle and scheduling a Senate Banking markup for the week of May 11.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Policy">Policy</span></div>
     </div>
   </a>
+  
+  
+  <h2 class="arc-month">April 2026</h2>
+  
   
   <a href="/2026/week-17/" class="archive-item">
-    <div class="arc-pill">Week 17</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Apr 19–25</div>
+      <div class="arc-tile-week">Week 17</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">April 19–25, 2026</div>
-      <div class="arc-title">Week 17 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Strategy bought 34,164 BTC for $2.54 billion — making it the largest institutional Bitcoin holder on earth.</div>
+      <div class="arc-head">Strategy bought 34,164 BTC for $2.54 billion — making it the largest institutional Bitcoin holder on earth.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Corporate Treasury">Corporate Treasury</span><span class="arc-cat" data-cat="ETF">ETF</span><span class="arc-cat" data-cat="Policy">Policy</span></div>
     </div>
   </a>
+  
   
   <a href="/2026/week-16/" class="archive-item">
-    <div class="arc-pill">Week 16</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Apr 12–18</div>
+      <div class="arc-tile-week">Week 16</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">April 12–18, 2026</div>
-      <div class="arc-title">Week 16 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">MSBT cleared $100 million in assets in its first week — making it Morgan Stanley&#39;s strongest ETF launch on record.</div>
+      <div class="arc-head">MSBT cleared $100 million in assets in its first week — making it Morgan Stanley&#39;s strongest ETF launch on record.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="ETF">ETF</span><span class="arc-cat" data-cat="Policy">Policy</span></div>
     </div>
   </a>
   
+  
   <a href="/2026/week-15/" class="archive-item">
-    <div class="arc-pill">Week 15</div>
+    <div class="arc-tile">
+      <div class="arc-tile-date">Apr 5–11</div>
+      <div class="arc-tile-week">Week 15</div>
+    </div>
     <div class="arc-body">
-      <div class="arc-date">April 5–11, 2026</div>
-      <div class="arc-title">Week 15 (2026) · BTC Weekly</div>
       
-      <div class="arc-lead">Morgan Stanley launched the first spot Bitcoin ETF issued directly by a major U.S. bank — undercutting every existing product on price.</div>
+      <div class="arc-head">Morgan Stanley launched the first spot Bitcoin ETF issued directly by a major U.S. bank — undercutting every existing product on price.</div>
       
+      <div class="arc-cats"><span class="arc-cat" data-cat="Banking">Banking</span><span class="arc-cat" data-cat="Research">Research</span></div>
     </div>
   </a>
+  
   
 
   <footer class="footer">

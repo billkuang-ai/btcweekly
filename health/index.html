@@ -139,6 +139,55 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
 
 .footer { text-align:center; padding:24px 0; border-top:1px solid var(--border-soft); margin-top:28px; font-size:var(--text-meta); color:var(--faint); line-height:2; }
 .footer a { color:var(--orange); }
+
+/* ── DESIGN v2 (shared with issue pages) ── */
+.wrapper { max-width:760px; }
+.page-ribbon {
+  position:relative; overflow:hidden; display:flex; align-items:center; gap:18px; flex-wrap:wrap;
+  margin-top:34px; padding:18px 22px;
+  background:linear-gradient(120deg, #F7931A, #FFAA3A); border-radius:16px;
+  box-shadow:0 10px 26px rgba(247,147,26,0.30);
+}
+.page-ribbon::before {
+  content:"₿"; position:absolute; right:24px; top:-30px; font-size:130px; font-weight:800;
+  color:rgba(255,255,255,0.12); pointer-events:none;
+}
+.pr-title {
+  position:relative; font-family:'Black Han Sans',sans-serif; font-weight:400;
+  font-size:clamp(32px, 6vw, 50px); line-height:1; color:#fff; text-shadow:2px 2px 0 #C96F00; white-space:nowrap;
+}
+.pr-meta { position:relative; display:flex; flex-direction:column; }
+.pr-meta b { font-size:20px; font-weight:800; color:#1C1208; line-height:1.1; }
+.pr-meta span { margin-top:4px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(28,18,8,0.75); }
+[data-cat] { --c:var(--orange); --cb:var(--orange-faint); }
+[data-cat="Regulation"]    { --c:#2F5D8A; --cb:#E6EEF7; }
+[data-cat="Banking"]       { --c:#2E6B45; --cb:#E3F2E8; }
+[data-cat="Institutional"] { --c:#6343A0; --cb:#EEE7F8; }
+[data-cat="Mining"]        { --c:#8A5200; --cb:#FCEBD2; }
+[data-cat="Research"]      { --c:#1C6E6E; --cb:#DFF2F1; }
+[data-cat="Payments"]      { --c:#A8355A; --cb:#FBE6EC; }
+[data-cat="Sovereign"]     { --c:#24406E; --cb:#E3E8F2; }
+[data-cat="ETF"]           { --c:#7E4410; --cb:#F6E6D6; }
+
+.hm-hero { background:#1C1208; border:none; border-radius:16px; box-shadow:0 18px 40px rgba(28,18,8,0.25); position:relative; overflow:hidden; }
+.hm-hero::after { content:""; position:absolute; right:-80px; top:-80px; width:260px; height:260px; border-radius:50%; background:radial-gradient(circle, #F7931A 0%, rgba(247,147,26,0) 70%); opacity:0.4; pointer-events:none; }
+.hm-hero > * { position:relative; }
+.hm-hero-label, .hm-hero-meta, .therm-scale { color:rgba(255,246,236,0.62); }
+.therm-scale .tick { background:rgba(255,246,236,0.5); }
+.therm-scale .therm-scale-row.active { color:#FFF6EC; }
+.therm-scale .therm-scale-row.active .tick { background:#FFF6EC; }
+.therm-tube { background:rgba(255,246,236,0.10); }
+.hm-spot, .hm-hero-explain { color:rgba(255,246,236,0.82); }
+.hm-hero-explain { border-top-color:rgba(255,246,236,0.14); }
+.hm-hero-explain strong { color:#FFF6EC; }
+.hm-intro { background:var(--white); border:none; border-left:4px solid var(--orange); border-radius:12px; font-style:normal; color:var(--text); box-shadow:0 4px 14px rgba(28,18,8,0.06); }
+.hm-section-label { margin-top:30px; font-family:'Black Han Sans',sans-serif; font-weight:400; font-size:20px; letter-spacing:0.04em; color:#1C1208; display:flex; align-items:center; gap:12px; }
+.hm-section-label::after { content:""; flex:1; height:2px; background:var(--orange-pale); border-radius:2px; }
+.hm-sub { border:none; border-top:5px solid var(--c, var(--orange)); border-radius:14px; box-shadow:0 6px 18px rgba(28,18,8,0.07); }
+.hm-input { border:none; border-left:5px solid var(--c, var(--orange)); border-radius:6px 14px 14px 6px; box-shadow:0 4px 14px rgba(28,18,8,0.06); }
+.hm-methodology { border:none; border-radius:14px; background:var(--white); box-shadow:0 4px 14px rgba(28,18,8,0.06); }
+.hm-info-tooltip { width:min(240px, calc(100vw - 48px)); left:auto; right:-8px; transform:none; }
+@media(max-width:600px){ .page-ribbon::before { right:-10px; } }
 </style>
 </head>
 <body>
@@ -155,7 +204,10 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
     </div>
   </header>
 
-  <h2 class="page-heading">Bitcoin Health Meter</h2>
+  <div class="page-ribbon">
+    <div class="pr-title">Health Meter</div>
+    <div class="pr-meta"><b>As of 2026-11-13</b><span>Refreshed daily</span></div>
+  </div>
 
   <div class="hm-hero">
     <div class="hm-hero-label">Composite Score</div>
@@ -186,35 +238,35 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   <div class="hm-sub-grid">
     
     
-    <div class="hm-sub">
+    <div class="hm-sub" style="--c:#FFAA3A">
       <div class="hm-sub-name">Network</div>
       <div class="hm-sub-num" style="color:#FFAA3A">59</div>
       <div class="hm-sub-bar"><div class="hm-sub-bar-fill" style="width:59.4%; background:#FFAA3A"></div></div>
       <div class="hm-sub-note">Hashrate trend · fee share</div>
     </div>
     
-    <div class="hm-sub">
+    <div class="hm-sub" style="--c:#F7931A">
       <div class="hm-sub-name">Demand</div>
       <div class="hm-sub-num" style="color:#F7931A">24</div>
       <div class="hm-sub-bar"><div class="hm-sub-bar-fill" style="width:24.3%; background:#F7931A"></div></div>
       <div class="hm-sub-note">Corporate BTC added · Coinbase premium</div>
     </div>
     
-    <div class="hm-sub">
+    <div class="hm-sub" style="--c:#c9302c">
       <div class="hm-sub-name">Holders</div>
       <div class="hm-sub-num" style="color:#c9302c">6</div>
       <div class="hm-sub-bar"><div class="hm-sub-bar-fill" style="width:6.2%; background:#c9302c"></div></div>
       <div class="hm-sub-note">Exchange balances</div>
     </div>
     
-    <div class="hm-sub">
+    <div class="hm-sub" style="--c:#c9302c">
       <div class="hm-sub-name">Liquidity</div>
       <div class="hm-sub-num" style="color:#c9302c">0</div>
       <div class="hm-sub-bar"><div class="hm-sub-bar-fill" style="width:0%; background:#c9302c"></div></div>
       <div class="hm-sub-note">Stablecoin supply</div>
     </div>
     
-    <div class="hm-sub">
+    <div class="hm-sub" style="--c:#1f9e4a">
       <div class="hm-sub-name">Leverage</div>
       <div class="hm-sub-num" style="color:#1f9e4a">100</div>
       <div class="hm-sub-bar"><div class="hm-sub-bar-fill" style="width:100%; background:#1f9e4a"></div></div>
@@ -229,7 +281,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   
 
   
-  <div class="hm-input">
+  <div class="hm-input" style="--c:#5cb85c">
     <div class="hm-input-row"><div class="hm-input-name">Hashrate Trend (30d vs 90d)<span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">Average mining power over the last 30 days divided by the last 90. Above 1 means miners are plugging in more machines.</span></span></div><div class="hm-input-score" style="color:#5cb85c">78</div></div>
     <div class="hm-input-val">Ratio 1.049 · 30d avg 1018 EH/s</div>
     <div class="hm-input-note">CoinMetrics — ranked against the last two years</div>
@@ -237,7 +289,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   
 
   
-  <div class="hm-input">
+  <div class="hm-input" style="--c:#c9302c">
     <div class="hm-input-row"><div class="hm-input-name">Fee Share of Miner Revenue (30d)<span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">Transaction fees as a share of what miners earn; the rest is new issuance, which halves every four years. Higher means more demand for block space and a security budget less dependent on the subsidy.</span></span></div><div class="hm-input-score" style="color:#c9302c">16</div></div>
     <div class="hm-input-val">0.61% of miner revenue</div>
     <div class="hm-input-note">CoinMetrics — ranked against the last two years</div>
@@ -245,7 +297,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   
 
   
-  <div class="hm-input">
+  <div class="hm-input" style="--c:#F7931A">
     <div class="hm-input-row"><div class="hm-input-name">Corporate BTC Added (30d)<span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">Net bitcoin added over 30 days by the largest public-company treasuries, counted in BTC rather than dollars, so it reflects buying, not price.</span></span></div><div class="hm-input-score" style="color:#F7931A">36</div></div>
     <div class="hm-input-val">+10,096 BTC · 25 companies tracked</div>
     <div class="hm-input-note">CoinGecko public treasuries</div>
@@ -253,7 +305,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   
 
   
-  <div class="hm-input">
+  <div class="hm-input" style="--c:#c9302c">
     <div class="hm-input-row"><div class="hm-input-name">Coinbase Premium (7d)<span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">Coinbase&#39;s BTC-USD price versus OKX&#39;s BTC-USDT price. A positive gap means US buyers, including the custody flows behind spot ETFs, are bidding harder than the offshore market.</span></span></div><div class="hm-input-score" style="color:#c9302c">7</div></div>
     <div class="hm-input-val">-0.132%</div>
     <div class="hm-input-note">Coinbase · OKX daily closes — ranked against the last two years</div>
@@ -261,7 +313,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   
 
   
-  <div class="hm-input">
+  <div class="hm-input" style="--c:#c9302c">
     <div class="hm-input-row"><div class="hm-input-name">Exchange Balances (30d Δ)<span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">Bitcoin held in exchange wallets, change over 30 days. Coins leaving exchanges are usually being held; coins arriving are usually there to be sold. Falling balances score higher.</span></span></div><div class="hm-input-score" style="color:#c9302c">6</div></div>
     <div class="hm-input-val">+1.75% · 2,723,131 BTC on exchanges</div>
     <div class="hm-input-note">CoinMetrics — exchange wallets are estimated by address labelling</div>
@@ -269,7 +321,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   
 
   
-  <div class="hm-input">
+  <div class="hm-input" style="--c:#c9302c">
     <div class="hm-input-row"><div class="hm-input-name">Stablecoin Supply (30d Δ)<span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">Total supply of all USD stablecoins, change over 30 days. New stablecoins are new dollars entering crypto; shrinking supply means dollars leaving.</span></span></div><div class="hm-input-score" style="color:#c9302c">0</div></div>
     <div class="hm-input-val">$287.8B · -5.33%</div>
     <div class="hm-input-note">DefiLlama (all USD stablecoins) — ranked against the last two years</div>
@@ -277,7 +329,7 @@ a:hover { color:var(--orange-bright); text-decoration:underline; }
   
 
   
-  <div class="hm-input">
+  <div class="hm-input" style="--c:#1f9e4a">
     <div class="hm-input-row"><div class="hm-input-name">Perp Funding (7d, annualized)<span class="hm-info-wrap"><button type="button" class="hm-info" aria-label="How this is scored">i</button><span class="hm-info-tooltip" role="tooltip">What leveraged traders pay to hold perpetual futures. Near zero to mildly positive is calm. Very positive means crowded longs; very negative means forced unwinding. Both extremes score low.</span></span></div><div class="hm-input-score" style="color:#1f9e4a">100</div></div>
     <div class="hm-input-val">+3.3%</div>
     <div class="hm-input-note">Deribit BTC perpetual — fixed scale, best between 0% and 8%</div>
