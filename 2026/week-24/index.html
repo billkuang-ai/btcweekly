@@ -448,6 +448,50 @@ p.s-part { margin-bottom:0; }
   .story-meta, .story.s1 .story-meta { padding:16px 18px 0; }
   .story-body { padding:10px 18px 20px; }
 }
+
+/* ── WEEK RIBBON (issue dates) ── */
+.meta-row { display:block; padding:18px 0 0; margin-top:16px; }
+.week-ribbon {
+  position:relative; display:flex; align-items:center; gap:18px;
+  background:linear-gradient(120deg, #F7931A, #FFAA3A); border-radius:16px;
+  padding:14px 14px 14px 22px; box-shadow:0 10px 26px rgba(247,147,26,0.30);
+}
+.week-ribbon::before {
+  content:"₿"; position:absolute; left:46%; top:-26px; font-size:124px; font-weight:800;
+  color:rgba(255,255,255,0.10); pointer-events:none; overflow:hidden;
+}
+.wr-date {
+  font-family:var(--wr-font, 'Inter', sans-serif); font-weight:var(--wr-weight, 800);
+  font-size:clamp(34px, 6vw, 52px); line-height:1; letter-spacing:-0.02em;
+  color:#FFFFFF; text-shadow:2px 2px 0 #C96F00; white-space:nowrap;
+}
+.wr-meta { display:flex; flex-direction:column; flex:1; min-width:0; }
+.wr-year { font-weight:800; font-size:22px; line-height:1; color:#1C1208; }
+.wr-span { white-space:nowrap; margin-top:5px; font-size:12px; font-weight:700; letter-spacing:0.12em; text-transform:uppercase; color:rgba(28,18,8,0.75); }
+.wr-ctrl { display:flex; align-items:center; gap:6px; z-index:2; }
+.wr-arrow {
+  display:grid; place-items:center; width:42px; height:42px; border-radius:10px;
+  background:rgba(255,255,255,0.28); color:#1C1208; font-size:24px; font-weight:700; text-decoration:none;
+}
+.wr-arrow:hover { background:rgba(255,255,255,0.5); text-decoration:none; }
+.wr-arrow.off { opacity:0.35; }
+.wr-week {
+  display:flex; align-items:center; gap:8px; height:42px; padding:0 14px; white-space:nowrap;
+  border:none; border-radius:10px; background:#1C1208; color:#FFF6EC; cursor:pointer;
+  font-family:inherit; font-size:13px; font-weight:700; letter-spacing:0.06em; text-transform:uppercase;
+}
+.wr-week[aria-expanded="true"] .pill-chevron { transform:rotate(180deg); }
+.week-ribbon .issue-dropdown { left:auto; right:0; transform:none; top:calc(100% + 8px); max-height:60vh; overflow-y:auto; }
+@media(max-width:600px) {
+  .week-ribbon { flex-wrap:wrap; padding:16px 16px 14px; gap:10px 16px; }
+  .week-ribbon::before { left:auto; right:-6px; }
+  .wr-date { font-size:clamp(28px, 8.4vw, 40px); }
+  .wr-span { display:none; }
+  .wr-meta { flex:0 0 auto; }
+  .wr-ctrl { width:100%; justify-content:space-between; }
+  .wr-week { flex:1; justify-content:center; }
+  .week-ribbon .issue-dropdown { left:0; right:0; width:auto; }
+}
 </style>
 </head>
 <body>
@@ -461,13 +505,20 @@ p.s-part { margin-bottom:0; }
     </div>
     <div class="masthead-hero">
       <div class="wordmark"><span class="w1">BTC</span>&thinsp;<span class="w2">WEEKLY</span></div>
+      
+      
       <div class="meta-row">
-        <div class="issue-pill-wrap">
-          <button class="issue-pill" id="issue-btn" aria-haspopup="listbox" aria-expanded="false">
-            Week 24 · June 7–13, 2026
-            <svg class="pill-chevron" width="10" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
-          </button>
-          <div class="issue-dropdown" id="issue-dropdown" hidden>
+        <div class="week-ribbon">
+          <div class="wr-date">Jun 7–13</div>
+          <div class="wr-meta"><span class="wr-year">2026</span><span class="wr-span">Sunday – Saturday</span></div>
+          <div class="wr-ctrl issue-pill-wrap">
+            <a class="wr-arrow" href="/2026/week-23/" aria-label="Previous issue: Week 23">‹</a>
+            <button class="wr-week" id="issue-btn" aria-haspopup="listbox" aria-expanded="false">
+              Week 24
+              <svg class="pill-chevron" width="11" height="7" viewBox="0 0 10 7" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M1 1l4 4 4-4"/></svg>
+            </button>
+            <a class="wr-arrow" href="/2026/week-25/" aria-label="Next issue: Week 25">›</a>
+            <div class="issue-dropdown" id="issue-dropdown" hidden>
             
             <a href="/2026/week-45/" class="issue-dropdown-item">
               Week 45 · November 1–7, 2026
@@ -589,6 +640,7 @@ p.s-part { margin-bottom:0; }
               Week 15 · April 5–11, 2026
             </a>
             
+          </div>
           </div>
         </div>
       </div>
