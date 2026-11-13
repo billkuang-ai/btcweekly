@@ -1,0 +1,127 @@
+[
+  {
+    "symbol": "MSTR.US",
+    "id": "strategy",
+    "name": "Strategy"
+  },
+  {
+    "symbol": "3350.T",
+    "id": "metaplanet",
+    "name": "Metaplanet"
+  },
+  {
+    "symbol": "XXI.US",
+    "id": "xxi",
+    "name": "Twenty One Capital"
+  },
+  {
+    "symbol": "ASST.US",
+    "id": "strive",
+    "name": "Strive"
+  },
+  {
+    "symbol": "MARA.US",
+    "id": "mara-holdings",
+    "name": "MARA Holdings"
+  },
+  {
+    "symbol": "CEPO.US",
+    "id": "bitcoin-standard-treasury-company",
+    "name": "Bitcoin Standard Treasury Company"
+  },
+  {
+    "symbol": "BLSH.US",
+    "id": "bullish",
+    "name": "Bullish"
+  },
+  {
+    "symbol": "GLXY.US",
+    "id": "galaxy-digital-holdings-ltd",
+    "name": "Galaxy Digital Holdings Ltd"
+  },
+  {
+    "symbol": "SPCX",
+    "id": "spacex",
+    "name": "Space Exploration Technologies Corp."
+  },
+  {
+    "symbol": "COIN.US",
+    "id": "coinbase-global",
+    "name": "Coinbase Global"
+  },
+  {
+    "symbol": "HUT.US",
+    "id": "hut-8-mining-corp",
+    "name": "Hut 8 Mining Corp"
+  },
+  {
+    "symbol": "CLSK.US",
+    "id": "cleanspark",
+    "name": "CleanSpark"
+  },
+  {
+    "symbol": "TSLA.US",
+    "id": "tesla",
+    "name": "Tesla"
+  },
+  {
+    "symbol": "DJT.US",
+    "id": "trump-media-technology-group-corp",
+    "name": "Trump Media & Technology Group Corp."
+  },
+  {
+    "symbol": "XYZ.US",
+    "id": "block",
+    "name": "Block"
+  },
+  {
+    "symbol": "ABTC.US",
+    "id": "american-bitcoin",
+    "name": "American Bitcoin"
+  },
+  {
+    "symbol": "GDC.US",
+    "id": "gd-culture-group",
+    "name": "GD Culture Group"
+  },
+  {
+    "symbol": "NXTT.US",
+    "id": "next-technology-holding",
+    "name": "Next Technology Holding"
+  },
+  {
+    "symbol": "BRR.US",
+    "id": "procap-btc",
+    "name": "Silvia (formerly ProCap Financial)"
+  },
+  {
+    "symbol": "GEMI.US",
+    "id": "gemini-space-station",
+    "name": "Gemini Space Station"
+  },
+  {
+    "symbol": "NAKA.US",
+    "id": "kindlymd",
+    "name": "Nakamoto Inc (formerly KindlyMD)"
+  },
+  {
+    "symbol": "434.HK",
+    "id": "boyaa-interactive-international-limited",
+    "name": "Boyaa Interactive International Limited"
+  },
+  {
+    "symbol": "OBTC3.SA",
+    "id": "oranjebtc",
+    "name": "OranjeBTC"
+  },
+  {
+    "symbol": "BTGO.US",
+    "id": "bitgo-holdings",
+    "name": "BitGo Holdings"
+  },
+  {
+    "symbol": "ADE.DE",
+    "id": "bitcoin-group-se",
+    "name": "Bitcoin Group SE"
+  }
+]
