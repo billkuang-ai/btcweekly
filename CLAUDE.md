@@ -8,10 +8,46 @@ You are researching and drafting the weekly BTC Weekly newsletter for btcweekly.
 
 Each Saturday, follow these steps in order **without stopping for approval**:
 
-1. **Research** — Run targeted searches across all category priorities. Filter by source quality. Exclude anything outside the current week's date range.
-2. **Shortlist** — Present 5 candidates with 🟢 / 🟡 / 🔴 ratings. Do not stop here — immediately continue to Draft and Publish in the same response.
-3. **Draft** — Write the 🟢 stories following all item format and editorial standards below.
-4. **Publish** — Save the issue file to `src/issues/`, run `npm run build`, commit, and push to main. Do not wait for approval at any step.
+1. **News input** — Query the Brave News API for the past week (see "News Input"). Fall back to web search only if Brave fails.
+2. **Research** — Fill gaps with targeted web searches across all category priorities. Filter by source quality. Exclude anything outside the current week's date range.
+3. **Verify** — Open (WebFetch) the main article for every story you keep and confirm the facts and publish date; find the primary source where one exists.
+4. **Shortlist** — Present 5 candidates with 🟢 / 🟡 / 🔴 ratings. Do not stop here — immediately continue to Draft and Publish in the same response.
+5. **Draft** — Write the 🟢 stories following all item format and editorial standards below.
+6. **Publish** — Save the issue file to `src/issues/`, run `npm run build`, commit, and push to main. Do not wait for approval at any step.
+7. **Report** — Always send a one-line push notification: `BTC Weekly Week XX: N stories (news: brave|web)`. If any step failed or was skipped, name the step and why. A run never finishes quietly with steps undone.
+
+---
+
+## News Input
+
+The Brave News API is the primary lead source. The key is in the environment variable `BRAVE_API_KEY` (set in the cloud environment, never in the repo). Run one query per category, with a ~1.1s pause between calls (free-plan rate limit):
+
+```bash
+curl -s -G "https://api.search.brave.com/res/v1/news/search" \
+  -H "Accept: application/json" -H "X-Subscription-Token: $BRAVE_API_KEY" \
+  --data-urlencode "q=bank bitcoin custody launch" \
+  -d count=20 -d freshness=pw -d country=us -d search_lang=en
+```
+
+Queries (edit freely):
+
+- `company first bitcoin purchase treasury`
+- `bitcoin treasury corporate purchase`
+- `bitcoin ETF record inflows`
+- `bitcoin SEC FDIC OCC Federal Reserve guidance`
+- `bitcoin reserve bill legislation`
+- `bank bitcoin custody launch`
+- `bitcoin payments Lightning bank partnership`
+- `sovereign bitcoin reserve government`
+- `bitcoin mining hashrate record`
+- `bitcoin protocol research quantum security`
+- `bitcoin executive appointed hires`
+- `bitcoin record milestone exchange`
+
+- **Brave's terms forbid storing results.** Keep them in memory or under /tmp only. Never commit them, save them in the repo (btcweekly is public), paste them anywhere, or quote their descriptions.
+- If `BRAVE_API_KEY` is missing or Brave returns errors (401/403/429/5xx) after a retry, use the web searches below instead and report news source "web" with the error.
+- Brave results are a lead list, not a source. Every story still gets its article opened and its facts confirmed before it runs. If articles can't be opened (blocked, 403), say so in the notification rather than silently dropping stories.
+- Every link in the issue must be a real URL you saw in a search result or a fetched page. Never construct a URL.
 
 ---
 
@@ -19,7 +55,7 @@ Each Saturday, follow these steps in order **without stopping for approval**:
 
 ### Search Strategy
 
-Run targeted searches — not broad "Bitcoin news" queries. Use the current month and year in every query:
+Use web search to fill categories Brave covers thinly and to find primary sources. Run targeted searches — not broad "Bitcoin news" queries. Use the current month and year in every query:
 
 - `Bitcoin treasury corporate purchase [month year]`
 - `Bitcoin ETF inflows institutional [month year]`
@@ -30,12 +66,18 @@ Run targeted searches — not broad "Bitcoin news" queries. Use the current mont
 - `Bitcoin Lightning payment bank partnership [year]`
 - `sovereign Bitcoin reserve [year]`
 
+### Noise Filter
+
+Skip before ranking: price-only and day-mover recaps with no cause, "should you buy" / "better buy" pieces, price targets and predictions, listicles, sponsored posts and press-release reposts on aggregator sites, and routine weekly ETF flow recaps. Rank what's left by structural impact (law, regulation, banking access, first-time entrants, named records), never by price moves.
+
 ### Source Tiers
 
 - **Preferred:** Bloomberg, Reuters, Fortune, Financial Times, MarketWatch, WSJ
 - **Strong:** CoinDesk, The Block, Bitcoin Magazine, Forbes
 - **Acceptable:** Official .gov sites, corporate press releases, first-party announcements
 - **Avoid:** No-name blogs, price speculation sites, aggregators without original reporting
+
+A Brave result from an Avoid-tier site can still lead you to a story; cite a Preferred/Strong/primary source for it or drop it.
 
 ### Category Priorities
 
@@ -120,6 +162,8 @@ Factual, third-person, declarative. Significance is shown through structural fac
 
 No price predictions or trading commentary. No closing summary paragraph.
 
+**Own words.** Write every sentence yourself. No quotes over ~10 words, never copy or lightly reword a search snippet or article sentence, and don't follow an article's structure. Every claim must be traceable to its linked source.
+
 ### Balanced
 
 Balanced means the reader gets the complete picture — not the flattering half, not the alarming half.
@@ -166,11 +210,7 @@ Concise means no sentence is present unless it earns its place.
 
 ### File Format
 
-Save each issue to:
-
-```
-/Users/Bill/Documents/dev/btcweekly/src/issues/YYYY-week-XX.md
-```
+Save each issue to `src/issues/YYYY-week-XX.md` in the repo root (locally that's `/Users/Bill/Documents/dev/btcweekly/src/issues/`; in a cloud run it's the clone).
 
 The file has no markdown body — all content lives in the YAML frontmatter:
 
@@ -205,5 +245,5 @@ stories:
 ---
 ```
 
-After saving: run `npm run build`, commit the new issue file, and push to main. Do not wait for confirmation at any of these steps. The homepage, archive, and RSS feed all update automatically. The site footer handles navigation — do not add a sign-off line to story content.
+After saving: run `npm run build`, commit the new issue file, and push to main. Do not wait for confirmation at any of these steps. The homepage, archive, and RSS feed all update automatically. The site footer handles navigation and the "News search powered by Brave" credit — do not add a sign-off line to story content.
 
