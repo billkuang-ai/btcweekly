@@ -1,52 +1,5 @@
 [
  {
-  "date": "2023-11-15",
-  "composite": 96.5,
-  "label": "Robust",
-  "rawComposite": 66.2,
-  "smoothed": 66.602,
-  "subScores": {
-   "network": 79.3,
-   "demand": 77,
-   "holders": 12.7,
-   "liquidity": 80.8,
-   "leverage": 85.8
-  },
-  "inputs": {
-   "hashTrend": {
-    "raw": 1.0717,
-    "score": 73
-   },
-   "feeShare": {
-    "raw": 5.9777,
-    "score": 94
-   },
-   "corp30": {
-    "raw": null,
-    "score": null
-   },
-   "premium7": {
-    "raw": 0.0389,
-    "score": 77
-   },
-   "exchFlow": {
-    "raw": 1.2812,
-    "score": 12.7
-   },
-   "stable30": {
-    "raw": 1.6576,
-    "score": 80.8
-   },
-   "funding7": {
-    "raw": 11.9636,
-    "score": 85.8
-   }
-  },
-  "corpLevel": null,
-  "btc": 37840.5534894798,
-  "backfilled": true
- },
- {
   "date": "2023-11-16",
   "composite": 96.3,
   "label": "Robust",
@@ -51734,5 +51687,58 @@
   },
   "corpLevel": 1222890.16,
   "btc": 64908.1763721888
+ },
+ {
+  "date": "2026-11-19",
+  "composite": 18.5,
+  "label": "Fragile",
+  "rawComposite": 27.4,
+  "smoothed": 30.84,
+  "subScores": {
+   "network": 54.6,
+   "demand": 6.3,
+   "holders": 13.2,
+   "liquidity": 0,
+   "leverage": 92
+  },
+  "inputs": {
+   "hashTrend": {
+    "raw": 1.0327,
+    "score": 66.8,
+    "asOf": "2026-11-19"
+   },
+   "feeShare": {
+    "raw": 0.6337,
+    "score": 25.9,
+    "asOf": "2026-11-19"
+   },
+   "corp30": {
+    "raw": -5820,
+    "score": 0.1,
+    "asOf": "2026-11-19"
+   },
+   "premium7": {
+    "raw": -0.0947,
+    "score": 15.5,
+    "asOf": "2026-11-19"
+   },
+   "exchFlow": {
+    "raw": 1.1483,
+    "score": 13.2,
+    "asOf": "2026-11-18"
+   },
+   "stable30": {
+    "raw": -5.4064,
+    "score": 0,
+    "asOf": "2026-11-19"
+   },
+   "funding7": {
+    "raw": 1.4033,
+    "score": 92,
+    "asOf": "2026-11-19"
+   }
+  },
+  "corpLevel": 1222890.16,
+  "btc": 62896.9341901052
  }
 ]
