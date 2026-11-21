@@ -6,7 +6,15 @@
   <link href="https://www.btcweekly.org/feed.xml" rel="self"/>
   <id>https://www.btcweekly.org/</id>
   <author><name>BTC Weekly</name></author>
-  <updated>2026-11-14T00:00:00Z</updated>
+  <updated>2026-11-21T00:00:00Z</updated>
+  <entry>
+    <title>Week 47 (2026) · BTC Weekly</title>
+    <link href="https://www.btcweekly.org/2026/week-47/"/>
+    <id>https://www.btcweekly.org/2026/week-47/</id>
+    <updated>2026-11-21T00:00:00Z</updated>
+    <summary>Custodia&#39;s Fed fight ends as Bitcoin ETFs log a record outflow.</summary>
+    <content type="html">&lt;p&gt;The Supreme Court&amp;#39;s refusal to hear Custodia&amp;#39;s Fed-access case, a record one-day withdrawal from BlackRock&amp;#39;s Bitcoin ETF and a 131-page security analysis of a post-quantum signature scheme each tested Bitcoin&amp;#39;s links to banks, funds and its own cryptography this week.&lt;/p&gt;&lt;ol&gt;&lt;li&gt;The Supreme Court left the Federal Reserve free to keep a crypto bank off its payment rails.&lt;/li&gt;&lt;li&gt;BlackRock&amp;#39;s Bitcoin fund had its worst day on record in the same week filings showed institutions owning more Bitcoin ETFs than ever.&lt;/li&gt;&lt;li&gt;A proposed post-quantum signature for Bitcoin got its first full security write-up as securities regulators warned firms against waiting.&lt;/li&gt;&lt;/ol&gt;</content>
+  </entry>
   <entry>
     <title>Week 46 (2026) · BTC Weekly</title>
     <link href="https://www.btcweekly.org/2026/week-46/"/>
