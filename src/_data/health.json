@@ -1,82 +1,82 @@
 {
   "version": 2,
-  "generatedAt": "2026-11-23T07:56:38.603Z",
-  "date": "2026-11-23",
-  "composite": 13.7,
+  "generatedAt": "2026-11-24T10:10:04.111Z",
+  "date": "2026-11-24",
+  "composite": 12.3,
   "label": "Fragile",
-  "rawComposite": 25.3,
+  "rawComposite": 23.9,
   "subScores": {
-    "network": 50.8,
-    "demand": 0.6,
-    "holders": 24.7,
-    "liquidity": 0.3,
-    "leverage": 74.7
+    "network": 50.5,
+    "demand": 0.5,
+    "holders": 18.5,
+    "liquidity": 0.5,
+    "leverage": 73.6
   },
   "inputs": {
     "hashTrend": {
-      "raw": 1.025,
-      "score": 58.6,
-      "asOf": "2026-11-23",
+      "raw": 1.0242,
+      "score": 57.8,
+      "asOf": "2026-11-24",
       "stale": false,
       "source": "CoinMetrics",
-      "ma30EH": 1008.7
+      "ma30EH": 1009.9
     },
     "feeShare": {
-      "raw": 0.6531,
-      "score": 32.6,
-      "asOf": "2026-11-23",
+      "raw": 0.6572,
+      "score": 33.3,
+      "asOf": "2026-11-24",
       "stale": false,
       "source": "CoinMetrics"
     },
     "corp30": {
-      "raw": -12002,
-      "score": 0.1,
-      "asOf": "2026-11-23",
+      "raw": -11545,
+      "score": 0.6,
+      "asOf": "2026-11-24",
       "stale": false,
       "source": "CoinGecko",
-      "trackedBTC": 1222890.16,
+      "trackedBTC": 1223347.16,
       "trackedCompanies": 25
     },
     "premium7": {
-      "raw": -0.1649,
-      "score": 1.2,
-      "asOf": "2026-11-23",
+      "raw": -0.1682,
+      "score": 0.4,
+      "asOf": "2026-11-24",
       "stale": false,
       "source": "Coinbase · OKX"
     },
     "exchFlow": {
-      "raw": 0.492,
-      "score": 24.7,
-      "asOf": "2026-11-22",
+      "raw": 0.8376,
+      "score": 18.5,
+      "asOf": "2026-11-23",
       "stale": false,
       "source": "CoinMetrics",
-      "exchangeBTC": 2699120.72331477
+      "exchangeBTC": 2708748.5228757
     },
     "stable30": {
-      "raw": -5.9859,
-      "score": 0.3,
-      "asOf": "2026-11-23",
+      "raw": -5.7332,
+      "score": 0.5,
+      "asOf": "2026-11-24",
       "stale": false,
       "source": "DefiLlama",
-      "totalUSD": 282670855134.18
+      "totalUSD": 283238747656.99
     },
     "funding7": {
-      "raw": -2.0549,
-      "score": 74.7,
-      "asOf": "2026-11-23",
+      "raw": -2.2725,
+      "score": 73.6,
+      "asOf": "2026-11-24",
       "stale": false,
       "source": "Deribit"
     }
   },
   "context": {
-    "strategyBtc": 850849,
-    "mNav": 0.956,
-    "strcPrice": 93.6
+    "strategyBtc": 851305,
+    "mNav": 0.9711,
+    "strcPrice": 98.3
   },
-  "btcPrice": 61103.7072912858,
+  "btcPrice": 61253.2168786616,
   "priceCheck": {
     "days": 365,
     "weekly": 0.26,
-    "level": 0.25
+    "level": 0.26
   }
 }
